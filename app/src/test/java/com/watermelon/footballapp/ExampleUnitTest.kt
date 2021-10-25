@@ -1,4 +1,4 @@
-package com.altaie.footballapp
+package com.watermelon.footballapp
 
 import org.junit.Test
 
