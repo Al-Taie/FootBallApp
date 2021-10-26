@@ -3,13 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <variable
+            name="viewModel"
+            type="com.watermelon.footballapp.viewModels.HomeViewModel" />
 
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#151515"
+        android:background="@color/app_background"
         tools:context="com.watermelon.footballapp.ui.home.HomeFragment">
 
         <ImageView

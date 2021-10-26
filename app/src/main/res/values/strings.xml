@@ -2,4 +2,11 @@
     <string name="app_name">FootBall App</string>
     <string name="of_the_day">of the day</string>
     <string name="match">Match</string>
+    <string name="match_details">Match Details</string>
+    <string name="shooting">Shooting</string>
+    <string name="attacks">Attacks</string>
+    <string name="possession">Possession</string>
+    <string name="divider">-</string>
+    <string name="cards">Cards</string>
+    <string name="corners">Corners</string>
 </resources>
