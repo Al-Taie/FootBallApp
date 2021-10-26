@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">FootBall App</string>
+    <string name="of_the_day">of the day</string>
+    <string name="match">Match</string>
 </resources>

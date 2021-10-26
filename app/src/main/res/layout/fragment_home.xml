@@ -1,0 +1,131 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#151515"
+        tools:context="com.watermelon.footballapp.ui.home.HomeFragment">
+
+        <ImageView
+            android:id="@+id/image_background"
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/home_image_bw"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_match"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/match"
+            android:textColor="#F9A000"
+            android:textSize="42sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_of_the_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/of_the_day"
+            android:textColor="@color/white"
+            android:textSize="42sp"
+            app:layout_constraintStart_toStartOf="@+id/text_match"
+            app:layout_constraintTop_toBottomOf="@+id/text_match" />
+
+        <ImageView
+            android:id="@+id/image_home_team"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="36dp"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_of_the_day" />
+
+        <ImageView
+            android:id="@+id/image_away_team"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="36dp"
+            android:layout_marginTop="24dp"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_of_the_day" />
+
+        <TextView
+            android:id="@+id/text_home_team"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            tools:text="chelsea"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/image_home_team"
+            app:layout_constraintStart_toStartOf="@+id/image_home_team"
+            app:layout_constraintTop_toBottomOf="@+id/image_home_team" />
+
+        <TextView
+            android:id="@+id/text_away_team"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            tools:text="manchester united"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/image_away_team"
+            app:layout_constraintStart_toStartOf="@+id/image_away_team"
+            app:layout_constraintTop_toBottomOf="@+id/image_away_team" />
+
+        <TextView
+            android:id="@+id/text_competition_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="premier league"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/image_away_team"
+            app:layout_constraintStart_toEndOf="@+id/image_home_team"
+            app:layout_constraintTop_toTopOf="@+id/image_home_team" />
+
+        <TextView
+            android:id="@+id/text_match_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            tools:text="19:30"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/text_competition_name"
+            app:layout_constraintStart_toStartOf="@+id/text_competition_name"
+            app:layout_constraintTop_toBottomOf="@+id/text_competition_name" />
+
+        <TextView
+            android:id="@+id/text_stadium_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            tools:text="stanford Bridge"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/text_match_time"
+            app:layout_constraintStart_toStartOf="@+id/text_match_time"
+            app:layout_constraintTop_toBottomOf="@+id/text_match_time" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_background"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/match_item"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
