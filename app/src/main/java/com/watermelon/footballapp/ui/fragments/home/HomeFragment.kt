@@ -1,4 +1,4 @@
-package com.watermelon.footballapp.ui.home
+package com.watermelon.footballapp.ui.fragments.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

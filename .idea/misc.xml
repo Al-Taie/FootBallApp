@@ -3,12 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Time TraveleR/AndroidStudioProjects/FootBallApp/app/src/main/res/layout/activity_home.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Time TraveleR/AndroidStudioProjects/FootBallApp/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Time TraveleR/AndroidStudioProjects/FootBallApp/app/src/main/res/layout/fragment_home.xml" value="0.35260416666666666" />
-        <entry key="..\:/Users/Time TraveleR/AndroidStudioProjects/FootBallApp/app/src/main/res/layout/fragment_match.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Time TraveleR/AndroidStudioProjects/FootBallApp/app/src/main/res/layout/home_fragment.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Time TraveleR/AndroidStudioProjects/FootBallApp/app/src/main/res/layout/match_item.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Wesam Nabeel/AndroidStudioProjects/FootBallApp/app/src/main/res/drawable/background.xml" value="0.2713541666666667" />
+        <entry key="..\:/Users/Wesam Nabeel/AndroidStudioProjects/FootBallApp/app/src/main/res/drawable/background_color_chip_state_list.xml" value="0.14427083333333332" />
+        <entry key="..\:/Users/Wesam Nabeel/AndroidStudioProjects/FootBallApp/app/src/main/res/drawable/chip_state.xml" value="0.2713541666666667" />
+        <entry key="..\:/Users/Wesam Nabeel/AndroidStudioProjects/FootBallApp/app/src/main/res/drawable/ic_baseline_arrow_back_ios_new_24.xml" value="0.2713541666666667" />
+        <entry key="..\:/Users/Wesam Nabeel/AndroidStudioProjects/FootBallApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.15677083333333333" />
+        <entry key="..\:/Users/Wesam Nabeel/AndroidStudioProjects/FootBallApp/app/src/main/res/drawable/tab_color_selector.xml" value="0.2713541666666667" />
+        <entry key="..\:/Users/Wesam Nabeel/AndroidStudioProjects/FootBallApp/app/src/main/res/layout/activity_home.xml" value="0.2552083333333333" />
+        <entry key="..\:/Users/Wesam Nabeel/AndroidStudioProjects/FootBallApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/Wesam Nabeel/AndroidStudioProjects/FootBallApp/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/Users/Wesam Nabeel/AndroidStudioProjects/FootBallApp/app/src/main/res/layout/fragment_league.xml" value="0.25" />
+        <entry key="..\:/Users/Wesam Nabeel/AndroidStudioProjects/FootBallApp/app/src/main/res/layout/fragment_match.xml" value="0.25" />
+        <entry key="..\:/Users/Wesam Nabeel/AndroidStudioProjects/FootBallApp/app/src/main/res/layout/fragment_matches.xml" value="0.25" />
+        <entry key="..\:/Users/Wesam Nabeel/AndroidStudioProjects/FootBallApp/app/src/main/res/layout/fragment_table.xml" value="0.33" />
+        <entry key="..\:/Users/Wesam Nabeel/AndroidStudioProjects/FootBallApp/app/src/main/res/layout/home_fragment.xml" value="0.21197916666666666" />
+        <entry key="..\:/Users/Wesam Nabeel/AndroidStudioProjects/FootBallApp/app/src/main/res/layout/item_match.xml" value="0.2552083333333333" />
+        <entry key="..\:/Users/Wesam Nabeel/AndroidStudioProjects/FootBallApp/app/src/main/res/layout/item_team.xml" value="0.25" />
+        <entry key="..\:/Users/Wesam Nabeel/AndroidStudioProjects/FootBallApp/app/src/main/res/layout/item_team_ranking.xml" value="0.2552083333333333" />
+        <entry key="..\:/Users/Wesam Nabeel/AndroidStudioProjects/FootBallApp/app/src/main/res/layout/match_item.xml" value="0.25" />
       </map>
     </option>
   </component>

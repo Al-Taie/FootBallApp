@@ -9,16 +9,19 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        tools:background="#151515"
-        android:layout_height="48dp">
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/margin_small8dp"
+        android:padding="@dimen/padding_small8dp"
+        tools:background="#151515">
 
         <TextView
             android:id="@+id/text_home_team_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:textSize="16sp"
+            android:layout_marginEnd="@dimen/margin_normal16dp"
+            android:fontFamily="sans-serif-black"
             android:textColor="@color/white"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/image_home_team_item"
             app:layout_constraintTop_toTopOf="parent"
@@ -28,9 +31,10 @@
             android:id="@+id/text_away_team_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:textSize="16sp"
+            android:layout_marginStart="@dimen/margin_normal16dp"
+            android:fontFamily="sans-serif-black"
             android:textColor="@color/white"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/image_away_team_item"
             app:layout_constraintTop_toTopOf="parent"
@@ -38,20 +42,20 @@
 
         <ImageView
             android:id="@+id/image_home_team_item"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginEnd    ="16dp"
-            android:src="@drawable/ic_launcher_background"
+            android:layout_width="@dimen/team_icon_size"
+            android:layout_height="@dimen/team_icon_size"
+            android:layout_marginEnd="@dimen/margin_normal16dp"
+            android:src="@drawable/laligaexample"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/text_home_team_score"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/image_away_team_item"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginStart="16dp"
-            android:src="@drawable/ic_launcher_background"
+            android:layout_width="@dimen/team_icon_size"
+            android:layout_height="@dimen/team_icon_size"
+            android:layout_marginStart="@dimen/margin_normal16dp"
+            android:src="@drawable/laligaexample"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/text_away_team_score"
             app:layout_constraintTop_toTopOf="parent" />
@@ -60,6 +64,7 @@
             android:id="@+id/text_divider"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
             android:text=":"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -71,22 +76,23 @@
             android:id="@+id/text_home_team_score"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="4dp"
+            android:layout_marginEnd="@dimen/margin_small8dp"
+            android:fontFamily="sans-serif-medium"
             android:textColor="@color/white"
-            app:layout_constraintEnd_toStartOf="@+id/text_divider"
             app:layout_constraintBaseline_toBaselineOf="@+id/text_divider"
+            app:layout_constraintEnd_toStartOf="@+id/text_divider"
             tools:text="0" />
 
         <TextView
             android:id="@+id/text_away_team_score"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_small8dp"
+            android:fontFamily="sans-serif-medium"
             android:textColor="@color/white"
-            app:layout_constraintStart_toEndOf="@+id/text_divider"
-            android:layout_marginStart="4dp"
             app:layout_constraintBaseline_toBaselineOf="@+id/text_divider"
+            app:layout_constraintStart_toEndOf="@+id/text_divider"
             tools:text="1" />
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_small8dp">8dp</dimen>
+    <dimen name="margin_normal16dp">16dp</dimen>
+    <dimen name="margin_medium24dp">24dp</dimen>
+    <dimen name="margin_big32dp">32dp</dimen>
+
+    <dimen name="padding_small8dp">8dp</dimen>
+    <dimen name="padding_normal16dp">16dp</dimen>
+    <dimen name="padding_medium24dp">24dp</dimen>
+    <dimen name="padding_big32dp">32dp</dimen>
+    <dimen name="team_icon_size">24dp</dimen>
+    <dimen name="team_icon_size_match">72dp</dimen>
+    <dimen name="team_ranking_icon_size">16dp</dimen>
+    <dimen name="yellow_card_icon_size">24dp</dimen>
+    <dimen name="arrow_icon_size">24dp</dimen>
+    <dimen name="leauge_icon_size">160dp</dimen>
+    <dimen name="margin_huge40dp">40dp</dimen>
+</resources>
