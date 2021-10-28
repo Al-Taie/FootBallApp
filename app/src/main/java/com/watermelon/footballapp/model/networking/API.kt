@@ -6,7 +6,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object API {
-    private const val baseUrl = "http://api.football-data.org/v2/"
+    private const val baseUrl = "https://api.football-data.org/v2/"
     private val client = OkHttpClient.Builder().addInterceptor(FootballInterceptor()).build()
     private val retrofit = Retrofit.Builder()
         .baseUrl(baseUrl)

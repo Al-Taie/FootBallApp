@@ -9,10 +9,7 @@ import retrofit2.Response
 
 class FootBallRepository {
 
-    suspend fun getMatches() : Flow<State<MatchResponse?>> {
-        return wrapWithFlow(API.apiService::getMatches)
-    }
-
+    fun getMatches() = wrapWithFlow { API.apiService.getMatches() }
 
     private fun <T> wrapWithFlow(function : suspend () -> Response<T>) : Flow<State<T?>> {
         return flow {
