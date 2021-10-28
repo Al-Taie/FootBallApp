@@ -3,11 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="viewModel"
             type="com.watermelon.footballapp.viewModels.HomeViewModel" />
-
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -131,14 +129,15 @@
             tools:text="stanford Bridge" />
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/matches_recycler"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:orientation="vertical"
+            app:items="@{viewModel.matches.toData().matches}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/image_background"
             tools:listitem="@layout/item_match" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

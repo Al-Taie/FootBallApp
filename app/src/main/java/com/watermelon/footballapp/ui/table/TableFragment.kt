@@ -13,7 +13,6 @@ class TableFragment : BaseFragment<FragmentTableBinding>() {
 
     }
 
-    override val viewModelID = BR.viewModel
     override val viewModel: TableViewModel by activityViewModels()
     override val inflate: (LayoutInflater, ViewGroup?, attachToRoot: Boolean) -> FragmentTableBinding
         get() = FragmentTableBinding::inflate

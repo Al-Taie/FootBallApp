@@ -9,11 +9,8 @@ import watermelon.footballapp.BR
 import watermelon.footballapp.databinding.FragmentMatchesBinding
 
 class MatchesFragment: BaseFragment<FragmentMatchesBinding>() {
-    override fun setup() {
+    override fun setup() {}
 
-    }
-
-    override val viewModelID = BR.viewModel
     override val viewModel: MatchesViewModel by activityViewModels()
     override val inflate: (LayoutInflater, ViewGroup?, attachToRoot: Boolean) -> FragmentMatchesBinding
         get() = FragmentMatchesBinding::inflate

@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
+import watermelon.footballapp.BR
 
 interface BaseInteractionListener
 
@@ -31,8 +32,8 @@ abstract class BaseAdapter<T>(
         when (holder) {
             is ItemViewHolder -> {
                 holder.binding.apply {
-//                    setVariable(BR.item, currentItem)
-//                    setVariable(BR.listener, _listener)
+                    setVariable(BR.item, currentItem)
+                    setVariable(BR.listener, _listener)
                 }
             }
         }
