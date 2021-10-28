@@ -15,14 +15,18 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        tools:background="#151515"
-        android:layout_height="48dp">
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/margin_small8dp"
+        android:padding="@dimen/padding_small8dp"
+        tools:background="#151515">
 
         <TextView
             android:id="@+id/home_team_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="@dimen/margin_normal16dp"
+            android:fontFamily="sans-serif-black"
+            android:textColor="@color/white"
             android:textSize="16sp"
             android:textColor="@color/white"
             android:text="@{item.homeTeam.name}"
@@ -35,10 +39,11 @@
             android:id="@+id/away_team_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:textSize="16sp"
+            android:layout_marginStart="@dimen/margin_normal16dp"
+            android:fontFamily="sans-serif-black"
             android:textColor="@color/white"
             android:text="@{item.awayTeam.name}"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/away_team_image"
             app:layout_constraintTop_toTopOf="parent"
@@ -46,20 +51,20 @@
 
         <ImageView
             android:id="@+id/home_team_image"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginEnd    ="16dp"
-            android:src="@drawable/ic_launcher_background"
+            android:layout_width="@dimen/team_icon_size"
+            android:layout_height="@dimen/team_icon_size"
+            android:layout_marginEnd="@dimen/margin_normal16dp"
+            android:src="@drawable/laligaexample"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/home_team_score"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/away_team_image"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginStart="16dp"
-            android:src="@drawable/ic_launcher_background"
+            android:layout_width="@dimen/team_icon_size"
+            android:layout_height="@dimen/team_icon_size"
+            android:layout_marginStart="@dimen/margin_normal16dp"
+            android:src="@drawable/laligaexample"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/away_team_score"
             app:layout_constraintTop_toTopOf="parent" />
@@ -69,6 +74,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text=":"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/divider"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -79,7 +86,8 @@
             android:id="@+id/home_team_score"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="4dp"
+            android:layout_marginEnd="@dimen/margin_small8dp"
+            android:fontFamily="sans-serif-medium"
             android:textColor="@color/white"
             android:text="@{item.score.fullTime.homeTeam.toString()}"
             app:layout_constraintEnd_toStartOf="@+id/divider"
@@ -90,10 +98,11 @@
             android:id="@+id/away_team_score"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_small8dp"
+            android:fontFamily="sans-serif-medium"
             android:textColor="@color/white"
             android:text="@{item.score.fullTime.awayTeam.toString()}"
             app:layout_constraintStart_toEndOf="@+id/divider"
-            android:layout_marginStart="4dp"
             app:layout_constraintBaseline_toBaselineOf="@+id/divider"
             tools:text="1" />
 

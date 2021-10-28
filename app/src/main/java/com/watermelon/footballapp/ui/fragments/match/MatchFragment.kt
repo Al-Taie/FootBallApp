@@ -1,4 +1,4 @@
-package com.watermelon.footballapp.ui.match
+package com.watermelon.footballapp.ui.fragments.match
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -14,7 +14,7 @@ class MatchFragment : BaseFragment<FragmentMatchBinding>() {
 
     }
 
-    override val viewModelID = BR.matchViewModel
+    override val viewModelID = BR.viewModel
     override val viewModel: MatchViewModel by activityViewModels()
     override val inflate: (LayoutInflater, ViewGroup?, attachToRoot: Boolean) -> FragmentMatchBinding
         get() = FragmentMatchBinding::inflate

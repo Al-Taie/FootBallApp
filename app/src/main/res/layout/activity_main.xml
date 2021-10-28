@@ -12,15 +12,70 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.HomeActivity">
+        android:background="@drawable/background"
+        tools:context=".ui.MainActivity">
 
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragment_container_host"
+        <ImageView
+            android:layout_width="@dimen/arrow_icon_size"
+            android:layout_height="@dimen/arrow_icon_size"
+            android:layout_marginStart="@dimen/margin_normal16dp"
+            android:layout_marginTop="@dimen/margin_medium24dp"
+            android:src="@drawable/ic_baseline_arrow_back_ios_new_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/white" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="@dimen/leauge_icon_size"
+            android:layout_height="@dimen/leauge_icon_size"
+            android:layout_margin="@dimen/margin_big32dp"
+            android:src="@drawable/laligaexample"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium24dp"
+            android:fontFamily="sans-serif-black"
+            android:text="La Liga 2020-21"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            style="@style/MyCustomTabLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:name="androidx.navigation.fragment.NavHostFragment"
-            app:defaultNavHost="true"
-            app:navGraph="@navigation/football_navigation"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_huge40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:tabTextAppearance="@style/CustomTabText" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/ranking_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
+
+<!--        <androidx.fragment.app.FragmentContainerView-->
+<!--            android:id="@+id/fragment_container_host"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:name="androidx.navigation.fragment.NavHostFragment"-->
+<!--            app:defaultNavHost="true"-->
+<!--            app:navGraph="@navigation/football_navigation"/>-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
