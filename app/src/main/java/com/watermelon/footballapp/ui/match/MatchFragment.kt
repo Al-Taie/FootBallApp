@@ -1,4 +1,4 @@
-package com.watermelon.footballapp.ui.fragments.match
+package com.watermelon.footballapp.ui.match
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

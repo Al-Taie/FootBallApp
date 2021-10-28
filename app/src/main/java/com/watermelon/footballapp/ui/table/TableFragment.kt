@@ -1,4 +1,4 @@
-package com.watermelon.footballapp.ui.fragments.table
+package com.watermelon.footballapp.ui.table
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

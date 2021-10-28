@@ -1,4 +1,4 @@
-package com.watermelon.footballapp.ui.fragments.home
+package com.watermelon.footballapp.ui.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -12,7 +12,6 @@ import watermelon.footballapp.databinding.FragmentHomeBinding
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     override fun setup() {}
 
-    override val viewModelID = BR.viewModel
     override val viewModel: HomeViewModel by activityViewModels()
     override val inflate: (LayoutInflater, ViewGroup?, attachToRoot: Boolean) -> FragmentHomeBinding
         get() = FragmentHomeBinding::inflate
