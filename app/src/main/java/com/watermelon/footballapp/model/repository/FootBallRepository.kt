@@ -10,18 +10,19 @@ import retrofit2.Response
 class FootBallRepository {
 
     fun getMatches() = wrapWithFlow { API.apiService.getMatches() }
+    fun getSingleMatch(matchId: Int) = wrapWithFlow { API.apiService.getSingleMatch(matchId) }
 
-    private fun <T> wrapWithFlow(function : suspend () -> Response<T>) : Flow<State<T?>> {
+    private fun <T> wrapWithFlow(function: suspend () -> Response<T>): Flow<State<T?>> {
         return flow {
             emit(State.Loading)
             try {
                 val result = function()
-                if (result.isSuccessful){
+                if (result.isSuccessful) {
                     emit(State.Success(result.body()))
                 } else {
                     emit(State.Error(result.message()))
                 }
-            } catch (e:Exception){
+            } catch (e: Exception) {
                 emit(State.Error(e.message.toString()))
             }
         }

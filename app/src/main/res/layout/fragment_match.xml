@@ -16,6 +16,24 @@
         android:background="@drawable/background"
         tools:context="com.watermelon.footballapp.ui.match.MatchFragment">
 
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:showWhenLoading="@{viewModel.singleMatch}" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/light_red"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:showWhenError="@{viewModel.singleMatch}" />
         <ImageView
             android:id="@+id/image_match_background"
             android:layout_width="match_parent"
@@ -31,6 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_normal16dp"
             android:fontFamily="sans-serif-black"
+            android:text="@{viewModel.singleMatch.toData().competition.name}"
             android:textColor="@color/white"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -64,6 +83,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_small8dp"
+            android:text="@{viewModel.singleMatch.toData().homeTeam.name}"
             android:fontFamily="sans-serif-black"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="@+id/home_team_match_image"
@@ -76,6 +96,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_small8dp"
+            android:text="@{viewModel.singleMatch.toData().awayTeam.name}"
             android:fontFamily="sans-serif-black"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="@+id/away_team_match_image"
@@ -90,6 +111,7 @@
             android:layout_marginEnd="@dimen/margin_small8dp"
             android:fontFamily="sans-serif-black"
             android:textColor="@color/white"
+            android:text="@{viewModel.singleMatch.toData().score.fullTime.homeTeam.toString()}"
             android:textSize="36sp"
             app:layout_constraintBottom_toBottomOf="@+id/divider_match"
             app:layout_constraintEnd_toStartOf="@+id/divider_match"
@@ -102,6 +124,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_small8dp"
             android:fontFamily="sans-serif-black"
+            android:text="@{viewModel.singleMatch.toData().score.fullTime.awayTeam.toString()}"
             android:textColor="@color/white"
             android:textSize="36sp"
             app:layout_constraintBottom_toBottomOf="@+id/divider_match"
