@@ -28,7 +28,6 @@
             android:fontFamily="sans-serif-black"
             android:textColor="@color/white"
             android:textSize="16sp"
-            android:textColor="@color/white"
             android:text="@{item.homeTeam.name}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/home_team_image"

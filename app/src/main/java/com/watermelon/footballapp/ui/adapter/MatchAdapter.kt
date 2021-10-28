@@ -7,5 +7,5 @@ import watermelon.footballapp.R
 
 class MatchAdapter(list: List<Match>, listener: MatchInteractionListener) :
     BaseAdapter<Match>(list, listener) {
-    override val layoutID = R.layout.match_item
+    override val layoutID = R.layout.item_match
 }

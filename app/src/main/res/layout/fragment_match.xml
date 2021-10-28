@@ -55,7 +55,6 @@
             android:layout_height="@dimen/team_icon_size_match"
             android:layout_margin="@dimen/margin_big32dp"
             android:src="@drawable/laligaexample"
-            android:src="@mipmap/ic_launcher"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/competition_name_match"
             tools:ignore="ContentDescription" />
@@ -313,7 +312,7 @@
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_corners" />
+            app:layout_constraintTop_toBottomOf="@+id/corners" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
