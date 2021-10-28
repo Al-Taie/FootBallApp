@@ -1,9 +1,8 @@
 package com.watermelon.footballapp.model.networking
 
-import com.watermelon.footballapp.model.match.MatchResponse
+import com.watermelon.footballapp.model.response.match.MatchResponse
 import retrofit2.Response
 import retrofit2.http.GET
-import retrofit2.http.Headers
 
 interface FootballService {
 

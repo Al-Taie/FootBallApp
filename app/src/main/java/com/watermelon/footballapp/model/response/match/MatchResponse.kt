@@ -1,4 +1,4 @@
-package com.watermelon.footballapp.model.match
+package com.watermelon.footballapp.model.response.match
 
 
 import com.google.gson.annotations.SerializedName
@@ -9,5 +9,5 @@ data class MatchResponse(
     @SerializedName("filters")
     val filters: Filters?,
     @SerializedName("matches")
-    val matches: List<Matches>?
+    val matches: List<Match>?
 )

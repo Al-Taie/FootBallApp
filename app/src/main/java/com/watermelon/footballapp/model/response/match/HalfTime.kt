@@ -1,9 +1,9 @@
-package com.watermelon.footballapp.model.match
+package com.watermelon.footballapp.model.response.match
 
 
 import com.google.gson.annotations.SerializedName
 
-data class FullTime(
+data class HalfTime(
     @SerializedName("awayTeam")
     val awayTeam: Any?,
     @SerializedName("homeTeam")

@@ -1,7 +1,7 @@
 package com.watermelon.footballapp.model.repository
 
 import com.watermelon.footballapp.model.State
-import com.watermelon.footballapp.model.match.MatchResponse
+import com.watermelon.footballapp.model.response.match.MatchResponse
 import com.watermelon.footballapp.model.networking.API
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow

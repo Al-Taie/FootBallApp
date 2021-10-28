@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.watermelon.footballapp.model.State
-import com.watermelon.footballapp.model.match.MatchResponse
+import com.watermelon.footballapp.model.response.match.MatchResponse
 import com.watermelon.footballapp.model.repository.FootBallRepository
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
