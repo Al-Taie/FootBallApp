@@ -26,7 +26,7 @@
             tools:ignore="ContentDescription" />
 
         <TextView
-            android:id="@+id/text_competition_name_match"
+            android:id="@+id/competition_name_match"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
@@ -38,85 +38,85 @@
 
 
         <ImageView
-            android:id="@+id/image_home_team_match"
+            android:id="@+id/home_team_match_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="32dp"
             android:src="@mipmap/ic_launcher"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_competition_name_match"
+            app:layout_constraintTop_toBottomOf="@+id/competition_name_match"
             tools:ignore="ContentDescription" />
 
         <ImageView
-            android:id="@+id/image_away_team_match"
+            android:id="@+id/away_team_match_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="32dp"
             android:src="@mipmap/ic_launcher"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_competition_name_match"
+            app:layout_constraintTop_toBottomOf="@+id/competition_name_match"
             tools:ignore="ContentDescription" />
 
         <TextView
-            android:id="@+id/text_home_team_name_match"
+            android:id="@+id/home_team_name_match"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="@+id/image_home_team_match"
-            app:layout_constraintStart_toStartOf="@+id/image_home_team_match"
-            app:layout_constraintTop_toBottomOf="@+id/image_home_team_match"
+            app:layout_constraintEnd_toEndOf="@+id/home_team_match_image"
+            app:layout_constraintStart_toStartOf="@+id/home_team_match_image"
+            app:layout_constraintTop_toBottomOf="@+id/home_team_match_image"
             tools:text="Barcelona" />
 
         <TextView
-            android:id="@+id/text_away_team_name_match"
+            android:id="@+id/away_team_name_match"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="@+id/image_away_team_match"
-            app:layout_constraintStart_toStartOf="@+id/image_away_team_match"
-            app:layout_constraintTop_toBottomOf="@+id/image_away_team_match"
+            app:layout_constraintEnd_toEndOf="@+id/away_team_match_image"
+            app:layout_constraintStart_toStartOf="@+id/away_team_match_image"
+            app:layout_constraintTop_toBottomOf="@+id/away_team_match_image"
             tools:text="FC Bayern" />
 
         <TextView
-            android:id="@+id/text_home_team_score_match"
+            android:id="@+id/home_team_score_match"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:textColor="@color/white"
             android:textSize="36sp"
-            app:layout_constraintBottom_toBottomOf="@+id/text_divider_match"
-            app:layout_constraintEnd_toStartOf="@+id/text_divider_match"
-            app:layout_constraintTop_toTopOf="@+id/text_divider_match"
+            app:layout_constraintBottom_toBottomOf="@+id/divider_match"
+            app:layout_constraintEnd_toStartOf="@+id/divider_match"
+            app:layout_constraintTop_toTopOf="@+id/divider_match"
             tools:text="2" />
 
         <TextView
-            android:id="@+id/text_away_team_score_match"
+            android:id="@+id/away_team_score_match"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:textColor="@color/white"
             android:textSize="36sp"
-            app:layout_constraintBottom_toBottomOf="@+id/text_divider_match"
-            app:layout_constraintStart_toEndOf="@+id/text_divider_match"
-            app:layout_constraintTop_toTopOf="@+id/text_divider_match"
+            app:layout_constraintBottom_toBottomOf="@+id/divider_match"
+            app:layout_constraintStart_toEndOf="@+id/divider_match"
+            app:layout_constraintTop_toTopOf="@+id/divider_match"
             tools:text="8" />
 
         <TextView
-            android:id="@+id/text_divider_match"
+            android:id="@+id/divider_match"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/divider"
             android:textColor="@color/white"
             android:textSize="36sp"
-            app:layout_constraintBottom_toBottomOf="@+id/image_home_team_match"
+            app:layout_constraintBottom_toBottomOf="@+id/home_team_match_image"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/image_home_team_match" />
+            app:layout_constraintTop_toTopOf="@+id/home_team_match_image" />
 
         <TextView
-            android:id="@+id/text_match_details"
+            android:id="@+id/match_details"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="32dp"
@@ -125,10 +125,10 @@
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_home_team_name_match" />
+            app:layout_constraintTop_toBottomOf="@+id/home_team_name_match" />
 
         <TextView
-            android:id="@+id/text_shooting"
+            android:id="@+id/shooting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -136,10 +136,10 @@
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_match_details" />
+            app:layout_constraintTop_toBottomOf="@+id/match_details" />
 
         <TextView
-            android:id="@+id/text_attack"
+            android:id="@+id/attack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -147,10 +147,10 @@
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_shooting" />
+            app:layout_constraintTop_toBottomOf="@+id/shooting" />
 
         <TextView
-            android:id="@+id/text_possession"
+            android:id="@+id/possession"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -158,32 +158,32 @@
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_attack" />
+            app:layout_constraintTop_toBottomOf="@+id/attack" />
 
         <TextView
-            android:id="@+id/text_yellow_cards"
+            android:id="@+id/yellow_cards"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="@string/cards"
             android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="@+id/text_possession"
-            app:layout_constraintStart_toEndOf="@+id/image_yellow_card"
-            app:layout_constraintTop_toBottomOf="@+id/text_possession" />
+            app:layout_constraintEnd_toEndOf="@+id/possession"
+            app:layout_constraintStart_toEndOf="@+id/yellow_card_image"
+            app:layout_constraintTop_toBottomOf="@+id/possession" />
 
         <ImageView
-            android:id="@+id/image_yellow_card"
+            android:id="@+id/yellow_card_image"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:src="@drawable/yellow_card"
-            app:layout_constraintBottom_toBottomOf="@+id/text_yellow_cards"
-            app:layout_constraintEnd_toStartOf="@+id/text_yellow_cards"
-            app:layout_constraintStart_toStartOf="@+id/text_possession"
-            app:layout_constraintTop_toTopOf="@+id/text_yellow_cards"
+            app:layout_constraintBottom_toBottomOf="@+id/yellow_cards"
+            app:layout_constraintEnd_toStartOf="@+id/yellow_cards"
+            app:layout_constraintStart_toStartOf="@+id/possession"
+            app:layout_constraintTop_toTopOf="@+id/yellow_cards"
             tools:ignore="ContentDescription" />
 
         <TextView
-            android:id="@+id/text_corners"
+            android:id="@+id/corners"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -191,100 +191,100 @@
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_yellow_cards" />
+            app:layout_constraintTop_toBottomOf="@+id/yellow_cards" />
 
         <TextView
-            android:id="@+id/text_home_team_shooting"
+            android:id="@+id/home_team_shooting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
-            app:layout_constraintBaseline_toBaselineOf="@id/text_shooting"
-            app:layout_constraintEnd_toStartOf="@+id/text_shooting"
+            app:layout_constraintBaseline_toBaselineOf="@id/shooting"
+            app:layout_constraintEnd_toStartOf="@+id/shooting"
             app:layout_constraintStart_toStartOf="parent"
             tools:text="8" />
 
         <TextView
-            android:id="@+id/text_away_team_shooting"
+            android:id="@+id/away_team_shooting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
-            app:layout_constraintBaseline_toBaselineOf="@id/text_shooting"
+            app:layout_constraintBaseline_toBaselineOf="@id/shooting"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/text_shooting"
+            app:layout_constraintStart_toEndOf="@+id/shooting"
             tools:text="12" />
 
         <TextView
-            android:id="@+id/text_home_team_attack"
+            android:id="@+id/home_team_attack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
-            app:layout_constraintBaseline_toBaselineOf="@id/text_attack"
+            app:layout_constraintBaseline_toBaselineOf="@id/attack"
 
-            app:layout_constraintEnd_toEndOf="@+id/text_home_team_shooting"
+            app:layout_constraintEnd_toEndOf="@+id/home_team_shooting"
             tools:text="22" />
 
         <TextView
-            android:id="@+id/text_away_team_attack"
+            android:id="@+id/away_team_attack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
-            app:layout_constraintBaseline_toBaselineOf="@id/text_attack"
+            app:layout_constraintBaseline_toBaselineOf="@id/attack"
 
-            app:layout_constraintStart_toStartOf="@+id/text_away_team_shooting"
+            app:layout_constraintStart_toStartOf="@+id/away_team_shooting"
             tools:text="29" />
 
         <TextView
-            android:id="@+id/text_home_team_possession"
+            android:id="@+id/home_team_possession"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
-            app:layout_constraintBaseline_toBaselineOf="@id/text_possession"
-            app:layout_constraintEnd_toEndOf="@+id/text_home_team_attack"
+            app:layout_constraintBaseline_toBaselineOf="@id/possession"
+            app:layout_constraintEnd_toEndOf="@+id/home_team_attack"
             tools:text="42" />
 
         <TextView
-            android:id="@+id/text_away_team_possession"
+            android:id="@+id/away_team_possession"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
-            app:layout_constraintBaseline_toBaselineOf="@id/text_possession"
-            app:layout_constraintStart_toStartOf="@+id/text_away_team_attack"
+            app:layout_constraintBaseline_toBaselineOf="@id/possession"
+            app:layout_constraintStart_toStartOf="@+id/away_team_attack"
             tools:text="58" />
 
         <TextView
-            android:id="@+id/text_home_team_yellow_cards"
+            android:id="@+id/home_team_yellow_cards"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
-            app:layout_constraintBaseline_toBaselineOf="@id/text_yellow_cards"
-            app:layout_constraintEnd_toEndOf="@+id/text_home_team_possession"
+            app:layout_constraintBaseline_toBaselineOf="@id/yellow_cards"
+            app:layout_constraintEnd_toEndOf="@+id/home_team_possession"
             tools:text="3" />
 
         <TextView
-            android:id="@+id/text_away_team_yellow_cards"
+            android:id="@+id/away_team_yellow_cards"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
-            app:layout_constraintBaseline_toBaselineOf="@id/text_yellow_cards"
-            app:layout_constraintStart_toStartOf="@+id/text_away_team_possession"
+            app:layout_constraintBaseline_toBaselineOf="@id/yellow_cards"
+            app:layout_constraintStart_toStartOf="@+id/away_team_possession"
             tools:text="5" />
 
         <TextView
-            android:id="@+id/text_home_team_corners"
+            android:id="@+id/home_team_corners"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
-            app:layout_constraintBaseline_toBaselineOf="@id/text_corners"
-            app:layout_constraintEnd_toEndOf="@+id/text_home_team_yellow_cards"
+            app:layout_constraintBaseline_toBaselineOf="@id/corners"
+            app:layout_constraintEnd_toEndOf="@+id/home_team_yellow_cards"
             tools:text="8" />
 
         <TextView
-            android:id="@+id/text_away_team_corners"
+            android:id="@+id/away_team_corners"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
-            app:layout_constraintBaseline_toBaselineOf="@id/text_corners"
-            app:layout_constraintStart_toStartOf="@+id/text_away_team_yellow_cards"
+            app:layout_constraintBaseline_toBaselineOf="@id/corners"
+            app:layout_constraintStart_toStartOf="@+id/away_team_yellow_cards"
             tools:text="7" />
 
 

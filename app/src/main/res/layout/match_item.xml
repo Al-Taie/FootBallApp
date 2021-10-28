@@ -4,7 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <variable
+            name="item"
+            type="com.watermelon.footballapp.model.response.match.Match" />
 
+        <variable
+            name="listener"
+            type="com.watermelon.footballapp.ui.match.MatchInteractionListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -13,54 +19,56 @@
         android:layout_height="48dp">
 
         <TextView
-            android:id="@+id/text_home_team_name"
+            android:id="@+id/home_team_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:textSize="16sp"
             android:textColor="@color/white"
+            android:text="@{item.homeTeam.name}"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/image_home_team_item"
+            app:layout_constraintEnd_toStartOf="@+id/home_team_image"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="chelsea" />
 
         <TextView
-            android:id="@+id/text_away_team_name"
+            android:id="@+id/away_team_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:textSize="16sp"
             android:textColor="@color/white"
+            android:text="@{item.awayTeam.name}"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/image_away_team_item"
+            app:layout_constraintStart_toEndOf="@+id/away_team_image"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="man utd" />
 
         <ImageView
-            android:id="@+id/image_home_team_item"
+            android:id="@+id/home_team_image"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginEnd    ="16dp"
             android:src="@drawable/ic_launcher_background"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/text_home_team_score"
+            app:layout_constraintEnd_toStartOf="@+id/home_team_score"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/image_away_team_item"
+            android:id="@+id/away_team_image"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginStart="16dp"
             android:src="@drawable/ic_launcher_background"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/text_away_team_score"
+            app:layout_constraintStart_toEndOf="@+id/away_team_score"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/text_divider"
+            android:id="@+id/divider"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=":"
+            tools:text=":"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -68,26 +76,26 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/text_home_team_score"
+            android:id="@+id/home_team_score"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="4dp"
             android:textColor="@color/white"
-            app:layout_constraintEnd_toStartOf="@+id/text_divider"
-            app:layout_constraintBaseline_toBaselineOf="@+id/text_divider"
+            android:text="@{item.score.fullTime.homeTeam.toString()}"
+            app:layout_constraintEnd_toStartOf="@+id/divider"
+            app:layout_constraintBaseline_toBaselineOf="@+id/divider"
             tools:text="0" />
 
         <TextView
-            android:id="@+id/text_away_team_score"
+            android:id="@+id/away_team_score"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
-            app:layout_constraintStart_toEndOf="@+id/text_divider"
+            android:text="@{item.score.fullTime.awayTeam.toString()}"
+            app:layout_constraintStart_toEndOf="@+id/divider"
             android:layout_marginStart="4dp"
-            app:layout_constraintBaseline_toBaselineOf="@+id/text_divider"
+            app:layout_constraintBaseline_toBaselineOf="@+id/divider"
             tools:text="1" />
-
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
