@@ -11,4 +11,8 @@ class FootBallRepository {
     fun getCompetitions() = ApiWrapper.wrapWithFlow { API.apiService.getCompetitions() }
     fun getSingleCompetitionById(competitionId: Int) =
         ApiWrapper.wrapWithFlow { API.apiService.getSingleCompetitionById(competitionId) }
+
+    fun getCompetitionStandingsById(competitionId: Int) =
+        ApiWrapper.wrapWithFlow { API.apiService.getCompetitionStandingsById(competitionId) }
+
 }
