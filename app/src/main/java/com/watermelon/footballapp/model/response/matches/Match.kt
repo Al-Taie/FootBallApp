@@ -2,6 +2,7 @@ package com.watermelon.footballapp.model.response.matches
 
 
 import com.google.gson.annotations.SerializedName
+import java.util.*
 
 data class Match(
     @SerializedName("awayTeam")
@@ -31,5 +32,5 @@ data class Match(
     @SerializedName("status")
     val status: String?,
     @SerializedName("utcDate")
-    val utcDate: String?
+    val utcDate: Date?
 )

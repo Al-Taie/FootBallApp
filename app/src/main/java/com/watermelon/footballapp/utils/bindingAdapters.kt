@@ -18,7 +18,7 @@ fun <T> setRecyclerItems(view: RecyclerView, items: List<T>?) {
 @BindingAdapter(value = ["matchType"])
 fun setMatchType(view: TextView, match: Match?) {
     when(match?.status) {
-        "SCHEDULED" -> view.text = match.utcDate
+        "SCHEDULED" -> view.text = match.utcDate?.convertToReadableTime()
         "FINISHED" -> view.text = "${match.score?.fullTime?.homeTeam} - ${match?.score?.fullTime?.awayTeam}"
     }
 }
