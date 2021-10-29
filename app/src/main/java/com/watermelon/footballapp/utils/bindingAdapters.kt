@@ -6,7 +6,7 @@ import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.watermelon.footballapp.model.State
-import com.watermelon.footballapp.model.response.match.Match
+import com.watermelon.footballapp.model.response.matches.Match
 import com.watermelon.footballapp.ui.base.BaseAdapter
 
 @BindingAdapter(value = ["app:items"])
