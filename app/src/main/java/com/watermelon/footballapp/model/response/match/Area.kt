@@ -4,10 +4,7 @@ package com.watermelon.footballapp.model.response.match
 import com.google.gson.annotations.SerializedName
 
 data class Area(
-    @SerializedName("code")
-    val code: String?,
-    @SerializedName("ensignUrl")
-    val ensignUrl: String?,
-    @SerializedName("name")
-    val name: String?
+    val code: String? = null,
+    val ensignUrl: String? = null,
+    val name: String? = null
 )

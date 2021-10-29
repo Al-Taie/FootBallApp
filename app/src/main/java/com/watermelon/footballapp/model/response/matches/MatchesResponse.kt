@@ -1,9 +1,9 @@
-package com.watermelon.footballapp.model.response.match
+package com.watermelon.footballapp.model.response.matches
 
 
 import com.google.gson.annotations.SerializedName
 
-data class MatchResponse(
+data class MatchesResponse(
     @SerializedName("count")
     val count: Int?,
     @SerializedName("filters")
