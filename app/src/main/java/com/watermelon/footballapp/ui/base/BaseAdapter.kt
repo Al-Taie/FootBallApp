@@ -4,7 +4,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.watermelon.footballapp.utils.MatchDiffUtil
 import watermelon.footballapp.BR
 
 interface BaseInteractionListener
@@ -15,7 +17,11 @@ abstract class BaseAdapter<T>(
 ) : RecyclerView.Adapter<BaseAdapter.BaseViewHolder>() {
     val items get() = _items
     override fun getItemCount() = _items.size
-    fun setItems(newItems: List<T>) = run { _items = newItems }
+    fun setItems(newItems: List<T>)  {
+        val diffResult = DiffUtil.calculateDiff(MatchDiffUtil(_items, newItems))
+        _items = newItems
+        diffResult.dispatchUpdatesTo(this)
+    }
 
     abstract val layoutID: Int
 
