@@ -1,30 +1,11 @@
 package com.watermelon.footballapp.model.repository
 
-import com.watermelon.footballapp.model.State
-import com.watermelon.footballapp.model.response.match.MatchResponse
 import com.watermelon.footballapp.model.networking.API
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flow
-import retrofit2.Response
 
 class FootBallRepository {
 
-    fun getMatches() = wrapWithFlow { API.apiService.getMatches() }
-    fun getSingleMatch(matchId: Int) = wrapWithFlow { API.apiService.getSingleMatch(matchId) }
+    fun getMatches() = ApiWrapper.wrapWithFlow { API.apiService.getMatches() }
+    fun getSingleMatch(matchId: Int) =
+        ApiWrapper.wrapWithFlow { API.apiService.getSingleMatchById(matchId) }
 
-    private fun <T> wrapWithFlow(function: suspend () -> Response<T>): Flow<State<T?>> {
-        return flow {
-            emit(State.Loading)
-            try {
-                val result = function()
-                if (result.isSuccessful) {
-                    emit(State.Success(result.body()))
-                } else {
-                    emit(State.Error(result.message()))
-                }
-            } catch (e: Exception) {
-                emit(State.Error(e.message.toString()))
-            }
-        }
-    }
 }

@@ -4,6 +4,5 @@ package com.watermelon.footballapp.model.response.match
 import com.google.gson.annotations.SerializedName
 
 data class Odds(
-    @SerializedName("msg")
-    val msg: String?
+    val msg: String? = null
 )

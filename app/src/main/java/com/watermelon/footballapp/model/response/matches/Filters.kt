@@ -1,4 +1,4 @@
-package com.watermelon.footballapp.model.response.match
+package com.watermelon.footballapp.model.response.matches
 
 
 import com.google.gson.annotations.SerializedName

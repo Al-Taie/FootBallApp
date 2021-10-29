@@ -4,12 +4,8 @@ package com.watermelon.footballapp.model.response.match
 import com.google.gson.annotations.SerializedName
 
 data class Referee(
-    @SerializedName("id")
-    val id: Int?,
-    @SerializedName("name")
-    val name: String?,
-    @SerializedName("nationality")
-    val nationality: String?,
-    @SerializedName("role")
-    val role: String?
+    val id: Int? = null,
+    val name: String? = null,
+    val nationality: String? = null,
+    val role: String? = null
 )
