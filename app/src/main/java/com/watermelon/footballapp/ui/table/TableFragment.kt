@@ -4,8 +4,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import com.watermelon.footballapp.ui.base.BaseFragment
-import com.watermelon.footballapp.viewModels.TableViewModel
-import watermelon.footballapp.BR
 import watermelon.footballapp.databinding.FragmentTableBinding
 
 class TableFragment : BaseFragment<FragmentTableBinding>() {

@@ -1,4 +1,4 @@
-package com.watermelon.footballapp.viewModels
+package com.watermelon.footballapp.ui.competition
 
 import androidx.lifecycle.ViewModel
 

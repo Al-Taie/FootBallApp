@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="com.watermelon.footballapp.viewModels.CompetitionViewModel" />
+            type="com.watermelon.footballapp.ui.competition.CompetitionViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="@dimen/margin_small8dp"
-        android:onClick="@{() -> listener.onItemClicked(item.id)}"
+        android:onClick="@{() -> listener.onMatchClicked(item.id)}"
         android:padding="@dimen/padding_small8dp"
         tools:background="#151515">
 

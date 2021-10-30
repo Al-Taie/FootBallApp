@@ -6,10 +6,6 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import com.watermelon.footballapp.ui.adapter.MatchAdapter
 import com.watermelon.footballapp.ui.base.BaseFragment
-import com.watermelon.footballapp.ui.match.MatchInteractionListener
-import com.watermelon.footballapp.viewModels.HomeViewModel
-import watermelon.footballapp.BR
-import watermelon.footballapp.R
 import watermelon.footballapp.databinding.FragmentHomeBinding
 
 
@@ -25,9 +21,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeNavigator {
 
     }
 
-    override fun navigateToMatch() {
+    override fun navigateToMatch(id: Int) {
+        val action = HomeFragmentDirections.actionHomeFragmentToMatchFragment(id)
         Navigation.findNavController(binding.root)
-            .navigate(R.id.action_homeFragment_to_matchFragment)
+            .navigate(action)
     }
 
 }
