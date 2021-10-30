@@ -20,6 +20,8 @@ fun setMatchType(view: TextView, match: Match?) {
     when(match?.status) {
         "SCHEDULED" -> view.text = match.utcDate?.convertToReadableTime()
         "FINISHED" -> view.text = "${match.score?.fullTime?.homeTeam} - ${match?.score?.fullTime?.awayTeam}"
+        "IN_PLAY" -> view.text = "${match.score?.fullTime?.homeTeam} - ${match?.score?.fullTime?.awayTeam}"
+        "PAUSED" -> view.text = "${match.score?.fullTime?.homeTeam} - ${match?.score?.fullTime?.awayTeam}"
     }
 }
 
