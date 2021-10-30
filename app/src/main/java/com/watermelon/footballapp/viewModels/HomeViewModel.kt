@@ -14,7 +14,7 @@ import kotlinx.coroutines.launch
 
 class HomeViewModel() : ViewModel(), MatchInteractionListener {
     private val repository = FootBallRepository()
-    lateinit var navigator : HomeNavigator
+    lateinit var navigator: HomeNavigator
     val matches = repository.getMatches().asLiveData()
     val singleMatch = MutableLiveData<State<SingleMatchResponse?>>()
 
@@ -26,5 +26,4 @@ class HomeViewModel() : ViewModel(), MatchInteractionListener {
         }
         navigator.navigateToMatch()
     }
-
 }

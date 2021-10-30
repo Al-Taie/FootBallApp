@@ -14,17 +14,20 @@ import watermelon.footballapp.databinding.FragmentHomeBinding
 
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeNavigator {
-    override fun setup() {
-       binding.matchesRecycler.adapter = MatchAdapter(emptyList(), viewModel)
-        viewModel.navigator = this
-    }
 
     override val viewModel: HomeViewModel by activityViewModels()
     override val inflate: (LayoutInflater, ViewGroup?, attachToRoot: Boolean) -> FragmentHomeBinding
         get() = FragmentHomeBinding::inflate
 
+    override fun setup() {
+        binding.matchesRecycler.adapter = MatchAdapter(emptyList(), viewModel)
+        viewModel.navigator = this
+
+    }
+
     override fun navigateToMatch() {
-        Navigation.findNavController(binding.root).navigate(R.id.action_homeFragment_to_matchFragment)
+        Navigation.findNavController(binding.root)
+            .navigate(R.id.action_homeFragment_to_matchFragment)
     }
 
 }
