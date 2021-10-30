@@ -27,9 +27,50 @@
     <fragment
         android:id="@+id/matchesFragment"
         android:name="com.watermelon.footballapp.ui.matches.MatchesFragment"
-        android:label="MatchesFragment" />
+        android:label="MatchesFragment" >
+        <action
+            android:id="@+id/action_matchesFragment_to_matchFragment"
+            app:destination="@id/matchFragment" />
+    </fragment>
     <fragment
         android:id="@+id/tableFragment"
         android:name="com.watermelon.footballapp.ui.table.TableFragment"
-        android:label="TableFragment" />
+        android:label="TableFragment" >
+        <action
+            android:id="@+id/action_tableFragment_to_teamFragment"
+            app:destination="@id/teamFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/playerFragment"
+        android:name="com.watermelon.footballapp.ui.player.PlayerFragment"
+        android:label="PlayerFragment" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/teamFragment"
+        android:name="com.watermelon.footballapp.ui.team.TeamFragment"
+        android:label="TeamFragment" >
+        <action
+            android:id="@+id/action_teamFragment_to_matchFragment"
+            app:destination="@id/matchFragment" />
+        <action
+            android:id="@+id/action_teamFragment_to_playerFragment"
+            app:destination="@id/playerFragment" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/scorersFragment"
+        android:name="com.watermelon.footballapp.ui.scorers.ScorersFragment"
+        android:label="ScorersFragment" >
+        <action
+            android:id="@+id/action_scorersFragment_to_playerFragment"
+            app:destination="@id/playerFragment" />
+        <argument
+            android:name="code"
+            app:argType="string" />
+    </fragment>
 </navigation>
