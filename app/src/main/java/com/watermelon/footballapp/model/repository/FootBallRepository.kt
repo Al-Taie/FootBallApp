@@ -11,12 +11,15 @@ class FootBallRepository {
     fun getCompetitions() = ApiWrapper.wrapWithFlow { API.apiService.getCompetitions() }
     fun getSingleCompetitionById(competitionId: Int) =
         ApiWrapper.wrapWithFlow { API.apiService.getSingleCompetitionById(competitionId) }
-
     fun getCompetitionStandingsById(competitionId: Int) =
         ApiWrapper.wrapWithFlow { API.apiService.getCompetitionStandingsById(competitionId) }
+    fun getCompetitionScorersByCode(competitionCode: String) =
+        ApiWrapper.wrapWithFlow { API.apiService.getCompetitionScorersByCode(competitionCode) }
+
 
     fun getTeamById(teamId: Int) = ApiWrapper.wrapWithFlow { API.apiService.getTeamById(teamId) }
-    fun getPlayerById(playerId: Int) = ApiWrapper.wrapWithFlow { API.apiService.getPlayerById(playerId) }
+    fun getPlayerById(playerId: Int) =
+        ApiWrapper.wrapWithFlow { API.apiService.getPlayerById(playerId) }
 
 
 }

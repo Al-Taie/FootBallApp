@@ -5,6 +5,7 @@ import com.watermelon.footballapp.model.response.competitions.CompetitionsRespon
 import com.watermelon.footballapp.model.response.match.SingleMatchResponse
 import com.watermelon.footballapp.model.response.matches.MatchesResponse
 import com.watermelon.footballapp.model.response.player.PlayerRespopnse
+import com.watermelon.footballapp.model.response.scorers.ScorersResponse
 import com.watermelon.footballapp.model.response.standings.StandingsResponse
 import com.watermelon.footballapp.model.response.team.SingleTeamResponse
 import retrofit2.Response
@@ -33,5 +34,9 @@ interface FootballService {
 
     @GET("players/{id}")
     suspend fun getPlayerById(@Path("id") playerId: Int): Response<PlayerRespopnse>
+
+    @GET("competitions/{code}/scorers")
+    suspend fun getCompetitionScorersByCode(@Path("code") competitionCode: String): Response<ScorersResponse>
+
 
 }
