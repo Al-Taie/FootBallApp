@@ -16,4 +16,7 @@ class FootBallRepository {
         ApiWrapper.wrapWithFlow { API.apiService.getCompetitionStandingsById(competitionId) }
 
     fun getTeamById(teamId: Int) = ApiWrapper.wrapWithFlow { API.apiService.getTeamById(teamId) }
+    fun getPlayerById(playerId: Int) = ApiWrapper.wrapWithFlow { API.apiService.getPlayerById(playerId) }
+
+
 }
