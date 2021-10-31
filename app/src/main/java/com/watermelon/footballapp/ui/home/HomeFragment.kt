@@ -1,13 +1,12 @@
 package com.watermelon.footballapp.ui.home
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.watermelon.footballapp.ui.adapter.MatchAdapter
 import com.watermelon.footballapp.ui.base.BaseFragment
-import com.watermelon.footballapp.ui.matches.MatchesFragmentDirections
 import watermelon.footballapp.databinding.FragmentHomeBinding
 
 
@@ -20,7 +19,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeNavigator {
     override fun setup() {
         binding.matchesRecycler.adapter = MatchAdapter(emptyList(), viewModel)
         viewModel.navigator = this
-
+        binding.listener = viewModel
     }
 
     override fun navigateToMatch(id: Int) {

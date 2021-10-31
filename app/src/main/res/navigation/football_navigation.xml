@@ -31,20 +31,12 @@
         android:id="@+id/matchesFragment"
         android:name="com.watermelon.footballapp.ui.matches.MatchesFragment"
         android:label="MatchesFragment"
-        tools:layout="@layout/fragment_matches">
-        <action
-            android:id="@+id/action_matchesFragment_to_matchFragment"
-            app:destination="@id/matchFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_matches"/>
     <fragment
         android:id="@+id/tableFragment"
         android:name="com.watermelon.footballapp.ui.table.TableFragment"
         android:label="TableFragment"
-        tools:layout="@layout/fragment_table">
-        <action
-            android:id="@+id/action_tableFragment_to_teamFragment"
-            app:destination="@id/teamFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_table"/>
     <fragment
         android:id="@+id/playerFragment"
         android:name="com.watermelon.footballapp.ui.player.PlayerFragment"
@@ -81,4 +73,9 @@
             android:name="code"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/competitionFragment"
+        android:name="com.watermelon.footballapp.ui.competition.CompetitionFragment"
+        android:label="CompetitionFragment"
+        tools:layout="@layout/fragment_competition"/>
 </navigation>

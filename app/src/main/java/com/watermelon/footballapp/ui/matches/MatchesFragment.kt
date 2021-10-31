@@ -19,11 +19,6 @@ class MatchesFragment: BaseFragment<FragmentMatchesBinding>(),MatchesNavigator {
     override val inflate: (LayoutInflater, ViewGroup?, attachToRoot: Boolean) -> FragmentMatchesBinding
         get() = FragmentMatchesBinding::inflate
 
-    override fun navigateToMatch(id: Int) {
-        val action = MatchesFragmentDirections.actionMatchesFragmentToMatchFragment(id)
-        Navigation.findNavController(binding.root)
-            .navigate(action)
-
-    }
+    override fun navigateToMatch(id: Int) {}
 
 }

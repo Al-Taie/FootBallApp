@@ -1,5 +1,6 @@
 package com.watermelon.footballapp.ui.home
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import com.watermelon.footballapp.model.repository.FootBallRepository
