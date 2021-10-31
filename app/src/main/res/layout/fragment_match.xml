@@ -66,7 +66,7 @@
             android:layout_width="@dimen/team_icon_size_match"
             android:layout_height="@dimen/team_icon_size_match"
             android:layout_margin="@dimen/margin_big32dp"
-            android:onClick="@{()->listener.onTeamClicked(viewModel.singleMatch.toData().match.homeTeam)}"
+            android:onClick="@{()->listener.onTeamClicked(viewModel.singleMatch.toData().match.homeTeam.id)}"
             android:src="@drawable/laligaexample"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/competition_name_match"
@@ -77,7 +77,7 @@
             android:layout_width="@dimen/team_icon_size_match"
             android:layout_height="@dimen/team_icon_size_match"
             android:layout_margin="@dimen/margin_big32dp"
-            android:onClick="@{()->listener.onTeamClicked(viewModel.singleMatch.toData().match.awayTeam)}"
+            android:onClick="@{()->listener.onTeamClicked(viewModel.singleMatch.toData().match.awayTeam.id)}"
 
             android:src="@drawable/laligaexample"
             app:layout_constraintEnd_toEndOf="parent"
