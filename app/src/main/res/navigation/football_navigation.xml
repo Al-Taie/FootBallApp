@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/football_navigation"
-    app:startDestination="@id/matchesFragment">
+    app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -30,7 +30,8 @@
     <fragment
         android:id="@+id/matchesFragment"
         android:name="com.watermelon.footballapp.ui.matches.MatchesFragment"
-        android:label="MatchesFragment" >
+        android:label="MatchesFragment"
+        tools:layout="@layout/fragment_matches">
         <action
             android:id="@+id/action_matchesFragment_to_matchFragment"
             app:destination="@id/matchFragment" />
@@ -38,7 +39,8 @@
     <fragment
         android:id="@+id/tableFragment"
         android:name="com.watermelon.footballapp.ui.table.TableFragment"
-        android:label="TableFragment" >
+        android:label="TableFragment"
+        tools:layout="@layout/fragment_table">
         <action
             android:id="@+id/action_tableFragment_to_teamFragment"
             app:destination="@id/teamFragment" />
@@ -46,7 +48,8 @@
     <fragment
         android:id="@+id/playerFragment"
         android:name="com.watermelon.footballapp.ui.player.PlayerFragment"
-        android:label="PlayerFragment" >
+        android:label="PlayerFragment"
+        tools:layout="@layout/fragment_player">
         <argument
             android:name="id"
             app:argType="integer" />
@@ -54,7 +57,8 @@
     <fragment
         android:id="@+id/teamFragment"
         android:name="com.watermelon.footballapp.ui.team.TeamFragment"
-        android:label="TeamFragment" >
+        android:label="TeamFragment"
+        tools:layout="@layout/fragment_team">
         <action
             android:id="@+id/action_teamFragment_to_matchFragment"
             app:destination="@id/matchFragment" />
@@ -68,7 +72,8 @@
     <fragment
         android:id="@+id/scorersFragment"
         android:name="com.watermelon.footballapp.ui.scorers.ScorersFragment"
-        android:label="ScorersFragment" >
+        android:label="ScorersFragment"
+        tools:layout="@layout/fragment_scorers">
         <action
             android:id="@+id/action_scorersFragment_to_playerFragment"
             app:destination="@id/playerFragment" />
