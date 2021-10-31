@@ -13,14 +13,13 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 class MatchViewModel : ViewModel(),TeamInteractionListener {
-    private val repository = FootBallRepository()
     lateinit var navigator: MatchNavigator
 
      val singleMatch = MutableLiveData<State<SingleMatchResponse?>>()
 
     fun makeRequest(id:Int) {
         viewModelScope.launch {
-            repository.getSingleMatch(id).collect {
+            FootBallRepository.getSingleMatch(id).collect {
                 singleMatch.postValue(it)
             }
         }

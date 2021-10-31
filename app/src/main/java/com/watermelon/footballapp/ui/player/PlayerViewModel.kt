@@ -5,8 +5,6 @@ import androidx.lifecycle.asLiveData
 import com.watermelon.footballapp.model.repository.FootBallRepository
 
 class PlayerViewModel : ViewModel() {
-    private val repository = FootBallRepository()
-
-    val player = repository.getPlayerById(20).asLiveData()
+    val player = FootBallRepository.getPlayerById(20).asLiveData()
 
 }

@@ -12,13 +12,11 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 class TeamViewModel : ViewModel() {
-    private val repository = FootBallRepository()
-
     val team = MutableLiveData<State<SingleTeamResponse?>>()
 
     fun makeRequest(id:Int) {
         viewModelScope.launch {
-            repository.getTeamById(id).collect {
+            FootBallRepository.getTeamById(id).collect {
                 team.postValue(it)
             }
         }
