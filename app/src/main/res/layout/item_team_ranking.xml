@@ -4,6 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <variable
+            name="item"
+            type="com.watermelon.footballapp.model.response.team.SingleTeamResponse" />
+
+        <variable
+            name="listener"
+            type="com.watermelon.footballapp.ui.team.TeamInteractionListener" />
 
     </data>
 
@@ -17,6 +24,7 @@
             app:cardBackgroundColor="@android:color/transparent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            android:onClick="@{() -> listener.onTeamClicked(item.id)}"
             android:layout_marginVertical="@dimen/margin_small8dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout

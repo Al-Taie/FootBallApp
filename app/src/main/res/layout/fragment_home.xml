@@ -6,6 +6,10 @@
         <variable
             name="viewModel"
             type="com.watermelon.footballapp.ui.home.HomeViewModel" />
+        <variable
+            name="listener"
+            type="com.watermelon.footballapp.ui.team.TeamInteractionListener" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -53,6 +57,8 @@
             android:layout_height="@dimen/team_icon_size_match"
             android:layout_marginStart="@dimen/margin_big32dp"
             android:layout_marginTop="@dimen/margin_medium24dp"
+            android:onClick="@{()->listener.onTeamClicked(viewModel.matches.toData().matches.get(0).homeTeam)}"
+
             android:src="@drawable/laligaexample"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_of_the_day" />
@@ -63,6 +69,7 @@
             android:layout_height="@dimen/team_icon_size_match"
             android:layout_marginTop="@dimen/margin_medium24dp"
             android:layout_marginEnd="@dimen/margin_big32dp"
+            android:onClick="@{()->listener.onTeamClicked(viewModel.matches.toData().matches.get(0).awayTeam)}"
             android:src="@drawable/laligaexample"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_of_the_day" />

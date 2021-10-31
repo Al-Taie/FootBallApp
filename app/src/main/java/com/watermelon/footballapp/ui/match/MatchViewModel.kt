@@ -7,11 +7,14 @@ import androidx.lifecycle.viewModelScope
 import com.watermelon.footballapp.model.State
 import com.watermelon.footballapp.model.repository.FootBallRepository
 import com.watermelon.footballapp.model.response.match.SingleMatchResponse
+import com.watermelon.footballapp.ui.matches.MatchesNavigator
+import com.watermelon.footballapp.ui.team.TeamInteractionListener
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
-class MatchViewModel : ViewModel() {
+class MatchViewModel : ViewModel(),TeamInteractionListener {
     private val repository = FootBallRepository()
+    lateinit var navigator: MatchNavigator
 
      val singleMatch = MutableLiveData<State<SingleMatchResponse?>>()
 
@@ -21,5 +24,9 @@ class MatchViewModel : ViewModel() {
                 singleMatch.postValue(it)
             }
         }
+    }
+
+    override fun onTeamClicked(id: Int) {
+        navigator.navigateToTeam(id)
     }
 }
