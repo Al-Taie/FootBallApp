@@ -7,8 +7,11 @@ import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.watermelon.footballapp.model.State
+import com.watermelon.footballapp.model.response.match.SingleMatch
 import com.watermelon.footballapp.model.response.matches.Match
 import com.watermelon.footballapp.ui.base.BaseAdapter
+import watermelon.footballapp.R
+import java.util.*
 
 @BindingAdapter(value = ["app:items"])
 fun <T> setRecyclerItems(view: RecyclerView, items: List<T>?) {
@@ -26,10 +29,31 @@ fun setMatchType(view: TextView, match: Match?) {
     }
 }
 
+@BindingAdapter(value = ["homeTeamScore"])
+fun setHomeTeamScore(view: TextView, match: SingleMatch?){
+    when(match?.status){
+        Constants.MatchType.SCHEDULED -> view.text = "-"
+        else -> view.text = match?.score?.fullTime?.homeTeam.toString()
+    }
+}
+
+@BindingAdapter(value = ["awayTeamScore"])
+fun setAwayTeamScore(view: TextView, match: SingleMatch?){
+    when(match?.status){
+        Constants.MatchType.SCHEDULED -> view.text = "-"
+        else -> view.text = match?.score?.fullTime?.awayTeam.toString()
+    }
+}
+
+@BindingAdapter(value = ["app:matchTime"])
+fun setMatchTime(view: TextView, Time: Date?){
+    view.text = Time?.convertToReadableTime()
+}
+
 @BindingAdapter(value = ["app:showWhenMatchInPlay"])
 fun showWhenMatchInPlay(view: ImageView, MatchType: String?){
     if (MatchType == Constants.MatchType.IN_PLAY) {
-        view.visibility = View.VISIBLE
+        view.setImageResource(R.drawable.live_icon)
     } else {
         view.visibility = View.INVISIBLE
     }
