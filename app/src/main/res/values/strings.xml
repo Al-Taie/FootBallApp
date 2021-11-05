@@ -9,4 +9,8 @@
     <string name="divider">-</string>
     <string name="cards">Cards</string>
     <string name="corners">Corners</string>
+    <string name="home">HOME</string>
+    <string name="wins">WINS</string>
+    <string name="draw">DRAW</string>
+    <string name="away">AWAY</string>
 </resources>

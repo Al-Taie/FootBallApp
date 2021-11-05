@@ -13,74 +13,115 @@
             type="com.watermelon.footballapp.ui.match.MatchInteractionListener" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="@dimen/margin_small8dp"
-        android:onClick="@{() -> listener.onMatchClicked(item.id)}"
-        android:padding="@dimen/padding_small8dp"
-        tools:background="#151515">
+        android:layout_height="120dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginVertical="12dp"
+        android:elevation="8dp"
+        app:cardCornerRadius="8dp">
 
-        <TextView
-            android:id="@+id/home_team_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/margin_normal16dp"
-            android:fontFamily="sans-serif-black"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            android:text="@{item.homeTeam.name}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/home_team_image"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="chelsea" />
 
-        <TextView
-            android:id="@+id/away_team_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_normal16dp"
-            android:fontFamily="sans-serif-black"
-            android:textColor="@color/white"
-            android:text="@{item.awayTeam.name}"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/away_team_image"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="man utd" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:onClick="@{() -> listener.onMatchClicked(item.id)}"
+            android:padding="@dimen/padding_small8dp">
 
-        <ImageView
-            android:id="@+id/home_team_image"
-            android:layout_width="@dimen/team_icon_size"
-            android:layout_height="@dimen/team_icon_size"
-            android:layout_marginEnd="@dimen/margin_normal16dp"
-            android:src="@drawable/laligaexample"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/divider"
-            app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/away_team_image"
-            android:layout_width="@dimen/team_icon_size"
-            android:layout_height="@dimen/team_icon_size"
-            android:layout_marginStart="@dimen/margin_normal16dp"
-            android:src="@drawable/laligaexample"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/divider"
-            app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/home_team_name"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="@{item.homeTeam.name}"
+                android:textColor="@color/primary_text_color"
+                android:ellipsize="end"
+                android:textAlignment="center"
+                android:lines="1"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/divider"
+                app:layout_constraintEnd_toStartOf="@+id/divider"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/divider"
+                tools:text="chelsea" />
 
-        <TextView
-            android:id="@+id/divider"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
-            matchType="@{item}"
-            tools:text="@string/divider"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <LinearLayout
+                android:id="@+id/competition_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/divider"
+                app:layout_constraintTop_toTopOf="parent">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/competition_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@{item.competition.name}"
+                    android:textColor="@color/primary_text_color"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:text="La Liga" />
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/area_flag"-->
+<!--                    android:layout_width="@dimen/area_flag_size"-->
+<!--                    android:layout_height="@dimen/area_flag_size"-->
+<!--                    android:layout_margin="@dimen/margin_small8dp"-->
+<!--                    app:layout_constraintBottom_toBottomOf="@+id/competition_name"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/competition_name"-->
+<!--                    app:layout_constraintTop_toTopOf="@+id/competition_name"-->
+<!--                    tools:src="@mipmap/ic_launcher" />-->
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/match_status"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:showWhenMatchInPlay="@{item.status}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider"
+                tools:src="@drawable/live_icon" />
+
+            <TextView
+                android:id="@+id/away_team_name"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="@{item.awayTeam.name}"
+                android:textColor="@color/primary_text_color"
+                android:textSize="14sp"
+                android:ellipsize="end"
+                android:textAlignment="center"
+                android:lines="1"
+                app:layout_constraintBottom_toBottomOf="@+id/divider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/divider"
+                app:layout_constraintTop_toTopOf="@+id/divider"
+                tools:text="man utd" />
+
+            <TextView
+                android:id="@+id/divider"
+                matchType="@{item}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@color/primary_text_color"
+                android:layout_marginTop="@dimen/margin_small8dp"
+                app:layout_constraintBottom_toTopOf="@+id/match_status"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/competition_layout"
+                tools:text="@string/divider" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 </layout>

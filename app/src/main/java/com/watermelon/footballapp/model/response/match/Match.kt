@@ -2,8 +2,9 @@ package com.watermelon.footballapp.model.response.match
 
 
 import com.google.gson.annotations.SerializedName
+import java.util.*
 
-data class Match(
+data class SingleMatch(
     val awayTeam: AwayTeamX? = null,
     val competition: Competition? = null,
     val group: String? = null,
@@ -17,6 +18,6 @@ data class Match(
     val season: Season? = null,
     val stage: String? = null,
     val status: String? = null,
-    val utcDate: String? = null,
+    val utcDate: Date? = null,
     val venue: String? = null
 )
