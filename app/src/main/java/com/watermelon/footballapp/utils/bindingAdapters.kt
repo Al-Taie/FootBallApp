@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.watermelon.footballapp.model.State
+import com.watermelon.footballapp.model.response.competitionMatches.CompetitionMatch
 import com.watermelon.footballapp.model.response.match.SingleMatch
 import com.watermelon.footballapp.model.response.matches.Match
 import com.watermelon.footballapp.ui.base.BaseAdapter
@@ -26,6 +27,30 @@ fun setMatchType(view: TextView, match: Match?) {
         Constants.MatchType.FINISHED -> view.text = "${match.score?.fullTime?.homeTeam} - ${match?.score?.fullTime?.awayTeam}"
         Constants.MatchType.IN_PLAY -> view.text = "${match.score?.fullTime?.homeTeam} - ${match?.score?.fullTime?.awayTeam}"
         Constants.MatchType.PAUSED -> view.text = "${match.score?.fullTime?.homeTeam} - ${match?.score?.fullTime?.awayTeam}"
+    }
+}
+
+@BindingAdapter(value = ["app:matchDate"])
+fun setMatchDate(view: TextView, matchDate: Date?){
+    view.text = matchDate?.setDate()
+}
+
+@BindingAdapter(value = ["competitionMatchType"])
+fun setCompetitionMatchType(view: TextView, match: CompetitionMatch?) {
+    when(match?.status) {
+        Constants.MatchType.SCHEDULED -> view.text = match.utcDate?.convertToReadableTime()
+        Constants.MatchType.FINISHED -> view.text = "${match.score?.fullTime?.homeTeam} - ${match?.score?.fullTime?.awayTeam}"
+        Constants.MatchType.IN_PLAY -> view.text = "${match.score?.fullTime?.homeTeam} - ${match?.score?.fullTime?.awayTeam}"
+        Constants.MatchType.PAUSED -> view.text = "${match.score?.fullTime?.homeTeam} - ${match?.score?.fullTime?.awayTeam}"
+    }
+}
+
+@BindingAdapter(value = ["app:matchDay"])
+fun setMatchDay(view: TextView, matchDay: Int?){
+    if (matchDay != null){
+        view.text = "match day: $matchDay"
+    } else {
+        view.text = ""
     }
 }
 
