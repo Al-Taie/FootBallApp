@@ -10,6 +10,11 @@ fun Date.convertToReadableTime(): String {
     return timeFormatter.format(this)
 }
 
+fun Date.setDate(): String {
+    val dateFormatter = SimpleDateFormat("yyyy-MM-dd")
+    return dateFormatter.format(this)
+}
+
 fun <T> View.handleErrorState(state: State<T>?) = if (state is State.Error) {
     this.visibility = View.VISIBLE
 } else {
