@@ -1,6 +1,7 @@
 package com.watermelon.footballapp.model.networking
 
 import com.watermelon.footballapp.model.response.competition.SingleCompetitionResponse
+import com.watermelon.footballapp.model.response.competitionMatches.CompetitionMatchesResponse
 import com.watermelon.footballapp.model.response.competitions.CompetitionsResponse
 import com.watermelon.footballapp.model.response.match.SingleMatchResponse
 import com.watermelon.footballapp.model.response.matches.MatchesResponse
@@ -22,6 +23,9 @@ interface FootballService {
 
     @GET("competitions/")
     suspend fun getCompetitions(): Response<CompetitionsResponse>
+
+    @GET("competitions/{id}/matches")
+    suspend fun getCompetitionMatchesById(@Path("id") competitionId: Int): Response<CompetitionMatchesResponse>
 
     @GET("competitions/{id}")
     suspend fun getSingleCompetitionById(@Path("id") competitionId: Int): Response<SingleCompetitionResponse>
