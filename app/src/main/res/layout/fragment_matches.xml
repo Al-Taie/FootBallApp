@@ -7,21 +7,21 @@
 
         <variable
             name="viewModel"
-            type="com.watermelon.footballapp.ui.matches.MatchesViewModel" />
+            type="com.watermelon.footballapp.ui.competition.CompetitionViewModel" />
 
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:background="@drawable/background">
+        android:background="@drawable/background">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/matches_recycler"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:orientation="vertical"
-            app:items="@{viewModel.matches.toData().matches}"
+            app:items="@{viewModel.competitionMatches.toData().matches}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
