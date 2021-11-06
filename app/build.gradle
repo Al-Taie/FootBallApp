@@ -68,4 +68,6 @@ dependencies {
 
     //Lottie
     implementation('com.airbnb.android:lottie:4.1.0')
+
+    implementation 'com.github.corouteam:GlideToVectorYou:v2.0.0'
 }

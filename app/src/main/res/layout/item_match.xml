@@ -68,15 +68,16 @@
                     app:layout_constraintStart_toStartOf="parent"
                     tools:text="La Liga" />
 
-<!--                <ImageView-->
-<!--                    android:id="@+id/area_flag"-->
-<!--                    android:layout_width="@dimen/area_flag_size"-->
-<!--                    android:layout_height="@dimen/area_flag_size"-->
-<!--                    android:layout_margin="@dimen/margin_small8dp"-->
-<!--                    app:layout_constraintBottom_toBottomOf="@+id/competition_name"-->
-<!--                    app:layout_constraintStart_toEndOf="@+id/competition_name"-->
-<!--                    app:layout_constraintTop_toTopOf="@+id/competition_name"-->
-<!--                    tools:src="@mipmap/ic_launcher" />-->
+                <ImageView
+                    android:id="@+id/area_flag"
+                    android:layout_width="@dimen/area_flag_size"
+                    android:layout_height="@dimen/area_flag_size"
+                    android:layout_margin="@dimen/margin_small8dp"
+                    imageUrl="@{item.competition.area.ensignUrl}"
+                    app:layout_constraintBottom_toBottomOf="@+id/competition_name"
+                    app:layout_constraintStart_toEndOf="@+id/competition_name"
+                    app:layout_constraintTop_toTopOf="@+id/competition_name"
+                    tools:src="@mipmap/ic_launcher" />
 
             </LinearLayout>
 

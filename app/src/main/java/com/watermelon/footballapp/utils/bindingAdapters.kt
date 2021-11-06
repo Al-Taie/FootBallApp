@@ -6,6 +6,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
+import com.bumptech.glide.request.RequestOptions
+import com.github.twocoffeesoneteam.glidetovectoryou.GlideToVectorYou
 import com.watermelon.footballapp.model.State
 import com.watermelon.footballapp.model.response.competitionMatches.CompetitionMatch
 import com.watermelon.footballapp.model.response.match.SingleMatch
@@ -13,6 +16,7 @@ import com.watermelon.footballapp.model.response.matches.Match
 import com.watermelon.footballapp.ui.base.BaseAdapter
 import watermelon.footballapp.R
 import java.util.*
+
 
 @BindingAdapter(value = ["app:items"])
 fun <T> setRecyclerItems(view: RecyclerView, items: List<T>?) {
@@ -100,4 +104,15 @@ fun <T> showWhenError(view: View, state: State<T>?) {
 @BindingAdapter(value = ["app:showWhenSuccess"])
 fun <T> showWhenSuccess(view: View, state: State<T>?) {
     view.handleSuccessState(state)
+}
+
+@BindingAdapter(value = ["imageUrl"])
+fun setImageUrl(view: ImageView, url: String?){
+    GlideToVectorYou.init()
+        .with(view.context)
+        .requestBuilder
+        .load(url)
+        .transition(DrawableTransitionOptions.withCrossFade())
+        .apply(RequestOptions().centerCrop())
+        .into(view)
 }
