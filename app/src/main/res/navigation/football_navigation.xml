@@ -13,12 +13,6 @@
         <action
             android:id="@+id/action_homeFragment_to_matchFragment"
             app:destination="@id/matchFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_teamFragment"
-            app:destination="@id/teamFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_competitionFragment"
-            app:destination="@id/competitionFragment" />
 
     </fragment>
     <fragment
@@ -29,17 +23,10 @@
         <argument
             android:name="id"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_matchFragment_to_competitionFragment"
+            app:destination="@id/competitionFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/matchesFragment"
-        android:name="com.watermelon.footballapp.ui.matches.MatchesFragment"
-        android:label="MatchesFragment"
-        tools:layout="@layout/fragment_matches"/>
-    <fragment
-        android:id="@+id/tableFragment"
-        android:name="com.watermelon.footballapp.ui.table.TableFragment"
-        android:label="TableFragment"
-        tools:layout="@layout/fragment_table"/>
     <fragment
         android:id="@+id/playerFragment"
         android:name="com.watermelon.footballapp.ui.player.PlayerFragment"
@@ -80,5 +67,9 @@
         android:id="@+id/competitionFragment"
         android:name="com.watermelon.footballapp.ui.competition.CompetitionFragment"
         android:label="CompetitionFragment"
-        tools:layout="@layout/fragment_competition"/>
+        tools:layout="@layout/fragment_competition">
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
 </navigation>
