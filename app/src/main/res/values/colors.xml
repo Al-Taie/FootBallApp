@@ -7,9 +7,11 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="background_gradient_start">#101010</color>
-    <color name="background_gradient_end">#101010</color>
+    <color name="background_gradient_start">#f6f6f6</color>
+    <color name="background_gradient_end">#EFEFEF</color>
     <color name="light_red">#ff5757</color>
-    <color name="primary_text_color">#000000</color>
-    <color name="light_text_color">#2B2B2B</color>
+    <color name="top_circle">#EFA124</color>
+    <color name="bottom_circle">#2D2C3E</color>
+    <color name="primary_text_color">#000</color>
+    <color name="light_text_color">#222</color>
 </resources>
