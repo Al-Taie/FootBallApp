@@ -13,12 +13,12 @@ import com.watermelon.footballapp.utils.Event
 class HomeViewModel : ViewModel(), MatchInteractionListener {
     val matches = FootBallRepository.getMatches().asLiveData()
 
-    private val _navigateToTeam = MutableLiveData<Event<Int>>()
-    val navigateToTeam : LiveData<Event<Int>> get() = _navigateToTeam
+    private val _matchId = MutableLiveData<Event<Int>>()
+    val matchId : LiveData<Event<Int>>
+        get() = _matchId
 
-    fun onTeamClicked(id: Int) { _navigateToTeam.value = Event(id) }
 
     override fun onMatchClicked(id: Int) {
-//        navigator.navigateToMatch(id)
+        _matchId.postValue(Event(id))
     }
 }

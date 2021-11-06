@@ -7,6 +7,7 @@ import androidx.navigation.fragment.findNavController
 import com.watermelon.footballapp.ui.adapter.MatchAdapter
 import com.watermelon.footballapp.ui.base.BaseFragment
 import com.watermelon.footballapp.utils.Event
+import com.watermelon.footballapp.utils.EventObserver
 import watermelon.footballapp.databinding.FragmentHomeBinding
 
 
@@ -17,18 +18,12 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
     override fun setup() {
         binding.matchesRecycler.adapter = MatchAdapter(emptyList(), viewModel)
-        viewModel.navigateToTeam.observe(this, ::navigateToTeam)
+        viewModel.matchId.observe(this, EventObserver{ navigateToMatch(it) })
     }
 
-//    fun navigateToMatch(id: Int) {
-//        val action = HomeFragmentDirections.actionHomeFragmentToMatchFragment(id)
-//        findNavController().navigate(action)
-//    }
-
-    private fun navigateToTeam(event: Event<Int>) {
-        event.getContentIfNotHandled()?.let { id ->
-            val action = HomeFragmentDirections.actionHomeFragmentToTeamFragment(id)
-            findNavController().navigate(action)
-        }
+    private fun navigateToMatch(id: Int) {
+        val action = HomeFragmentDirections.actionHomeFragmentToMatchFragment(id)
+        findNavController().navigate(action)
     }
+
 }
