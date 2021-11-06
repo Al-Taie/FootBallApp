@@ -33,5 +33,13 @@
         <item name="fontFamily">sans-serif</item>
     </style>
 
+    <style name="circleImageViewStyle" >
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+    <style name="yesButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">#ff003c</item>
+    </style>
+
 
 </resources>

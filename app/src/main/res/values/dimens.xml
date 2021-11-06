@@ -17,4 +17,5 @@
     <dimen name="leauge_icon_size">160dp</dimen>
     <dimen name="margin_huge40dp">40dp</dimen>
     <dimen name="area_flag_size">24dp</dimen>
+    <dimen name="icon_size">40dp</dimen>
 </resources>
