@@ -21,37 +21,40 @@ fun <T> setRecyclerItems(view: RecyclerView, items: List<T>?) {
 
 @BindingAdapter(value = ["matchType"])
 fun setMatchType(view: TextView, match: Match?) {
-    when(match?.status) {
+    when (match?.status) {
         Constants.MatchType.SCHEDULED -> view.text = match.utcDate?.convertToReadableTime()
-        Constants.MatchType.FINISHED -> view.text = "${match.score?.fullTime?.homeTeam} - ${match?.score?.fullTime?.awayTeam}"
-        Constants.MatchType.IN_PLAY -> view.text = "${match.score?.fullTime?.homeTeam} - ${match?.score?.fullTime?.awayTeam}"
-        Constants.MatchType.PAUSED -> view.text = "${match.score?.fullTime?.homeTeam} - ${match?.score?.fullTime?.awayTeam}"
+        Constants.MatchType.FINISHED -> view.text =
+            "${match.score?.fullTime?.homeTeam} - ${match?.score?.fullTime?.awayTeam}"
+        Constants.MatchType.IN_PLAY -> view.text =
+            "${match.score?.fullTime?.homeTeam} - ${match?.score?.fullTime?.awayTeam}"
+        Constants.MatchType.PAUSED -> view.text =
+            "${match.score?.fullTime?.homeTeam} - ${match?.score?.fullTime?.awayTeam}"
     }
 }
 
 @BindingAdapter(value = ["homeTeamScore"])
-fun setHomeTeamScore(view: TextView, match: SingleMatch?){
-    when(match?.status){
+fun setHomeTeamScore(view: TextView, match: SingleMatch?) {
+    when (match?.status) {
         Constants.MatchType.SCHEDULED -> view.text = "-"
         else -> view.text = match?.score?.fullTime?.homeTeam.toString()
     }
 }
 
 @BindingAdapter(value = ["awayTeamScore"])
-fun setAwayTeamScore(view: TextView, match: SingleMatch?){
-    when(match?.status){
+fun setAwayTeamScore(view: TextView, match: SingleMatch?) {
+    when (match?.status) {
         Constants.MatchType.SCHEDULED -> view.text = "-"
         else -> view.text = match?.score?.fullTime?.awayTeam.toString()
     }
 }
 
 @BindingAdapter(value = ["app:matchTime"])
-fun setMatchTime(view: TextView, Time: Date?){
+fun setMatchTime(view: TextView, Time: Date?) {
     view.text = Time?.convertToReadableTime()
 }
 
 @BindingAdapter(value = ["app:showWhenMatchInPlay"])
-fun showWhenMatchInPlay(view: ImageView, MatchType: String?){
+fun showWhenMatchInPlay(view: ImageView, MatchType: String?) {
     if (MatchType == Constants.MatchType.IN_PLAY) {
         view.setImageResource(R.drawable.live_icon)
     } else {
