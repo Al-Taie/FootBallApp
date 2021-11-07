@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -9,10 +10,115 @@
             type="com.watermelon.footballapp.ui.team.TeamViewModel" />
     </data>
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:showWhenError="@{viewModel.team}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:visibility="gone"
+            >
+            <include
+                layout="@layout/error_layout"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:layout_width="@dimen/arrow_icon_size"
+            android:layout_height="@dimen/arrow_icon_size"
+            android:layout_marginStart="@dimen/margin_normal16dp"
+            android:layout_marginTop="@dimen/margin_medium24dp"
+            android:src="@drawable/ic_baseline_arrow_back_ios_new_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/white" />
 
+        <ImageView
+            android:id="@+id/imageViewError"
+            android:layout_width="@dimen/leauge_icon_size"
+            android:layout_height="@dimen/leauge_icon_size"
+            android:layout_margin="@dimen/margin_big32dp"
+            app:showWhenError="@{viewModel.team}"
+            android:src="@color/light_red"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone"/>
+        <ProgressBar
+            android:id="@+id/proressBar"
+            android:layout_width="@dimen/leauge_icon_size"
+            android:layout_height="@dimen/leauge_icon_size"
+            android:layout_margin="@dimen/margin_big32dp"
+            app:showWhenLoading="@{viewModel.team}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone"/>
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="@dimen/leauge_icon_size"
+            android:layout_height="@dimen/leauge_icon_size"
+            android:layout_margin="@dimen/margin_big32dp"
+            app:showWhenSuccess="@{viewModel.team}"
+            imageUrl="@{viewModel.team.toData().crestUrl}"
+            tools:src="@drawable/laligaexample"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium24dp"
+            android:fontFamily="sans-serif-black"
+            app:showWhenSuccess="@{viewModel.team}"
+            android:text="@{viewModel.team.toData().shortName}"
+            tools:text="Team Name"
+            android:textColor="@color/primary_text_color"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            style="@style/MyCustomTabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_huge40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:tabTextAppearance="@style/CustomTabText" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/team_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/view_pager_loading"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:showWhenLoading="@{viewModel.team}"
+            app:lottie_rawRes="@raw/loading"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
