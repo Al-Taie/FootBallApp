@@ -25,7 +25,8 @@
             app:argType="integer" />
         <action
             android:id="@+id/action_matchFragment_to_competitionFragment"
-            app:destination="@id/competitionFragment" />
+            app:destination="@id/competitionFragment"
+            app:popUpTo="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/playerFragment"

@@ -3,12 +3,14 @@ package com.watermelon.footballapp.ui.competition
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import com.google.android.material.tabs.TabLayoutMediator
 import com.watermelon.footballapp.ui.base.BaseFragment
 import com.watermelon.footballapp.ui.matches.MatchesFragment
 import com.watermelon.footballapp.ui.scorers.ScorersFragment
 import com.watermelon.footballapp.ui.table.TableFragment
+import watermelon.footballapp.R
 import watermelon.footballapp.databinding.FragmentCompetitionBinding
 
 
@@ -18,13 +20,19 @@ class CompetitionFragment : BaseFragment<FragmentCompetitionBinding>() {
     private val tabTitles = listOf("Matches", "Table", "Scorers")
 
     override fun setup() {
+        makeCompetitionRequests()
+        initViewPager()
+        initTabLayout()
+        callBacks()
+    }
+
+
+    private fun makeCompetitionRequests() {
         val args : CompetitionFragmentArgs by navArgs()
         viewModel.getCompetitionMatchesById(args.id)
         viewModel.getCompetitionById(args.id)
         viewModel.getCompetitionStandingById(args.id)
         viewModel.getCompetitionScorersById(args.id)
-        initViewPager()
-        initTabLayout()
     }
 
     private fun initTabLayout() {
@@ -36,6 +44,12 @@ class CompetitionFragment : BaseFragment<FragmentCompetitionBinding>() {
     private fun initViewPager() {
         val adapter = CompetitionPagerAdapter(this, fragmentList)
         binding.rankingViewPager.adapter = adapter
+    }
+
+    private fun callBacks() {
+        binding.backButton.setOnClickListener { view ->
+            view.findNavController().popBackStack(R.id.homeFragment, false)
+        }
     }
 
     override val viewModel: CompetitionViewModel by activityViewModels()

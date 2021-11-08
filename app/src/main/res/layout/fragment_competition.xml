@@ -16,6 +16,7 @@
         android:background="@drawable/background">
 
         <ImageView
+            android:id="@+id/back_button"
             android:layout_width="@dimen/arrow_icon_size"
             android:layout_height="@dimen/arrow_icon_size"
             android:layout_marginStart="@dimen/margin_normal16dp"
