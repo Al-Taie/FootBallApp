@@ -20,6 +20,7 @@ class CompetitionFragment : BaseFragment<FragmentCompetitionBinding>() {
         val args : CompetitionFragmentArgs by navArgs()
         viewModel.getCompetitionMatchesById(args.id)
         viewModel.getCompetitionById(args.id)
+        viewModel.getCompetitionStandingById(args.id)
         initViewPager()
         initTabLayout()
     }

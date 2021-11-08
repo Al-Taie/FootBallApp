@@ -1,5 +1,7 @@
 package com.watermelon.footballapp.ui.team
 
-interface TeamInteractionListener {
+import com.watermelon.footballapp.ui.base.BaseInteractionListener
+
+interface TeamInteractionListener: BaseInteractionListener {
     fun onTeamClicked(id: Int)
 }

@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.watermelon.footballapp.ui.table.TableViewModel" />
+            type="com.watermelon.footballapp.ui.competition.CompetitionViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -102,36 +102,42 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/margin_big32dp"
+                        android:layout_marginEnd="@dimen/margin_normal16dp"
                         android:text="P"
-
                         android:textColor="@color/primary_text_color" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/margin_big32dp"
+                        android:layout_marginEnd="@dimen/margin_normal16dp"
+                        android:text="W"
+                        android:textColor="@color/primary_text_color" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_normal16dp"
                         android:text="D"
                         android:textColor="@color/primary_text_color" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/margin_big32dp"
+                        android:layout_marginEnd="@dimen/margin_normal16dp"
                         android:text="L"
                         android:textColor="@color/primary_text_color" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/margin_big32dp"
+                        android:layout_marginEnd="@dimen/margin_normal16dp"
                         android:text="GD"
                         android:textColor="@color/primary_text_color" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/margin_big32dp"
+                        android:layout_marginEnd="@dimen/margin_normal16dp"
                         android:text="PTS"
                         android:textColor="@color/primary_text_color" />
 
@@ -142,17 +148,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    app:layout_constraintGuide_begin="205dp" />
+                    app:layout_constraintGuide_percent="0.55" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.cardview.widget.CardView>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_view"
+            android:id="@+id/table_recycler_view"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:orientation="vertical"
-            app:items="@{viewModel.standings.toData().standings}"
+            app:items="@{viewModel.competitionStanding.toData().standings.get(0).table}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cardView2"
