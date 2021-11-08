@@ -75,6 +75,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@{String.valueOf(item.numberOfGoals)}"
+                android:textColor="@color/primary_text_color"
                 android:layout_marginEnd="@dimen/margin_normal16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -85,10 +86,10 @@
                 android:id="@+id/ball"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:layout_margin="@dimen/margin_small8dp"
-                android:src="@drawable/image_ball"
+                android:layout_marginHorizontal="@dimen/margin_huge40dp"
+                android:src="@drawable/football_icon"
                 app:layout_constraintBottom_toBottomOf="@+id/scores_number"
-                app:layout_constraintEnd_toStartOf="@+id/scores_number"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/scores_number" />
 
 

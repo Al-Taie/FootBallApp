@@ -22,6 +22,7 @@ class CompetitionFragment : BaseFragment<FragmentCompetitionBinding>() {
         viewModel.getCompetitionMatchesById(args.id)
         viewModel.getCompetitionById(args.id)
         viewModel.getCompetitionStandingById(args.id)
+        viewModel.getCompetitionScorersById(args.id)
         initViewPager()
         initTabLayout()
     }

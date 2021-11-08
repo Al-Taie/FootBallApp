@@ -19,8 +19,8 @@ object FootBallRepository {
     fun getCompetitionStandingsById(competitionId: Int) =
         ApiWrapper.wrapWithFlow { API.apiService.getCompetitionStandingsById(competitionId) }
 
-    fun getCompetitionScorersByCode(competitionCode: String) =
-        ApiWrapper.wrapWithFlow { API.apiService.getCompetitionScorersByCode(competitionCode) }
+    fun getCompetitionScorersById(competitionId: Int) =
+        ApiWrapper.wrapWithFlow { API.apiService.getCompetitionScorersById(competitionId) }
 
 
     fun getTeamById(teamId: Int) = ApiWrapper.wrapWithFlow { API.apiService.getTeamById(teamId) }

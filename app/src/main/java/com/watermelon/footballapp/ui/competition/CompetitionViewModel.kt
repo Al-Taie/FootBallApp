@@ -8,6 +8,7 @@ import com.watermelon.footballapp.model.State
 import com.watermelon.footballapp.model.repository.FootBallRepository
 import com.watermelon.footballapp.model.response.competition.SingleCompetitionResponse
 import com.watermelon.footballapp.model.response.competitionMatches.CompetitionMatchesResponse
+import com.watermelon.footballapp.model.response.scorers.ScorersResponse
 import com.watermelon.footballapp.model.response.standings.StandingsResponse
 import com.watermelon.footballapp.ui.match.MatchInteractionListener
 import kotlinx.coroutines.flow.collect
@@ -27,6 +28,10 @@ class CompetitionViewModel : ViewModel(),MatchInteractionListener {
     private val _competitionStanding = MutableLiveData<State<StandingsResponse?>>()
     val competitionStanding : LiveData<State<StandingsResponse?>>
         get() = _competitionStanding
+
+    private val _competitionScorers = MutableLiveData<State<ScorersResponse?>>()
+    val competitionScorers : LiveData<State<ScorersResponse?>>
+        get() = _competitionScorers
 
     fun getCompetitionMatchesById(competitionId: Int) {
         viewModelScope.launch {
@@ -48,6 +53,14 @@ class CompetitionViewModel : ViewModel(),MatchInteractionListener {
         viewModelScope.launch {
             repository.getCompetitionStandingsById(competitionId).collect {
                 _competitionStanding.postValue(it)
+            }
+        }
+    }
+
+    fun getCompetitionScorersById(competitionId: Int){
+        viewModelScope.launch {
+            repository.getCompetitionScorersById(competitionId).collect {
+                _competitionScorers.postValue(it)
             }
         }
     }
