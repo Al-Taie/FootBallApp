@@ -7,14 +7,15 @@ import androidx.navigation.fragment.navArgs
 import com.google.android.material.tabs.TabLayoutMediator
 import com.watermelon.footballapp.ui.base.BaseFragment
 import com.watermelon.footballapp.ui.matches.MatchesFragment
+import com.watermelon.footballapp.ui.scorers.ScorersFragment
 import com.watermelon.footballapp.ui.table.TableFragment
 import watermelon.footballapp.databinding.FragmentCompetitionBinding
 
 
 class CompetitionFragment : BaseFragment<FragmentCompetitionBinding>() {
 
-    private val fragmentList = listOf( MatchesFragment(), TableFragment())
-    private val tabTitles = listOf("Matches", "Table")
+    private val fragmentList = listOf( MatchesFragment(), TableFragment(), ScorersFragment())
+    private val tabTitles = listOf("Matches", "Table", "Scorers")
 
     override fun setup() {
         val args : CompetitionFragmentArgs by navArgs()
