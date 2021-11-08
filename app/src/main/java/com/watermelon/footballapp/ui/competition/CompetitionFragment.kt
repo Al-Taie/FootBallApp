@@ -19,6 +19,7 @@ class CompetitionFragment : BaseFragment<FragmentCompetitionBinding>() {
     override fun setup() {
         val args : CompetitionFragmentArgs by navArgs()
         viewModel.getCompetitionMatchesById(args.id)
+        viewModel.getCompetitionById(args.id)
         initViewPager()
         initTabLayout()
     }

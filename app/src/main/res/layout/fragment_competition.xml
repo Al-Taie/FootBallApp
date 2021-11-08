@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -22,17 +23,18 @@
             android:src="@drawable/ic_baseline_arrow_back_ios_new_24"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/white" />
+            app:tint="@color/black" />
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="@dimen/leauge_icon_size"
             android:layout_height="@dimen/leauge_icon_size"
             android:layout_margin="@dimen/margin_big32dp"
-            android:src="@drawable/laligaexample"
+            imageUrl="@{viewModel.competition.toData().emblemUrl}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/laligaexample"/>
 
         <TextView
             android:id="@+id/textView"
@@ -40,12 +42,13 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_medium24dp"
             android:fontFamily="sans-serif-black"
-            android:text="La Liga 2020-21"
-            android:textColor="@color/white"
+            android:text="@{viewModel.competition.toData().name}"
+            android:textColor="@color/primary_text_color"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="@+id/imageView"
             app:layout_constraintStart_toStartOf="@+id/imageView"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            tools:text="La Liga 2020-21" />
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayout"
@@ -53,6 +56,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_huge40dp"
+            app:tabTextColor="@color/primary_text_color"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView"

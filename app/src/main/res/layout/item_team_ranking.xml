@@ -38,7 +38,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="#1"
-                    android:textColor="@color/white"
+                    android:textColor="@color/primary_text_color"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -59,7 +59,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_small8dp"
                     android:text="Barcelona"
-                    android:textColor="@color/white"
+                    android:textColor="@color/primary_text_color"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/imageView2"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -79,35 +79,35 @@
                         android:layout_marginEnd="@dimen/margin_big32dp"
                         android:text="8"
 
-                        android:textColor="@color/white" />
+                        android:textColor="@color/primary_text_color" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="@dimen/margin_big32dp"
                         android:text="58"
-                        android:textColor="@color/white" />
+                        android:textColor="@color/primary_text_color" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="@dimen/margin_big32dp"
                         android:text="28"
-                        android:textColor="@color/white" />
+                        android:textColor="@color/primary_text_color" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="@dimen/margin_big32dp"
                         android:text="8"
-                        android:textColor="@color/white" />
+                        android:textColor="@color/primary_text_color" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="@dimen/margin_big32dp"
                         android:text="8"
-                        android:textColor="@color/white" />
+                        android:textColor="@color/primary_text_color" />
 
                 </LinearLayout>
 
