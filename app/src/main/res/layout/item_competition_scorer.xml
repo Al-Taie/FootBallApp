@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="item"
+            type="com.watermelon.footballapp.model.response.scorers.Scorer" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        app:cardCornerRadius="8dp"
+        android:layout_marginHorizontal="@dimen/margin_normal16dp"
+        android:layout_marginVertical="@dimen/margin_small8dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+<!--            <TextView-->
+<!--                android:id="@+id/player_rank"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textSize="24sp"-->
+<!--                -->
+<!--                android:layout_marginStart="@dimen/margin_small8dp"-->
+<!--                android:textColor="@color/primary_text_color"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                tools:text="1" />-->
+
+            <TextView
+                android:id="@+id/player_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text="@{item.player.name}"
+                android:layout_marginHorizontal="@dimen/margin_medium24dp"
+                android:layout_marginVertical="@dimen/margin_small8dp"
+                android:textColor="@color/primary_text_color"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Cristiano Ronaldo" />
+
+            <TextView
+                android:id="@+id/team_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:text="@{item.team.name}"
+                app:layout_constraintStart_toStartOf="@+id/player_name"
+                app:layout_constraintTop_toBottomOf="@+id/player_name"
+                tools:text="Manchester United" />
+
+            <TextView
+                android:id="@+id/player_position"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_small8dp"
+                android:textSize="12sp"
+                android:text="@{item.player.position}"
+                app:layout_constraintStart_toEndOf="@+id/player_name"
+                app:layout_constraintBaseline_toBaselineOf="@+id/player_name"
+                tools:layout_editor_absoluteY="16dp"
+                tools:text="Attacker" />
+
+            <TextView
+                android:id="@+id/scores_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{String.valueOf(item.numberOfGoals)}"
+                android:layout_marginEnd="@dimen/margin_normal16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="30" />
+
+            <ImageView
+                android:id="@+id/ball"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_margin="@dimen/margin_small8dp"
+                android:src="@drawable/image_ball"
+                app:layout_constraintBottom_toBottomOf="@+id/scores_number"
+                app:layout_constraintEnd_toStartOf="@+id/scores_number"
+                app:layout_constraintTop_toTopOf="@+id/scores_number" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+    </androidx.cardview.widget.CardView>
+</layout>
