@@ -1,5 +1,6 @@
 package com.watermelon.footballapp.ui.competition
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
@@ -10,40 +11,37 @@ import com.watermelon.footballapp.ui.base.BaseFragment
 import com.watermelon.footballapp.ui.matches.MatchesFragment
 import com.watermelon.footballapp.ui.scorers.ScorersFragment
 import com.watermelon.footballapp.ui.table.TableFragment
+import com.watermelon.footballapp.utils.Constants
 import watermelon.footballapp.R
 import watermelon.footballapp.databinding.FragmentCompetitionBinding
 
 
 class CompetitionFragment : BaseFragment<FragmentCompetitionBinding>() {
-
-    private val fragmentList = listOf( MatchesFragment(), TableFragment(), ScorersFragment())
-    private val tabTitles = listOf("Matches", "Table", "Scorers")
+    private val args: CompetitionFragmentArgs by navArgs()
 
     override fun setup() {
-        makeCompetitionRequests()
+        viewModel.getCompetitionById(args.id)
         initViewPager()
         initTabLayout()
         callBacks()
     }
 
-
-    private fun makeCompetitionRequests() {
-        val args : CompetitionFragmentArgs by navArgs()
-        viewModel.getCompetitionMatchesById(args.id)
-        viewModel.getCompetitionById(args.id)
-        viewModel.getCompetitionStandingById(args.id)
-        viewModel.getCompetitionScorersById(args.id)
-    }
-
     private fun initTabLayout() {
+        val tabTitles = listOf("Matches", "Table", "Scorers")
         TabLayoutMediator(binding.tabLayout, binding.rankingViewPager) { tab, position ->
             tab.text = tabTitles[position]
         }.attach()
     }
 
     private fun initViewPager() {
-        val adapter = CompetitionPagerAdapter(this, fragmentList)
-        binding.rankingViewPager.adapter = adapter
+        val bundle = Bundle().apply { putInt(Constants.ID, args.id) }
+        val fragmentList = listOf(
+            MatchesFragment(),
+            TableFragment(),
+            ScorersFragment()
+        ).map { it.apply { arguments = bundle } }
+
+        binding.rankingViewPager.adapter = CompetitionPagerAdapter(this, fragmentList)
     }
 
     private fun callBacks() {

@@ -7,4 +7,5 @@ object Constants {
         const val IN_PLAY = "IN_PLAY"
         const val PAUSED = "PAUSED"
     }
+    const val ID = "ID"
 }
