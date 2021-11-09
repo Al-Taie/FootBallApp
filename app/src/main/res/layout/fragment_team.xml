@@ -82,7 +82,7 @@
             app:showWhenSuccess="@{viewModel.team}"
             android:text="@{viewModel.team.toData().shortName}"
             tools:text="Team Name"
-            android:textColor="@color/primary_text_color"
+            android:textColor="@color/primary_text"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="@+id/imageView"
             app:layout_constraintStart_toStartOf="@+id/imageView"

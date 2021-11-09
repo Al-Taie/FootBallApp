@@ -41,8 +41,8 @@ interface FootballService {
     @GET("competitions/{id}/standings")
     suspend fun getCompetitionStandingsById(@Path("id") competitionId: Int): Response<StandingsResponse>
 
-    @GET("competitions/{code}/scorers")
-    suspend fun getCompetitionScorersByCode(@Path("code") competitionCode: String): Response<ScorersResponse>
+    @GET("competitions/{id}/scorers")
+    suspend fun getCompetitionScorersById(@Path("id") competitionId: Int): Response<ScorersResponse>
 
 
     @GET("players/{id}")
