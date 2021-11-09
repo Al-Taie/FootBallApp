@@ -52,18 +52,6 @@
             app:argType="integer" />
     </fragment>
     <fragment
-        android:id="@+id/scorersFragment"
-        android:name="com.watermelon.footballapp.ui.scorers.ScorersFragment"
-        android:label="ScorersFragment"
-        tools:layout="@layout/fragment_scorers">
-        <action
-            android:id="@+id/action_scorersFragment_to_playerFragment"
-            app:destination="@id/playerFragment" />
-        <argument
-            android:name="code"
-            app:argType="string" />
-    </fragment>
-    <fragment
         android:id="@+id/competitionFragment"
         android:name="com.watermelon.footballapp.ui.competition.CompetitionFragment"
         android:label="CompetitionFragment"
@@ -77,5 +65,8 @@
         <action
             android:id="@+id/action_competitionFragment_to_playerFragment"
             app:destination="@id/playerFragment" />
+        <action
+            android:id="@+id/action_competitionFragment_to_teamFragment"
+            app:destination="@id/teamFragment" />
     </fragment>
 </navigation>
