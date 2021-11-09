@@ -9,6 +9,7 @@ import com.watermelon.footballapp.model.response.player.PlayerRespopnse
 import com.watermelon.footballapp.model.response.scorers.ScorersResponse
 import com.watermelon.footballapp.model.response.standings.StandingsResponse
 import com.watermelon.footballapp.model.response.team.SingleTeamResponse
+import com.watermelon.footballapp.model.response.teamMatches.TeamMatchesResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -26,7 +27,7 @@ interface FootballService {
     suspend fun getTeamById(@Path("id") teamId: Int): Response<SingleTeamResponse>
 
     @GET("teams/{teamId}}/matches")
-    suspend fun getMatchesForTeam(teamId:Int) : Response<MatchesResponse>
+    suspend fun getMatchesForTeam(teamId:Int) : Response<TeamMatchesResponse>
 
 
     @GET("competitions/")
