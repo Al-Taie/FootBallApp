@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="item"
             type="com.watermelon.footballapp.model.response.scorers.Scorer" />
@@ -12,48 +13,57 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        app:cardCornerRadius="8dp"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/margin_normal16dp"
-        android:layout_marginVertical="@dimen/margin_small8dp">
+        android:layout_marginVertical="@dimen/margin_small8dp"
+        app:cardBackgroundColor="@color/item_background"
+        app:cardCornerRadius="8dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:padding="@dimen/padding_small8dp">
 
 
-<!--            <TextView-->
-<!--                android:id="@+id/player_rank"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:textSize="24sp"-->
-<!--                -->
-<!--                android:layout_marginStart="@dimen/margin_small8dp"-->
-<!--                android:textColor="@color/primary_text_color"-->
-<!--                app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent"-->
-<!--                tools:text="1" />-->
+            <!--            <TextView-->
+            <!--                android:id="@+id/player_rank"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:textSize="24sp"-->
+            <!--                android:layout_marginStart="@dimen/margin_normal16dp"-->
+            <!--                android:textColor="@color/primary_text"-->
+            <!--                android:text="@{viewModel.competitionScorers.toData().scorers.indexOf(item.player)}"-->
+            <!--                android:fontFamily="sans-serif-black"-->
+            <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toTopOf="parent"-->
+            <!--                tools:text="1" />-->
 
             <TextView
                 android:id="@+id/player_name"
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
+                android:layout_marginHorizontal="@dimen/margin_normal16dp"
+                android:fontFamily="sans-serif-black"
                 android:text="@{item.player.name}"
-                android:layout_marginHorizontal="@dimen/margin_medium24dp"
-                android:layout_marginVertical="@dimen/margin_small8dp"
-                android:textColor="@color/primary_text_color"
+                android:textColor="@color/primary_text"
+                android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="Cristiano Ronaldo" />
+                android:singleLine="true"
+                android:ellipsize="marquee"
+                android:fadingEdge="horizontal"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                tools:text="Cristiano Ronaldo gdasgdsgsdgdsggewgwe" />
 
             <TextView
                 android:id="@+id/team_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="12sp"
                 android:text="@{item.team.name}"
+                android:textColor="@color/light_text"
+                android:textSize="12sp"
                 app:layout_constraintStart_toStartOf="@+id/player_name"
                 app:layout_constraintTop_toBottomOf="@+id/player_name"
                 tools:text="Manchester United" />
@@ -63,10 +73,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_small8dp"
-                android:textSize="12sp"
                 android:text="@{item.player.position}"
-                app:layout_constraintStart_toEndOf="@+id/player_name"
+                android:textColor="@color/light_text"
+                android:textSize="12sp"
                 app:layout_constraintBaseline_toBaselineOf="@+id/player_name"
+                app:layout_constraintStart_toEndOf="@+id/player_name"
                 tools:layout_editor_absoluteY="16dp"
                 tools:text="Attacker" />
 
@@ -74,9 +85,10 @@
                 android:id="@+id/scores_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{String.valueOf(item.numberOfGoals)}"
-                android:textColor="@color/primary_text_color"
                 android:layout_marginEnd="@dimen/margin_normal16dp"
+                android:fontFamily="sans-serif-black"
+                android:text="@{String.valueOf(item.numberOfGoals)}"
+                android:textColor="@color/primary_text"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -94,9 +106,6 @@
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
 
 
     </androidx.cardview.widget.CardView>

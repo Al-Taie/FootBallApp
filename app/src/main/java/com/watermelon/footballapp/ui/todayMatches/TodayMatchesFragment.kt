@@ -1,4 +1,4 @@
-package com.watermelon.footballapp.ui.home
+package com.watermelon.footballapp.ui.todayMatches
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,13 +7,13 @@ import androidx.navigation.fragment.findNavController
 import com.watermelon.footballapp.ui.match.MatchAdapter
 import com.watermelon.footballapp.ui.base.BaseFragment
 import com.watermelon.footballapp.utils.EventObserver
-import watermelon.footballapp.databinding.FragmentHomeBinding
+import watermelon.footballapp.databinding.FragmentTodayMatchesBinding
 
 
-class HomeFragment : BaseFragment<FragmentHomeBinding>() {
-    override val viewModel: HomeViewModel by activityViewModels()
-    override val inflate: (LayoutInflater, ViewGroup?, attachToRoot: Boolean) -> FragmentHomeBinding
-        get() = FragmentHomeBinding::inflate
+class TodayMatchesFragment : BaseFragment<FragmentTodayMatchesBinding>() {
+    override val viewModel: TodayMatchesViewModel by activityViewModels()
+    override val inflate: (LayoutInflater, ViewGroup?, attachToRoot: Boolean) -> FragmentTodayMatchesBinding
+        get() = FragmentTodayMatchesBinding::inflate
 
     override fun setup() {
         binding.matchesRecycler.adapter = MatchAdapter(emptyList(), viewModel)
@@ -21,7 +21,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     }
 
     private fun navigateToMatch(id: Int) {
-        val action = HomeFragmentDirections.actionHomeFragmentToMatchFragment(id)
+        val action = TodayMatchesFragmentDirections.actionHomeFragmentToMatchFragment(id)
         findNavController().navigate(action)
     }
 

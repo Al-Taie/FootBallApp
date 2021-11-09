@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.watermelon.footballapp.ui.home.HomeFragment"
+        android:name="com.watermelon.footballapp.ui.todayMatches.TodayMatchesFragment"
         android:label="HomeFragment"
-        tools:layout="@layout/fragment_home">
+        tools:layout="@layout/fragment_today_matches">
         <action
             android:id="@+id/action_homeFragment_to_matchFragment"
             app:destination="@id/matchFragment" />
