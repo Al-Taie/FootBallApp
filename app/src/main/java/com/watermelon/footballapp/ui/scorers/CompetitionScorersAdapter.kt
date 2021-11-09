@@ -1,4 +1,4 @@
-package com.watermelon.footballapp.ui.adapter
+package com.watermelon.footballapp.ui.scorers
 
 import com.watermelon.footballapp.model.response.scorers.Scorer
 import com.watermelon.footballapp.ui.base.BaseAdapter

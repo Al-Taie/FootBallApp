@@ -1,4 +1,4 @@
-package com.watermelon.footballapp.ui.adapter
+package com.watermelon.footballapp.ui.table
 
 import com.watermelon.footballapp.model.response.standings.Table
 import com.watermelon.footballapp.ui.base.BaseAdapter

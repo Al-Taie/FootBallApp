@@ -1,4 +1,4 @@
-package com.watermelon.footballapp.model.networking
+package com.watermelon.footballapp.model.network
 
 import com.watermelon.footballapp.utils.FootballInterceptor
 import okhttp3.OkHttpClient

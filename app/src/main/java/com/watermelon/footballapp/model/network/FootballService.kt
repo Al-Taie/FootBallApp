@@ -1,4 +1,4 @@
-package com.watermelon.footballapp.model.networking
+package com.watermelon.footballapp.model.network
 
 import com.watermelon.footballapp.model.response.competition.SingleCompetitionResponse
 import com.watermelon.footballapp.model.response.competitionMatches.CompetitionMatchesResponse

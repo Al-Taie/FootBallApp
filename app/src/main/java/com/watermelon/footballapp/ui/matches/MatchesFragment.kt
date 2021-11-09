@@ -3,7 +3,6 @@ package com.watermelon.footballapp.ui.matches
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
-import com.watermelon.footballapp.ui.adapter.CompetitionMatchAdapter
 import com.watermelon.footballapp.ui.base.BaseFragment
 import com.watermelon.footballapp.utils.Constants
 import watermelon.footballapp.databinding.FragmentMatchesBinding

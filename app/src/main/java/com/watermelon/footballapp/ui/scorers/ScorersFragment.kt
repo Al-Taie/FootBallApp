@@ -3,9 +3,7 @@ package com.watermelon.footballapp.ui.scorers
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
-import com.watermelon.footballapp.ui.adapter.CompetitionScorersAdapter
 import com.watermelon.footballapp.ui.base.BaseFragment
-import com.watermelon.footballapp.ui.competition.CompetitionViewModel
 import com.watermelon.footballapp.utils.Constants
 import watermelon.footballapp.databinding.FragmentScorersBinding
 

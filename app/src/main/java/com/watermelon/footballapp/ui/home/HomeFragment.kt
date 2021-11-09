@@ -4,9 +4,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import com.watermelon.footballapp.ui.adapter.MatchAdapter
+import com.watermelon.footballapp.ui.match.MatchAdapter
 import com.watermelon.footballapp.ui.base.BaseFragment
-import com.watermelon.footballapp.utils.Event
 import com.watermelon.footballapp.utils.EventObserver
 import watermelon.footballapp.databinding.FragmentHomeBinding
 

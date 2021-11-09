@@ -1,6 +1,6 @@
 package com.watermelon.footballapp.model.repository
 
-import com.watermelon.footballapp.model.networking.API
+import com.watermelon.footballapp.model.network.API
 
 object FootBallRepository {
     fun getMatches() = ApiWrapper.wrapWithFlow { API.apiService.getMatches() }
