@@ -1,4 +1,4 @@
-package com.watermelon.footballapp.ui.adapter
+package com.watermelon.footballapp.ui.matches
 
 import com.watermelon.footballapp.model.response.competitionMatches.CompetitionMatch
 import com.watermelon.footballapp.ui.base.BaseAdapter

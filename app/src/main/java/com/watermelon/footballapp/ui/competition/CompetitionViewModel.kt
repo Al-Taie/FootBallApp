@@ -21,25 +21,6 @@ class CompetitionViewModel : ViewModel(),MatchInteractionListener {
     val competition : LiveData<State<SingleCompetitionResponse?>>
         get() = _competition
 
-    private val _competitionMatches = MutableLiveData<State<CompetitionMatchesResponse?>>()
-    val competitionMatches : LiveData<State<CompetitionMatchesResponse?>>
-        get() = _competitionMatches
-
-    private val _competitionStanding = MutableLiveData<State<StandingsResponse?>>()
-    val competitionStanding : LiveData<State<StandingsResponse?>>
-        get() = _competitionStanding
-
-    private val _competitionScorers = MutableLiveData<State<ScorersResponse?>>()
-    val competitionScorers : LiveData<State<ScorersResponse?>>
-        get() = _competitionScorers
-
-    fun getCompetitionMatchesById(competitionId: Int) {
-        viewModelScope.launch {
-            repository.getCompetitionMatchesById(competitionId).collect {
-                _competitionMatches.postValue(it)
-            }
-        }
-    }
 
     fun getCompetitionById(competitionId : Int) {
         viewModelScope.launch {
@@ -49,21 +30,7 @@ class CompetitionViewModel : ViewModel(),MatchInteractionListener {
         }
     }
 
-    fun getCompetitionStandingById(competitionId: Int) {
-        viewModelScope.launch {
-            repository.getCompetitionStandingsById(competitionId).collect {
-                _competitionStanding.postValue(it)
-            }
-        }
-    }
 
-    fun getCompetitionScorersById(competitionId: Int){
-        viewModelScope.launch {
-            repository.getCompetitionScorersById(competitionId).collect {
-                _competitionScorers.postValue(it)
-            }
-        }
-    }
 
     override fun onMatchClicked(id: Int) {
 
