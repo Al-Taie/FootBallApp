@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- application colors-->
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
+
+    <!--neutral colors-->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="background_gradient_start">#f6f6f6</color>
-    <color name="background_gradient_end">#EFEFEF</color>
+
+    <!--background colors-->
+    <color name="background_gradient_start">#0F0F15</color>
+    <color name="background_gradient_end">#272730</color>
+
+    <!--text colors-->
+    <color name="primary_text">#ffffff</color>
+    <color name="light_text">#cccccc</color>
+
+    <color name="item_background">#1C1A28</color>
+    <!--other colors-->
     <color name="light_red">#ff5757</color>
     <color name="top_circle">#EFA124</color>
     <color name="bottom_circle">#2D2C3E</color>
@@ -16,6 +28,5 @@
     <color name="secondary_barnd_color">#0A68BF</color>
     <color name="accent_brand_color">#FFE34F</color>
     <color name="dark_color">#1B1B1B</color>
-    <color name="primary_text_color">#000</color>
-    <color name="light_text_color">#222</color>
+
 </resources>
