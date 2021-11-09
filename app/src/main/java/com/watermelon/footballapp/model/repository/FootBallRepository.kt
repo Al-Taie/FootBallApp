@@ -5,6 +5,7 @@ import com.watermelon.footballapp.model.network.API
 object FootBallRepository {
     fun getMatches() = ApiWrapper.wrapWithFlow { API.apiService.getMatches() }
 
+    fun getMatchesForTeam(teamId: Int) = ApiWrapper.wrapWithFlow { API.apiService.getMatchesForTeam(teamId) }
     fun getSingleMatch(matchId: Int) =
         ApiWrapper.wrapWithFlow { API.apiService.getSingleMatchById(matchId) }
 
