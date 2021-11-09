@@ -28,16 +28,6 @@ class CompetitionFragment : BaseFragment<FragmentCompetitionBinding>() {
         callBacks()
     }
 
-    fun navigateToMatch(){
-//        val matchId = arguments?.getInt("matchId")
-//        Log.i("karrar", matchId.toString())
-
-            val action = CompetitionFragmentDirections.actionCompetitionFragmentToMatchFragment2(328847)
-            findNavController().navigate(action)
-
-
-    }
-
     private fun initTabLayout() {
         val tabTitles = listOf("Matches", "Table", "Scorers")
         TabLayoutMediator(binding.tabLayout, binding.rankingViewPager) { tab, position ->
@@ -65,5 +55,4 @@ class CompetitionFragment : BaseFragment<FragmentCompetitionBinding>() {
     override val viewModel: CompetitionViewModel by activityViewModels()
     override val inflate: (LayoutInflater, ViewGroup?, attachToRoot: Boolean) -> FragmentCompetitionBinding
         get() = FragmentCompetitionBinding::inflate
-
 }

@@ -14,8 +14,7 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface FootballService {
-
-    @GET("matches?dateFrom=2021-11-03&dateTo=2021-11-03")
+    @GET("matches")
     suspend fun getMatches(): Response<MatchesResponse>
 
     @GET("matches/{id}")
@@ -41,6 +40,4 @@ interface FootballService {
 
     @GET("competitions/{id}/scorers")
     suspend fun getCompetitionScorersById(@Path("id") competitionId: Int): Response<ScorersResponse>
-
-
 }
