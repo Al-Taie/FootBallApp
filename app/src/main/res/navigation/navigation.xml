@@ -25,8 +25,7 @@
             app:argType="integer" />
         <action
             android:id="@+id/action_matchFragment_to_competitionFragment"
-            app:destination="@id/competitionFragment"
-            app:popUpTo="@id/homeFragment" />
+            app:destination="@id/competitionFragment" />
     </fragment>
     <fragment
         android:id="@+id/playerFragment"
@@ -72,5 +71,13 @@
         <argument
             android:name="id"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_competitionFragment_to_matchFragment2"
+            app:destination="@id/matchFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/matchesFragment"
+        android:name="com.watermelon.footballapp.ui.matches.MatchesFragment"
+        android:label="MatchesFragment"
+        tools:layout="@layout/fragment_matches"/>
 </navigation>

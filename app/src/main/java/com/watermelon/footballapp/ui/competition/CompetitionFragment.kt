@@ -1,10 +1,12 @@
 package com.watermelon.footballapp.ui.competition
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.google.android.material.tabs.TabLayoutMediator
 import com.watermelon.footballapp.ui.base.BaseFragment
@@ -24,6 +26,16 @@ class CompetitionFragment : BaseFragment<FragmentCompetitionBinding>() {
         initViewPager()
         initTabLayout()
         callBacks()
+    }
+
+    fun navigateToMatch(){
+//        val matchId = arguments?.getInt("matchId")
+//        Log.i("karrar", matchId.toString())
+
+            val action = CompetitionFragmentDirections.actionCompetitionFragmentToMatchFragment2(328847)
+            findNavController().navigate(action)
+
+
     }
 
     private fun initTabLayout() {

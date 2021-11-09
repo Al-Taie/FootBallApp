@@ -5,6 +5,7 @@ import com.watermelon.footballapp.model.State
 import com.watermelon.footballapp.model.repository.FootBallRepository
 import com.watermelon.footballapp.model.response.competitionMatches.CompetitionMatchesResponse
 import com.watermelon.footballapp.ui.match.MatchInteractionListener
+import com.watermelon.footballapp.utils.Event
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
@@ -14,6 +15,10 @@ class MatchesViewModel : ViewModel(), MatchInteractionListener {
     private val _competitionMatches = MutableLiveData<State<CompetitionMatchesResponse?>>()
     val competitionMatches: LiveData<State<CompetitionMatchesResponse?>>
         get() = _competitionMatches
+
+    private val _matchId = MutableLiveData<Event<Int>>()
+    val matchId : LiveData<Event<Int>>
+        get() =  _matchId
 
     fun getCompetitionMatchesById(competitionId: Int) {
         viewModelScope.launch {
@@ -25,6 +30,6 @@ class MatchesViewModel : ViewModel(), MatchInteractionListener {
 
 
     override fun onMatchClicked(id: Int) {
-
+        _matchId.postValue(Event(id))
     }
 }
