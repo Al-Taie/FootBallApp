@@ -8,11 +8,11 @@ import com.watermelon.footballapp.ui.match.MatchInteractionListener
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
-class MatchesViewModel : ViewModel() ,MatchInteractionListener {
+class MatchesViewModel : ViewModel(), MatchInteractionListener {
     val matches = FootBallRepository.getMatches().asLiveData()
 
     private val _competitionMatches = MutableLiveData<State<CompetitionMatchesResponse?>>()
-    val competitionMatches : LiveData<State<CompetitionMatchesResponse?>>
+    val competitionMatches: LiveData<State<CompetitionMatchesResponse?>>
         get() = _competitionMatches
 
     fun getCompetitionMatchesById(competitionId: Int) {

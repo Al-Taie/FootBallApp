@@ -8,7 +8,7 @@ import com.watermelon.footballapp.ui.base.BaseFragment
 import com.watermelon.footballapp.utils.Constants
 import watermelon.footballapp.databinding.FragmentMatchesBinding
 
-class MatchesFragment : BaseFragment<FragmentMatchesBinding>(), MatchesNavigator {
+class MatchesFragment : BaseFragment<FragmentMatchesBinding>() {
     override fun setup() {
         arguments?.getInt(Constants.ID)?.run { viewModel.getCompetitionMatchesById(this) }
         binding.matchesRecycler.adapter = CompetitionMatchAdapter(emptyList(), viewModel)
@@ -17,6 +17,4 @@ class MatchesFragment : BaseFragment<FragmentMatchesBinding>(), MatchesNavigator
     override val viewModel: MatchesViewModel by activityViewModels()
     override val inflate: (LayoutInflater, ViewGroup?, attachToRoot: Boolean) -> FragmentMatchesBinding
         get() = FragmentMatchesBinding::inflate
-
-    override fun navigateToMatch(id: Int) {}
 }
