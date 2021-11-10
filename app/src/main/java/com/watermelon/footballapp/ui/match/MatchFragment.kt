@@ -14,19 +14,30 @@ class MatchFragment : BaseFragment<FragmentMatchBinding>() {
     override fun setup() {
         val args : MatchFragmentArgs by navArgs()
         viewModel.getMatchById(args.id)
+
         viewModel.competitionId.observe(this, EventObserver{
             navigateToCompetition(it)
         })
+
+        viewModel.teamId.observe(this, EventObserver{
+            navigateToTeam(it)
+        })
+    }
+
+    private fun navigateToTeam(teamId: Int) {
+        val action = MatchFragmentDirections.actionMatchFragmentToTeamFragment(teamId)
+        findNavController().navigate(action)
+    }
+
+    private fun navigateToCompetition(competitionId : Int){
+        val action = MatchFragmentDirections.actionMatchFragmentToCompetitionFragment(competitionId)
+        findNavController().navigate(action)
     }
 
     override val viewModel: MatchViewModel by activityViewModels()
     override val inflate: (LayoutInflater, ViewGroup?, attachToRoot: Boolean) -> FragmentMatchBinding
         get() = FragmentMatchBinding::inflate
 
-    private fun navigateToCompetition(competitionId : Int){
-        val action = MatchFragmentDirections.actionMatchFragmentToCompetitionFragment(competitionId)
-        findNavController().navigate(action)
-    }
 
 
 }

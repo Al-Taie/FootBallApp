@@ -24,4 +24,14 @@
     <string name="home_menu">Home</string>
     <string name="matches">Matches</string>
     <string name="competitions">Competitions</string>
+    <string name="match_status">Match Status</string>
+    <string name="home_team">Home Team</string>
+    <string name="result_divider">-</string>
+    <string name="away_team">Away Team</string>
+    <string name="head_to_head">Head To Head</string>
+    <string name="total_matches">Total Matches</string>
+    <string name="total_goals">Total Goals</string>
+    <string name="home_wins">Home Wins</string>
+    <string name="draws">Draws</string>
+    <string name="away_wins">Away Wins</string>
 </resources>

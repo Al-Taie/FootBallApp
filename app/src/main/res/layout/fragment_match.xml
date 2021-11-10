@@ -8,10 +8,6 @@
             name="viewModel"
             type="com.watermelon.footballapp.ui.match.MatchViewModel" />
 
-        <variable
-            name="listener"
-            type="com.watermelon.footballapp.ui.team.TeamInteractionListener" />
-
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -33,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_medium24dp"
             android:fontFamily="sans-serif-black"
-            android:text="Match Status"
+            android:text="@string/match_status"
             android:textColor="@color/primary_text"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -76,6 +72,7 @@
                         android:layout_gravity="center"
                         android:fontFamily="sans-serif-black"
                         android:text="@{viewModel.singleMatch.toData().match.competition.name}"
+                        android:onClick="@{() -> viewModel.onCompetitionClicked(viewModel.singleMatch.toData().match.competition.id)}"
                         android:textColor="@color/primary_text"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -99,11 +96,13 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/home_team_name"
                             android:layout_width="80dp"
                             android:layout_height="wrap_content"
                             android:ellipsize="end"
                             android:fontFamily="sans-serif-black"
                             android:lines="1"
+                            android:onClick="@{() -> viewModel.onTeamClicked(viewModel.singleMatch.toData().match.homeTeam.id)}"
                             android:text="@{viewModel.singleMatch.toData().match.homeTeam.name}"
                             android:textColor="@color/primary_text"
                             android:textSize="14sp"
@@ -115,9 +114,9 @@
                             android:layout_gravity="right"
                             android:layout_marginHorizontal="@dimen/margin_normal16dp"
                             android:fontFamily="sans-serif-medium"
-                            android:text="Home Team"
+                            android:text="@string/home_team"
                             android:textColor="@color/secondary_text"
-                            android:textSize="10sp" />
+                            android:textSize="12sp" />
                     </LinearLayout>
 
                     <TextView
@@ -137,7 +136,7 @@
                         android:layout_gravity="center"
                         android:layout_marginHorizontal="@dimen/margin_small8dp"
                         android:fontFamily="sans-serif-black"
-                        android:text="-"
+                        android:text="@string/result_divider"
                         android:textColor="@color/primary_text"
                         android:textSize="14sp"
                         tools:text="-" />
@@ -161,11 +160,13 @@
 
 
                         <TextView
+                            android:id="@+id/away_team_name"
                             android:layout_width="80dp"
                             android:layout_height="wrap_content"
                             android:ellipsize="end"
                             android:fontFamily="sans-serif-black"
                             android:lines="1"
+                            android:onClick="@{() -> viewModel.onTeamClicked(viewModel.singleMatch.toData().match.awayTeam.id)}"
                             android:text="@{viewModel.singleMatch.toData().match.awayTeam.name}"
                             android:textColor="@color/primary_text"
                             android:textSize="14sp"
@@ -177,9 +178,9 @@
                             android:layout_gravity="right"
                             android:layout_marginHorizontal="@dimen/margin_normal16dp"
                             android:fontFamily="sans-serif-medium"
-                            android:text="Away Team"
+                            android:text="@string/away_team"
                             android:textColor="@color/secondary_text"
-                            android:textSize="10sp" />
+                            android:textSize="12sp" />
 
                     </LinearLayout>
 
@@ -213,7 +214,7 @@
                         android:fontFamily="sans-serif-medium"
                         android:text="@{viewModel.singleMatch.toData().match.utcDate.toGMTString()}"
                         android:textColor="@color/primary_text"
-                        android:textSize="10sp"
+                        android:textSize="12sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         tools:text="1/10/2019" />
@@ -243,7 +244,7 @@
                         android:fontFamily="sans-serif-medium"
                         android:text="@{viewModel.singleMatch.toData().match.status.toString()}"
                         android:textColor="@color/primary_text"
-                        android:textSize="10sp"
+                        android:textSize="12sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         tools:text="1/10/2019" />
@@ -262,7 +263,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_huge40dp"
             android:fontFamily="sans-serif-black"
-            android:text="Head To Head"
+            android:text="@string/head_to_head"
             android:textColor="@color/primary_text"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -295,40 +296,17 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="@dimen/margin_normal16dp"
                         android:fontFamily="sans-serif-black"
-                        android:text="15"
+                        android:text="@{String.valueOf(viewModel.singleMatch.toData().head2head.numberOfMatches)}"
                         android:textColor="@color/primary_text"
-                        android:textSize="25sp" />
+                        android:textSize="25sp"
+                        tools:text="15"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="@dimen/margin_normal16dp"
                         android:fontFamily="sans-serif-black"
-                        android:text="Total Matches"
-                        android:textColor="@color/primary_text"
-                        android:textSize="25sp" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_normal16dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/margin_normal16dp"
-                        android:fontFamily="sans-serif-black"
-                        android:text="15"
-                        android:textColor="@color/primary_text"
-                        android:textSize="25sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/margin_normal16dp"
-                        android:fontFamily="sans-serif-black"
-                        android:text="Total Goals"
+                        android:text="@string/total_matches"
                         android:textColor="@color/primary_text"
                         android:textSize="25sp" />
                 </LinearLayout>
@@ -343,40 +321,17 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="@dimen/margin_normal16dp"
                         android:fontFamily="sans-serif-black"
-                        android:text="15"
+                        android:text="@{String.valueOf(viewModel.singleMatch.toData().head2head.totalGoals)}"
                         android:textColor="@color/primary_text"
-                        android:textSize="25sp" />
+                        android:textSize="25sp"
+                        tools:text="15" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="@dimen/margin_normal16dp"
                         android:fontFamily="sans-serif-black"
-                        android:text="Home Wins"
-                        android:textColor="@color/primary_text"
-                        android:textSize="25sp" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_normal16dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/margin_normal16dp"
-                        android:fontFamily="sans-serif-black"
-                        android:text="15"
-                        android:textColor="@color/primary_text"
-                        android:textSize="25sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/margin_normal16dp"
-                        android:fontFamily="sans-serif-black"
-                        android:text="Draws"
+                        android:text="@string/total_goals"
                         android:textColor="@color/primary_text"
                         android:textSize="25sp" />
                 </LinearLayout>
@@ -391,16 +346,67 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="@dimen/margin_normal16dp"
                         android:fontFamily="sans-serif-black"
-                        android:text="15"
+                        android:text="@{String.valueOf(viewModel.singleMatch.toData().head2head.homeTeam.wins)}"
                         android:textColor="@color/primary_text"
-                        android:textSize="25sp" />
+                        android:textSize="25sp"
+                        tools:text="15"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="@dimen/margin_normal16dp"
                         android:fontFamily="sans-serif-black"
-                        android:text="Away Wins"
+                        android:text="@string/home_wins"
+                        android:textColor="@color/primary_text"
+                        android:textSize="25sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_normal16dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_normal16dp"
+                        android:fontFamily="sans-serif-black"
+                        android:text="@{String.valueOf(viewModel.singleMatch.toData().head2head.homeTeam.draws)}"
+                        android:textColor="@color/primary_text"
+                        android:textSize="25sp"
+                        tools:text="15"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_normal16dp"
+                        android:fontFamily="sans-serif-black"
+                        android:text="@string/draws"
+                        android:textColor="@color/primary_text"
+                        android:textSize="25sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_normal16dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_normal16dp"
+                        android:fontFamily="sans-serif-black"
+                        android:text="@{String.valueOf(viewModel.singleMatch.toData().head2head.awayTeam.wins)}"
+                        android:textColor="@color/primary_text"
+                        android:textSize="25sp"
+                        tools:text="15" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_normal16dp"
+                        android:fontFamily="sans-serif-black"
+                        android:text="@string/away_wins"
                         android:textColor="@color/primary_text"
                         android:textSize="25sp" />
                 </LinearLayout>

@@ -9,22 +9,33 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 class MatchViewModel : ViewModel() {
-     val singleMatch = MutableLiveData<State<SingleMatchResponse?>>()
+
+    private val _singleMatch = MutableLiveData<State<SingleMatchResponse?>>()
+    val singleMatch : LiveData<State<SingleMatchResponse?>>
+        get() = _singleMatch
 
     private val _competitionId = MutableLiveData<Event<Int>>()
     val competitionId : LiveData<Event<Int>>
         get() = _competitionId
 
+    private val _teamId = MutableLiveData<Event<Int>>()
+    val teamId : LiveData<Event<Int>>
+        get() = _teamId
+
     fun getMatchById(id:Int) {
         viewModelScope.launch {
             FootBallRepository.getSingleMatch(id).collect {
-                singleMatch.postValue(it)
+                _singleMatch.postValue(it)
             }
         }
     }
 
     fun onCompetitionClicked(competitionId: Int){
         _competitionId.postValue(Event(competitionId))
+    }
+
+    fun onTeamClicked(teamId: Int){
+        _teamId.postValue(Event(teamId))
     }
 
 
