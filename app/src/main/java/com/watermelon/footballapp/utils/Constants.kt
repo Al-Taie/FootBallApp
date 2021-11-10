@@ -7,5 +7,8 @@ object Constants {
         const val IN_PLAY = "IN_PLAY"
         const val PAUSED = "PAUSED"
     }
+    object ErrorType {
+        const val TOO_MANY_REQUESTS = "429"
+    }
     const val ID = "ID"
 }

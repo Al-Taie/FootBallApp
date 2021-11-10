@@ -13,4 +13,12 @@
     <string name="wins">WINS</string>
     <string name="draw">DRAW</string>
     <string name="away">AWAY</string>
+    <string name="top_teams">Top Teams</string>
+    <string name="top_competitions">Top Competitions</string>
+    <string name="real_madrid">Real Madrid</string>
+    <string name="spain_1902">Spain - 1902</string>
+    <string name="barcelona">Barcelona</string>
+    <string name="spain_1899">Spain - 1899</string>
+    <string name="manchester_united">Manchester United</string>
+    <string name="england_1878">England - 1878</string>
 </resources>
