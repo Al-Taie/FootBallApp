@@ -81,4 +81,13 @@
             android:id="@+id/action_homeFragment2_to_competitionFragment"
             app:destination="@id/competitionFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/competitionListFragment"
+        android:name="com.watermelon.footballapp.ui.competitionList.CompetitionListFragment"
+        android:label="CompetitionListFragment"
+        tools:layout="@layout/fragment_competition_list">
+        <action
+            android:id="@+id/action_competitionListFragment_to_competitionFragment"
+            app:destination="@id/competitionFragment" />
+    </fragment>
 </navigation>

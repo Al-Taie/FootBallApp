@@ -7,7 +7,7 @@ data class Competition(
     val area: Area? = null,
     val code: Any? = null,
     val currentSeason: CurrentSeason? = null,
-    val emblemUrl: Any? = null,
+    val emblemUrl: String? = null,
     val id: Int? = null,
     val lastUpdated: String? = null,
     val name: String? = null,

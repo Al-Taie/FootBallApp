@@ -30,7 +30,7 @@ interface FootballService {
     suspend fun getMatchesForTeam(@Path("teamId") teamId:Int) : Response<TeamMatchesResponse>
 
 
-    @GET("competitions/")
+    @GET("competitions")
     suspend fun getCompetitions(): Response<CompetitionsResponse>
 
     @GET("competitions/{id}")
