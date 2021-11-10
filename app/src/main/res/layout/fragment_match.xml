@@ -52,8 +52,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/item_background"
-                app:showWhenSuccess="@{viewModel.singleMatch}"
-                android:padding="@dimen/padding_small8dp">
+                android:padding="@dimen/padding_small8dp"
+                app:showWhenSuccess="@{viewModel.singleMatch}">
 
 
                 <LinearLayout
@@ -72,8 +72,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:fontFamily="sans-serif-black"
-                        android:text="@{viewModel.singleMatch.toData().match.competition.name}"
                         android:onClick="@{() -> viewModel.onCompetitionClicked(viewModel.singleMatch.toData().match.competition.id)}"
+                        android:text="@{viewModel.singleMatch.toData().match.competition.name}"
                         android:textColor="@color/primary_text"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -254,31 +254,35 @@
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/item_background"
+                android:padding="@dimen/padding_small8dp"
                 app:showWhenError="@{viewModel.singleMatch}"
-                tools:visibility="gone"
-                android:padding="@dimen/padding_small8dp">
+                tools:visibility="gone">
+
                 <include
                     layout="@layout/error_layout"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="match_parent" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/item_background"
+                android:padding="@dimen/padding_small8dp"
                 app:showWhenLoading="@{viewModel.singleMatch}"
-                tools:visibility="gone"
-                android:padding="@dimen/padding_small8dp">
+                tools:visibility="gone">
+
                 <include
                     layout="@layout/loading_layout"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="match_parent" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -293,17 +297,17 @@
             android:fontFamily="sans-serif-black"
             android:text="@string/head_to_head"
             android:textColor="@color/primary_text"
-            app:showWhenSuccess="@{viewModel.singleMatch}"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView" />
+            app:layout_constraintTop_toBottomOf="@+id/cardView"
+            app:showWhenSuccess="@{viewModel.singleMatch}" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="8dp"
             android:layout_marginTop="@dimen/margin_normal16dp"
+            app:cardCornerRadius="8dp"
             app:layout_constraintEnd_toEndOf="@+id/cardView"
             app:layout_constraintStart_toStartOf="@+id/cardView"
             app:layout_constraintTop_toBottomOf="@+id/textView7">
@@ -328,7 +332,7 @@
                         android:text="@{String.valueOf(viewModel.singleMatch.toData().head2head.numberOfMatches)}"
                         android:textColor="@color/primary_text"
                         android:textSize="25sp"
-                        tools:text="15"/>
+                        tools:text="15" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -339,6 +343,7 @@
                         android:textColor="@color/primary_text"
                         android:textSize="25sp" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -364,6 +369,7 @@
                         android:textColor="@color/primary_text"
                         android:textSize="25sp" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -378,7 +384,7 @@
                         android:text="@{String.valueOf(viewModel.singleMatch.toData().head2head.homeTeam.wins)}"
                         android:textColor="@color/primary_text"
                         android:textSize="25sp"
-                        tools:text="15"/>
+                        tools:text="15" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -389,6 +395,7 @@
                         android:textColor="@color/primary_text"
                         android:textSize="25sp" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -403,7 +410,7 @@
                         android:text="@{String.valueOf(viewModel.singleMatch.toData().head2head.homeTeam.draws)}"
                         android:textColor="@color/primary_text"
                         android:textSize="25sp"
-                        tools:text="15"/>
+                        tools:text="15" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -414,6 +421,7 @@
                         android:textColor="@color/primary_text"
                         android:textSize="25sp" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -441,37 +449,41 @@
                 </LinearLayout>
 
             </LinearLayout>
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/item_background"
+                android:padding="@dimen/padding_small8dp"
                 app:showWhenError="@{viewModel.singleMatch}"
-                tools:visibility="gone"
-                android:padding="@dimen/padding_small8dp">
+                tools:visibility="gone">
+
                 <include
                     layout="@layout/error_layout"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="match_parent" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/item_background"
+                android:padding="@dimen/padding_small8dp"
                 app:showWhenLoading="@{viewModel.singleMatch}"
-                tools:visibility="gone"
-                android:padding="@dimen/padding_small8dp">
+                tools:visibility="gone">
+
                 <include
                     layout="@layout/loading_layout"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="match_parent" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.cardview.widget.CardView>
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

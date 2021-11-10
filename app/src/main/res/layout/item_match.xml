@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="item"
             type="com.watermelon.footballapp.model.response.matches.Match" />
@@ -44,8 +45,8 @@
                     imageUrl="@{item.competition.area.ensignUrl}"
                     android:layout_width="@dimen/area_flag_size"
                     android:layout_height="@dimen/area_flag_size"
-                    android:layout_marginEnd="@dimen/margin_small8dp"
                     android:layout_marginVertical="@dimen/margin_small8dp"
+                    android:layout_marginEnd="@dimen/margin_small8dp"
                     app:layout_constraintBottom_toBottomOf="@+id/competition_name"
                     app:layout_constraintStart_toEndOf="@+id/competition_name"
                     app:layout_constraintTop_toTopOf="@+id/competition_name"
@@ -56,11 +57,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:fontFamily="sans-serif-black"
                     android:text="@{item.competition.name}"
                     android:textColor="@color/primary_text"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    android:fontFamily="sans-serif-black"
 
                     tools:text="La Liga" />
 
@@ -79,6 +80,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+
                     <TextView
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
@@ -89,21 +91,22 @@
                         android:textColor="@color/primary_text"
                         android:textSize="14sp"
                         tools:text="Barcelona" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="right"
                         android:layout_marginHorizontal="@dimen/margin_normal16dp"
                         android:fontFamily="sans-serif-medium"
                         android:text="Home Team"
-                        android:layout_gravity="right"
                         android:textColor="@color/secondary_text"
                         android:textSize="10sp" />
                 </LinearLayout>
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_gravity="center"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:layout_marginHorizontal="@dimen/margin_small8dp"
                     android:fontFamily="sans-serif-medium"
                     android:text="@{String.valueOf(item.score.fullTime.homeTeam)}"
@@ -115,9 +118,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="-"
-                    android:fontFamily="sans-serif-black"
                     android:layout_marginHorizontal="@dimen/margin_small8dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="-"
                     android:textColor="@color/primary_text"
                     android:textSize="14sp"
                     tools:text="-" />
@@ -132,34 +135,36 @@
                     android:textColor="@color/primary_text"
                     android:textSize="14sp"
                     tools:text="1" />
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_small8dp"
-                android:orientation="vertical">
 
-
-                <TextView
-                    android:layout_width="80dp"
-                    android:layout_height="wrap_content"
-                    android:lines="1"
-                    android:ellipsize="end"
-                    android:fontFamily="sans-serif-black"
-                    android:text="@{item.awayTeam.name}"
-                    android:textColor="@color/primary_text"
-                    android:textSize="14sp"
-                    tools:text="Real Madrid" />
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="@dimen/margin_normal16dp"
-                    android:fontFamily="sans-serif-medium"
-                    android:text="Away Team"
-                    android:layout_gravity="right"
-                    android:textColor="@color/secondary_text"
-                    android:textSize="10sp" />
+                    android:layout_marginStart="@dimen/margin_small8dp"
+                    android:orientation="vertical">
 
-            </LinearLayout>
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="sans-serif-black"
+                        android:lines="1"
+                        android:text="@{item.awayTeam.name}"
+                        android:textColor="@color/primary_text"
+                        android:textSize="14sp"
+                        tools:text="Real Madrid" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginHorizontal="@dimen/margin_normal16dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Away Team"
+                        android:textColor="@color/secondary_text"
+                        android:textSize="10sp" />
+
+                </LinearLayout>
 
             </LinearLayout>
 
@@ -190,8 +195,8 @@
                     android:layout_gravity="center"
                     android:fontFamily="sans-serif-medium"
                     android:text="@{item.utcDate.toGMTString()}"
-                    android:textSize="10sp"
                     android:textColor="@color/primary_text"
+                    android:textSize="10sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     tools:text="1/10/2019" />
@@ -219,15 +224,14 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:fontFamily="sans-serif-medium"
-                    android:textSize="10sp"
                     android:text="@{item.status.toString()}"
                     android:textColor="@color/primary_text"
+                    android:textSize="10sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     tools:text="1/10/2019" />
 
             </LinearLayout>
-
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

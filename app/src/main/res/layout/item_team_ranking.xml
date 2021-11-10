@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="item"
             type="com.watermelon.footballapp.model.response.standings.Table" />
@@ -21,10 +22,10 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="@{() -> listener.onTeamClicked(item.team.id)}"
             app:cardBackgroundColor="@android:color/transparent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:onClick="@{() -> listener.onTeamClicked(item.team.id)}" >
+            app:layout_constraintTop_toTopOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -41,14 +42,14 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:text="10"/>
+                    tools:text="10" />
 
                 <ImageView
                     android:id="@+id/imageView2"
+                    imageUrl="@{item.team.crestUrl}"
                     android:layout_width="@dimen/team_ranking_icon_size"
                     android:layout_height="@dimen/team_ranking_icon_size"
                     android:layout_marginStart="@dimen/margin_small8dp"
-                    imageUrl="@{item.team.crestUrl}"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/rank"
                     app:layout_constraintTop_toTopOf="parent"
@@ -59,9 +60,9 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_small8dp"
-                    android:text="@{item.team.name}"
                     android:ellipsize="end"
                     android:lines="1"
+                    android:text="@{item.team.name}"
                     android:textColor="@color/primary_text"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/linearLayout"

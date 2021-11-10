@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="viewModel"
             type="com.watermelon.footballapp.ui.home.HomeViewModel" />
@@ -37,42 +38,42 @@
             app:layout_constraintTop_toBottomOf="@+id/textView5">
 
             <com.google.android.material.imageview.ShapeableImageView
-                android:src="@drawable/premier_league"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:scaleType="centerCrop"
-                android:onClick="@{() -> viewModel.onCompetitionClicked(2021)}"
                 android:layout_marginHorizontal="@dimen/margin_normal16dp"
+                android:onClick="@{() -> viewModel.onCompetitionClicked(2021)}"
+                android:scaleType="centerCrop"
+                android:src="@drawable/premier_league"
                 app:shapeAppearanceOverlay="@style/circleImageViewStyle" />
 
             <com.google.android.material.imageview.ShapeableImageView
-                android:src="@drawable/laligaexample"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
+                android:layout_marginHorizontal="@dimen/margin_normal16dp"
                 android:onClick="@{() -> viewModel.onCompetitionClicked(2014)}"
                 android:scaleType="centerCrop"
-                android:layout_marginHorizontal="@dimen/margin_normal16dp"
-                app:shapeAppearanceOverlay="@style/circleImageViewStyle"/>
+                android:src="@drawable/laligaexample"
+                app:shapeAppearanceOverlay="@style/circleImageViewStyle" />
 
             <com.google.android.material.imageview.ShapeableImageView
-                android:src="@drawable/serie_a"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:onClick="@{() -> viewModel.onCompetitionClicked(2019)}"
                 android:layout_marginHorizontal="@dimen/margin_normal16dp"
-                app:shapeAppearanceOverlay="@style/circleImageViewStyle"
-                android:background="@color/white" />
+                android:background="@color/white"
+                android:onClick="@{() -> viewModel.onCompetitionClicked(2019)}"
+                android:src="@drawable/serie_a"
+                app:shapeAppearanceOverlay="@style/circleImageViewStyle" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium24dp"
             android:fontFamily="sans-serif-black"
             android:text="@string/top_teams"
-            android:textSize="26sp"
-            android:layout_marginTop="@dimen/margin_medium24dp"
             android:textColor="@color/primary_text"
+            android:textSize="26sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
@@ -82,9 +83,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/margin_medium24dp"
-            app:cardCornerRadius="8dp"
-            android:onClick="@{() -> viewModel.onTeamClicked(86)}"
             android:layout_marginTop="@dimen/margin_big32dp"
+            android:onClick="@{() -> viewModel.onTeamClicked(86)}"
+            app:cardCornerRadius="8dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView8">
 
@@ -99,10 +100,10 @@
                     android:layout_width="@dimen/home_fragment_team_size"
                     android:layout_height="@dimen/home_fragment_team_size"
                     android:layout_marginEnd="@dimen/margin_normal16dp"
+                    android:src="@drawable/ic_real_madrid_logo"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:src="@drawable/ic_real_madrid_logo" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/real_mardid_primary"
@@ -140,8 +141,8 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/margin_medium24dp"
             android:layout_marginTop="@dimen/margin_normal16dp"
-            app:cardCornerRadius="8dp"
             android:onClick="@{() -> viewModel.onTeamClicked(81)}"
+            app:cardCornerRadius="8dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/real_madrid">
 
@@ -156,18 +157,18 @@
                     android:layout_width="@dimen/home_fragment_team_size"
                     android:layout_height="@dimen/home_fragment_team_size"
                     android:layout_marginStart="@dimen/margin_small8dp"
+                    android:src="@drawable/ic_barcelona_logo"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:src="@drawable/ic_barcelona_logo" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/barcelona_primary"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_normal16dp"
                     android:fontFamily="sans-serif-black"
                     android:text="@string/barcelona"
-                    android:layout_marginEnd="@dimen/margin_normal16dp"
                     android:textColor="@color/dark_background_text_primary_team"
                     android:textSize="20sp"
                     app:layout_constraintBottom_toTopOf="@+id/barcelona_secondary"
@@ -197,8 +198,8 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/margin_medium24dp"
             android:layout_marginTop="@dimen/margin_normal16dp"
-            app:cardCornerRadius="8dp"
             android:onClick="@{() -> viewModel.onTeamClicked(66)}"
+            app:cardCornerRadius="8dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/barcelona">
 
@@ -213,10 +214,10 @@
                     android:layout_width="@dimen/home_fragment_team_size"
                     android:layout_height="@dimen/home_fragment_team_size"
                     android:layout_marginEnd="@dimen/margin_normal16dp"
+                    android:src="@drawable/ic_manchester_united_logo"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:src="@drawable/ic_manchester_united_logo" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/man_united_primary"
@@ -248,62 +249,62 @@
 
         </androidx.cardview.widget.CardView>
 
-<!--        <androidx.cardview.widget.CardView-->
-<!--            android:id="@+id/man_city"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginHorizontal="@dimen/margin_medium24dp"-->
-<!--            android:layout_marginTop="@dimen/margin_normal16dp"-->
-<!--            app:cardCornerRadius="8dp"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/man_united">-->
+        <!--        <androidx.cardview.widget.CardView-->
+        <!--            android:id="@+id/man_city"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginHorizontal="@dimen/margin_medium24dp"-->
+        <!--            android:layout_marginTop="@dimen/margin_normal16dp"-->
+        <!--            app:cardCornerRadius="8dp"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/man_united">-->
 
-<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:background="@color/man_city_background"-->
-<!--                android:padding="@dimen/padding_normal16dp">-->
+        <!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:background="@color/man_city_background"-->
+        <!--                android:padding="@dimen/padding_normal16dp">-->
 
-<!--                <ImageView-->
-<!--                    android:id="@+id/man_city_image_view"-->
-<!--                    android:layout_width="@dimen/home_fragment_team_size"-->
-<!--                    android:layout_height="@dimen/home_fragment_team_size"-->
-<!--                    android:layout_marginStart="@dimen/margin_small8dp"-->
-<!--                    android:src="@drawable/laligaexample"-->
-<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                    app:layout_constraintStart_toStartOf="parent"-->
-<!--                    app:layout_constraintTop_toTopOf="parent"-->
-<!--                    tools:src="@drawable/laligaexample" />-->
+        <!--                <ImageView-->
+        <!--                    android:id="@+id/man_city_image_view"-->
+        <!--                    android:layout_width="@dimen/home_fragment_team_size"-->
+        <!--                    android:layout_height="@dimen/home_fragment_team_size"-->
+        <!--                    android:layout_marginStart="@dimen/margin_small8dp"-->
+        <!--                    android:src="@drawable/laligaexample"-->
+        <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--                    app:layout_constraintStart_toStartOf="parent"-->
+        <!--                    app:layout_constraintTop_toTopOf="parent"-->
+        <!--                    tools:src="@drawable/laligaexample" />-->
 
-<!--                <TextView-->
-<!--                    android:id="@+id/man_city_primary"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginStart="@dimen/margin_huge40dp"-->
-<!--                    android:fontFamily="sans-serif-black"-->
-<!--                    android:text="Man City"-->
-<!--                    android:textColor="@color/dark_background_text_primary_team"-->
-<!--                    android:textSize="20sp"-->
-<!--                    app:layout_constraintBottom_toTopOf="@+id/man_city_secondary"-->
-<!--                    app:layout_constraintStart_toEndOf="@+id/man_city_image_view"-->
-<!--                    app:layout_constraintTop_toTopOf="parent"-->
-<!--                    app:layout_constraintVertical_chainStyle="packed" />-->
+        <!--                <TextView-->
+        <!--                    android:id="@+id/man_city_primary"-->
+        <!--                    android:layout_width="wrap_content"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:layout_marginStart="@dimen/margin_huge40dp"-->
+        <!--                    android:fontFamily="sans-serif-black"-->
+        <!--                    android:text="Man City"-->
+        <!--                    android:textColor="@color/dark_background_text_primary_team"-->
+        <!--                    android:textSize="20sp"-->
+        <!--                    app:layout_constraintBottom_toTopOf="@+id/man_city_secondary"-->
+        <!--                    app:layout_constraintStart_toEndOf="@+id/man_city_image_view"-->
+        <!--                    app:layout_constraintTop_toTopOf="parent"-->
+        <!--                    app:layout_constraintVertical_chainStyle="packed" />-->
 
-<!--                <TextView-->
-<!--                    android:id="@+id/man_city_secondary"-->
-<!--                    android:layout_width="120dp"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:ellipsize="end"-->
-<!--                    android:fontFamily="sans-serif"-->
-<!--                    android:text="England - 1880"-->
-<!--                    android:textColor="@color/dark_background_text_secondary_team"-->
-<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                    app:layout_constraintStart_toStartOf="@+id/man_city_primary"-->
-<!--                    app:layout_constraintTop_toBottomOf="@+id/man_city_primary" />-->
+        <!--                <TextView-->
+        <!--                    android:id="@+id/man_city_secondary"-->
+        <!--                    android:layout_width="120dp"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:ellipsize="end"-->
+        <!--                    android:fontFamily="sans-serif"-->
+        <!--                    android:text="England - 1880"-->
+        <!--                    android:textColor="@color/dark_background_text_secondary_team"-->
+        <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--                    app:layout_constraintStart_toStartOf="@+id/man_city_primary"-->
+        <!--                    app:layout_constraintTop_toBottomOf="@+id/man_city_primary" />-->
 
-<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+        <!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
 
-<!--        </androidx.cardview.widget.CardView>-->
+        <!--        </androidx.cardview.widget.CardView>-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

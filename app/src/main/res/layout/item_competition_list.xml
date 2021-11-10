@@ -18,14 +18,14 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:onClick="@{() -> listener.onCompetitionClicked(item.id)}"
-        android:background="@color/item_background">
+        android:background="@color/item_background"
+        android:onClick="@{() -> listener.onCompetitionClicked(item.id)}">
 
         <ImageView
             android:id="@+id/competition_icon"
+            imageUrl="@{item.emblemUrl}"
             android:layout_width="32dp"
             android:layout_height="32dp"
-            imageUrl="@{item.emblemUrl}"
             android:layout_margin="@dimen/margin_normal16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -36,13 +36,13 @@
             android:id="@+id/competition_name"
             android:layout_width="240dp"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-black"
-            android:textSize="16sp"
+            android:layout_marginStart="@dimen/margin_medium24dp"
             android:ellipsize="end"
+            android:fontFamily="sans-serif-black"
             android:lines="1"
             android:text="@{item.name}"
-            android:layout_marginStart="@dimen/margin_medium24dp"
             android:textColor="@color/primary_text"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/competition_icon"
             app:layout_constraintStart_toEndOf="@+id/competition_icon"
             app:layout_constraintTop_toTopOf="@+id/competition_icon"

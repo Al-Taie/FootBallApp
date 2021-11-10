@@ -45,11 +45,11 @@
             android:id="@+id/constraintLayout2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:showWhenSuccess="@{viewModel.player}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/topCircle">
+            app:layout_constraintTop_toBottomOf="@id/topCircle"
+            app:showWhenSuccess="@{viewModel.player}">
 
 
             <TextView
@@ -167,12 +167,12 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView"
-            app:showWhenError="@{viewModel.player}"
-            android:visibility="gone">
+            app:showWhenError="@{viewModel.player}">
 
             <include
                 layout="@layout/error_layout"
@@ -180,15 +180,16 @@
                 android:layout_height="match_parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView"
-            app:showWhenLoading="@{viewModel.player}"
-            android:visibility="gone">
+            app:showWhenLoading="@{viewModel.player}">
 
             <include
                 layout="@layout/loading_layout"

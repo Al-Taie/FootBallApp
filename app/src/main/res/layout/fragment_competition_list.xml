@@ -15,31 +15,35 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/item_background"
+            android:padding="@dimen/padding_small8dp"
             app:showWhenLoading="@{viewModel.competitionList}"
-            tools:visibility="gone"
-            android:padding="@dimen/padding_small8dp">
+            tools:visibility="gone">
+
             <include
                 layout="@layout/loading_layout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/item_background"
+            android:padding="@dimen/padding_small8dp"
             app:showWhenError="@{viewModel.competitionList}"
-            tools:visibility="gone"
-            android:padding="@dimen/padding_small8dp">
+            tools:visibility="gone">
+
             <include
                 layout="@layout/error_layout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

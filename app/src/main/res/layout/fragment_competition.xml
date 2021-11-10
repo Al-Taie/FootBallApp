@@ -13,33 +13,36 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/background"
-       >
+        android:background="@drawable/background">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/item_background"
+            android:padding="@dimen/padding_small8dp"
             app:showWhenLoading="@{viewModel.competition}"
-            tools:visibility="gone"
-            android:padding="@dimen/padding_small8dp">
+            tools:visibility="gone">
+
             <include
                 layout="@layout/loading_layout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/item_background"
+            android:padding="@dimen/padding_small8dp"
             app:showWhenError="@{viewModel.competition}"
-            tools:visibility="gone"
-            android:padding="@dimen/padding_small8dp">
+            tools:visibility="gone">
+
             <include
                 layout="@layout/error_layout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -57,16 +60,16 @@
 
         <ImageView
             android:id="@+id/imageView"
+            imageUrl="@{viewModel.competition.toData().emblemUrl}"
             android:layout_width="@dimen/leauge_icon_size"
             android:layout_height="@dimen/leauge_icon_size"
             android:layout_margin="@dimen/margin_big32dp"
-            app:showWhenSuccess="@{viewModel.competition}"
-            imageUrl="@{viewModel.competition.toData().emblemUrl}"
-            app:whenNoImageInAPI="@{viewModel.competition.toData().emblemUrl}"
+            android:src="@drawable/cup_image"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:src="@drawable/cup_image"/>
+            app:showWhenSuccess="@{viewModel.competition}"
+            app:whenNoImageInAPI="@{viewModel.competition.toData().emblemUrl}" />
 
         <TextView
             android:id="@+id/textView"
@@ -75,29 +78,28 @@
             android:layout_marginTop="@dimen/margin_medium24dp"
             android:fontFamily="sans-serif-black"
             android:text="@{viewModel.competition.toData().name}"
-            app:showWhenSuccess="@{viewModel.competition}"
             android:textColor="@color/primary_text"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="@+id/imageView"
             app:layout_constraintStart_toStartOf="@+id/imageView"
             app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:showWhenSuccess="@{viewModel.competition}"
             tools:text="La Liga 2020-21" />
 
         <com.google.android.material.tabs.TabLayout
-            app:showWhenSuccess="@{viewModel.competition}"
             android:id="@+id/tabLayout"
             style="@style/MyCustomTabLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_huge40dp"
-            app:tabTextColor="@color/primary_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:tabTextAppearance="@style/CustomTabText" />
+            app:showWhenSuccess="@{viewModel.competition}"
+            app:tabTextAppearance="@style/CustomTabText"
+            app:tabTextColor="@color/primary_text" />
 
         <androidx.viewpager2.widget.ViewPager2
-            app:showWhenSuccess="@{viewModel.competition}"
             android:id="@+id/ranking_view_pager"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -105,6 +107,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
+            app:layout_constraintTop_toBottomOf="@+id/tabLayout"
+            app:showWhenSuccess="@{viewModel.competition}" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

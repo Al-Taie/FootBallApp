@@ -3,9 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="viewModel"
             type="com.watermelon.footballapp.ui.todayMatches.TodayMatchesViewModel" />
+
         <variable
             name="listener"
             type="com.watermelon.footballapp.ui.team.TeamInteractionListener" />
@@ -22,15 +24,17 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/item_background"
+            android:padding="@dimen/padding_small8dp"
             app:showWhenLoading="@{viewModel.matches}"
-            tools:visibility="gone"
-            android:padding="@dimen/padding_small8dp">
+            tools:visibility="gone">
+
             <include
                 layout="@layout/loading_layout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -51,13 +55,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/item_background"
+            android:padding="@dimen/padding_small8dp"
             app:showWhenError="@{viewModel.matches}"
-            tools:visibility="gone"
-            android:padding="@dimen/padding_small8dp">
+            tools:visibility="gone">
+
             <include
                 layout="@layout/error_layout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -70,8 +75,8 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:listitem="@layout/item_match"
-            app:showWhenSuccess="@{viewModel.matches}"/>
+            app:showWhenSuccess="@{viewModel.matches}"
+            tools:listitem="@layout/item_match" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
