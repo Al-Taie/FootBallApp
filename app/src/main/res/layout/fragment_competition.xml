@@ -32,6 +32,7 @@
             android:layout_height="@dimen/leauge_icon_size"
             android:layout_margin="@dimen/margin_big32dp"
             imageUrl="@{viewModel.competition.toData().emblemUrl}"
+            app:whenNoImageInAPI="@{viewModel.competition.toData().emblemUrl}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"

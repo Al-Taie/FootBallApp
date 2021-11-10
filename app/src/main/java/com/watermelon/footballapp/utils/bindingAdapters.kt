@@ -132,3 +132,10 @@ fun setImageUrl(view: ImageView, url: String?){
             .into(view)
     }
 }
+
+@BindingAdapter(value = ["app:whenNoImageInAPI"])
+fun setCompetitionDefaultImage(view: ImageView, url: String?){
+    if(url == null){
+        view.setImageResource(R.drawable.cup_image)
+    }
+}
