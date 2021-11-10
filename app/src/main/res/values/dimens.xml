@@ -18,4 +18,5 @@
     <dimen name="margin_huge40dp">40dp</dimen>
     <dimen name="area_flag_size">24dp</dimen>
     <dimen name="icon_size">40dp</dimen>
+    <dimen name="home_fragment_team_size">80dp</dimen>
 </resources>
