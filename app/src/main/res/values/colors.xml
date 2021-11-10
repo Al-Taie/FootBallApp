@@ -29,4 +29,14 @@
     <color name="accent_brand_color">#FFE34F</color>
     <color name="dark_color">#1B1B1B</color>
 
+    <!--teams-->
+    <color name="real_madrid_background">#EEEEEE</color>
+    <color name="barcelona_background">#BD0C0C</color>
+    <color name="man_united_background">#161616</color>
+    <color name="man_city_background">#004789</color>
+    <color name="juventus_background">#E0E0E0</color>
+    <color name="dark_background_text_primary_team">#FFFFFF</color>
+    <color name="dark_background_text_secondary_team">#EEEEEE</color>
+    <color name="light_background_text_primary_team">#1C1C1C</color>
+    <color name="light_background_text_secondary_team">#323232</color>
 </resources>

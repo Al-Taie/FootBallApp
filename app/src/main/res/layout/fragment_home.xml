@@ -1,0 +1,306 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.watermelon.footballapp.ui.home.HomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background">
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium24dp"
+            android:fontFamily="sans-serif-black"
+            android:text="Top Competitions"
+            android:textColor="@color/primary_text"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_normal16dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView5">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                imageUrl="https://crests.football-data.org/773.svg"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginHorizontal="@dimen/margin_normal16dp"
+                app:shapeAppearanceOverlay="@style/circleImageViewStyle"
+                tools:background="@color/white" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                imageUrl="https://crests.football-data.org/773.svg"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginHorizontal="@dimen/margin_normal16dp"
+                app:shapeAppearanceOverlay="@style/circleImageViewStyle"
+                tools:background="@color/white" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                imageUrl="https://crests.football-data.org/773.svg"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginHorizontal="@dimen/margin_normal16dp"
+                app:shapeAppearanceOverlay="@style/circleImageViewStyle"
+                tools:background="@color/white" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="Top Teams"
+            android:textSize="26sp"
+            android:layout_marginTop="@dimen/padding_normal16dp"
+            android:textColor="@color/primary_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/real_madrid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_medium24dp"
+            app:cardCornerRadius="8dp"
+            android:layout_marginTop="@dimen/margin_normal16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView8">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/real_madrid_background"
+                android:padding="@dimen/padding_normal16dp">
+
+                <ImageView
+                    android:id="@+id/real_madrid_image_view"
+                    android:layout_width="@dimen/home_fragment_team_size"
+                    android:layout_height="@dimen/home_fragment_team_size"
+                    android:layout_marginEnd="@dimen/margin_normal16dp"
+                    android:src="@drawable/laligaexample"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@drawable/laligaexample" />
+
+                <TextView
+                    android:id="@+id/real_mardid_primary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_normal16dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Real Madrid"
+                    android:textColor="@color/light_background_text_primary_team"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toTopOf="@+id/real_madrid_secondary"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <TextView
+                    android:id="@+id/real_madrid_secondary"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="sans-serif"
+                    android:text="Spain - 1902"
+                    android:textColor="@color/light_background_text_secondary_team"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/real_mardid_primary"
+                    app:layout_constraintTop_toBottomOf="@+id/real_mardid_primary" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/barcelona"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_medium24dp"
+            android:layout_marginTop="@dimen/margin_normal16dp"
+            app:cardCornerRadius="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/real_madrid">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/barcelona_background"
+                android:padding="@dimen/padding_normal16dp">
+
+                <ImageView
+                    android:id="@+id/barcelona_image_view"
+                    android:layout_width="@dimen/home_fragment_team_size"
+                    android:layout_height="@dimen/home_fragment_team_size"
+                    android:src="@drawable/laligaexample"
+                    android:layout_marginStart="@dimen/margin_small8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@drawable/laligaexample" />
+
+                <TextView
+                    android:id="@+id/barcelona_primary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Barcelona"
+                    android:layout_marginStart="@dimen/margin_huge40dp"
+                    android:textColor="@color/dark_background_text_primary_team"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toTopOf="@+id/barcelona_secondary"
+                    app:layout_constraintStart_toEndOf="@+id/barcelona_image_view"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <TextView
+                    android:id="@+id/barcelona_secondary"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="sans-serif"
+                    android:text="Spain - 1899"
+                    android:textColor="@color/dark_background_text_secondary_team"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/barcelona_primary"
+                    app:layout_constraintTop_toBottomOf="@+id/barcelona_primary" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/man_united"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_medium24dp"
+            android:layout_marginTop="@dimen/margin_normal16dp"
+            app:cardCornerRadius="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/barcelona">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/man_united_background"
+                android:padding="@dimen/padding_normal16dp">
+
+                <ImageView
+                    android:id="@+id/man_ubited_image_view"
+                    android:layout_width="@dimen/home_fragment_team_size"
+                    android:layout_height="@dimen/home_fragment_team_size"
+                    android:layout_marginEnd="@dimen/margin_normal16dp"
+                    android:src="@drawable/laligaexample"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@drawable/laligaexample" />
+
+                <TextView
+                    android:id="@+id/man_united_primary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_normal16dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Man United"
+                    android:textColor="@color/dark_background_text_primary_team"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toTopOf="@+id/man_united_secondary"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <TextView
+                    android:id="@+id/man_united_secondary"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="sans-serif"
+                    android:text="England - 1878"
+                    android:textColor="@color/dark_background_text_secondary_team"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/man_united_primary"
+                    app:layout_constraintTop_toBottomOf="@+id/man_united_primary" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/man_city"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_medium24dp"
+            android:layout_marginTop="@dimen/margin_normal16dp"
+            app:cardCornerRadius="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/man_united">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/man_city_background"
+                android:padding="@dimen/padding_normal16dp">
+
+                <ImageView
+                    android:id="@+id/man_city_image_view"
+                    android:layout_width="@dimen/home_fragment_team_size"
+                    android:layout_height="@dimen/home_fragment_team_size"
+                    android:layout_marginStart="@dimen/margin_small8dp"
+                    android:src="@drawable/laligaexample"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@drawable/laligaexample" />
+
+                <TextView
+                    android:id="@+id/man_city_primary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_huge40dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Man City"
+                    android:textColor="@color/dark_background_text_primary_team"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toTopOf="@+id/man_city_secondary"
+                    app:layout_constraintStart_toEndOf="@+id/man_city_image_view"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <TextView
+                    android:id="@+id/man_city_secondary"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="sans-serif"
+                    android:text="England - 1880"
+                    android:textColor="@color/dark_background_text_secondary_team"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/man_city_primary"
+                    app:layout_constraintTop_toBottomOf="@+id/man_city_primary" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
