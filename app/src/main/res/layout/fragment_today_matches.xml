@@ -20,6 +20,7 @@
 
 
         <ImageView
+            android:id="@+id/imageView6"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="#FF0000"
@@ -33,6 +34,20 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:showWhenLoading="@{viewModel.matches}" />
+
+        <TextView
+            android:id="@+id/no_matches"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/there_are_no_matches_today"
+            app:showWhenNoMatchesToday="@{viewModel.matches.toData().matches}"
+            android:textColor="@color/primary_text"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/matches_recycler"

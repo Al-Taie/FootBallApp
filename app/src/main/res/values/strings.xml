@@ -34,4 +34,5 @@
     <string name="home_wins">Home Wins</string>
     <string name="draws">Draws</string>
     <string name="away_wins">Away Wins</string>
+    <string name="there_are_no_matches_today">There are no matches today</string>
 </resources>

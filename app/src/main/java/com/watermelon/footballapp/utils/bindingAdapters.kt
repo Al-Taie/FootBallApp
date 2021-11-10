@@ -139,3 +139,12 @@ fun setCompetitionDefaultImage(view: ImageView, url: String?){
         view.setImageResource(R.drawable.cup_image)
     }
 }
+
+@BindingAdapter(value = ["app:showWhenNoMatchesToday"])
+fun showWhenNoMatchesToday(view: View, matchList: List<Match>?){
+    if (matchList?.isEmpty() == true){
+        view.visibility = View.VISIBLE
+    } else {
+        view.visibility = View.INVISIBLE
+    }
+}
