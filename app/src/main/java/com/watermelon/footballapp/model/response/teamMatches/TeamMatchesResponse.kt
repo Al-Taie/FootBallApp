@@ -1,8 +1,13 @@
 package com.watermelon.footballapp.model.response.teamMatches
 
 
+import com.google.gson.annotations.SerializedName
+
 data class TeamMatchesResponse(
-    val count: Int? = null,
-    val filters: Filters? = null,
-    val matches: List<TeamMatch>? = null
+    @SerializedName("count")
+    val count: Int?,
+    @SerializedName("filters")
+    val filters: Filters?,
+    @SerializedName("matches")
+    val matches: List<TeamMatch>?
 )
