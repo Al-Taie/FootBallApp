@@ -20,304 +20,394 @@
         android:background="@drawable/background"
         tools:context="com.watermelon.footballapp.ui.match.MatchFragment">
 
-        <ProgressBar
+        <ImageView
+            android:id="@+id/imageView5"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:alpha="0.2"
+            android:src="@drawable/match_wallpaper" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium24dp"
+            android:fontFamily="sans-serif-black"
+            android:text="Match Status"
+            android:textColor="@color/primary_text"
+            android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:showWhenLoading="@{viewModel.singleMatch}" />
+            app:layout_constraintTop_toTopOf="parent" />
+
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/home_team_card_view"
-            android:layout_width="160dp"
-            android:layout_height="160dp"
-            android:layout_marginTop="@dimen/margin_big32dp"
-            android:elevation="1dp"
-            app:cardCornerRadius="16dp"
-            app:layout_constraintEnd_toStartOf="@+id/away_team_card_view"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:showWhenSuccess="@{viewModel.singleMatch}" />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/away_team_card_view"
-            android:layout_width="160dp"
-            android:layout_height="160dp"
-            android:layout_marginTop="@dimen/margin_big32dp"
-            android:elevation="1dp"
-            app:cardCornerRadius="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/home_team_card_view"
-            app:layout_constraintTop_toTopOf="parent"
-            app:showWhenSuccess="@{viewModel.singleMatch}" />
-
-        <TextView
-            android:id="@+id/home_team_score"
-            homeTeamScore="@{viewModel.singleMatch.toData().match}"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:elevation="2dp"
-            android:textColor="@color/black"
-            android:textSize="72sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@id/home_team_card_view"
-            app:layout_constraintEnd_toEndOf="@+id/home_team_card_view"
-            app:layout_constraintStart_toStartOf="@+id/home_team_card_view"
-            app:layout_constraintTop_toTopOf="@id/home_team_card_view"
-            app:showWhenSuccess="@{viewModel.singleMatch}"
-            tools:text="3" />
-
-        <TextView
-            android:id="@+id/away_team_score"
-            awayTeamScore="@{viewModel.singleMatch.toData().match}"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:elevation="2dp"
-            android:textColor="@color/black"
-            android:textSize="72sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@id/away_team_card_view"
-            app:layout_constraintEnd_toEndOf="@+id/away_team_card_view"
-            app:layout_constraintStart_toStartOf="@+id/away_team_card_view"
-            app:layout_constraintTop_toTopOf="@id/away_team_card_view"
-            app:showWhenSuccess="@{viewModel.singleMatch}"
-            tools:text="1" />
-
-
-        <TextView
-            android:id="@+id/home_team_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_normal16dp"
-            android:text="@{viewModel.singleMatch.toData().match.homeTeam.name}"
-            android:textColor="@color/primary_text"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/home_team_card_view"
-            app:layout_constraintStart_toStartOf="@+id/home_team_card_view"
-            app:layout_constraintTop_toBottomOf="@+id/home_team_card_view"
-            app:showWhenSuccess="@{viewModel.singleMatch}"
-            tools:text="manchester united" />
-
-        <TextView
-            android:id="@+id/away_team_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_normal16dp"
-            android:text="@{viewModel.singleMatch.toData().match.awayTeam.name}"
-            android:textColor="@color/primary_text"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/away_team_card_view"
-            app:layout_constraintStart_toStartOf="@+id/away_team_card_view"
-            app:layout_constraintTop_toBottomOf="@+id/away_team_card_view"
-            app:showWhenSuccess="@{viewModel.singleMatch}"
-            tools:text="manchester city" />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/match_time_card_view"
+            android:id="@+id/cardView"
             android:layout_width="match_parent"
-            android:layout_height="140dp"
+            android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/margin_medium24dp"
-            android:layout_marginVertical="@dimen/margin_normal16dp"
-            android:layout_marginTop="12dp"
-            app:cardCornerRadius="16dp"
-            app:layout_constraintTop_toBottomOf="@+id/home_team_name"
-            app:showWhenSuccess="@{viewModel.singleMatch}">
+            android:layout_marginTop="@dimen/margin_normal16dp"
+            app:cardCornerRadius="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView6">
 
-            <View
+
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/match_time_background" />
+                android:background="@color/item_background"
+                android:padding="@dimen/padding_small8dp">
+
+
+                <LinearLayout
+                    android:id="@+id/competition_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <TextView
+                        android:id="@+id/competition_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="sans-serif-black"
+                        android:text="@{viewModel.singleMatch.toData().match.competition.name}"
+                        android:textColor="@color/primary_text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+
+                        tools:text="La Liga" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/competition_layout">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:fontFamily="sans-serif-black"
+                            android:lines="1"
+                            android:text="@{viewModel.singleMatch.toData().match.homeTeam.name}"
+                            android:textColor="@color/primary_text"
+                            android:textSize="14sp"
+                            tools:text="Barcelona" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:layout_marginHorizontal="@dimen/margin_normal16dp"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="Home Team"
+                            android:textColor="@color/secondary_text"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginHorizontal="@dimen/margin_small8dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@{String.valueOf(viewModel.singleMatch.toData().match.score.fullTime.homeTeam)}"
+                        android:textColor="@color/primary_text"
+                        android:textSize="14sp"
+                        tools:text="1" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginHorizontal="@dimen/margin_small8dp"
+                        android:fontFamily="sans-serif-black"
+                        android:text="-"
+                        android:textColor="@color/primary_text"
+                        android:textSize="14sp"
+                        tools:text="-" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginHorizontal="@dimen/margin_small8dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@{String.valueOf(viewModel.singleMatch.toData().match.score.fullTime.awayTeam)}"
+                        android:textColor="@color/primary_text"
+                        android:textSize="14sp"
+                        tools:text="1" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_small8dp"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:fontFamily="sans-serif-black"
+                            android:lines="1"
+                            android:text="@{viewModel.singleMatch.toData().match.awayTeam.name}"
+                            android:textColor="@color/primary_text"
+                            android:textSize="14sp"
+                            tools:text="Real Madrid" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:layout_marginHorizontal="@dimen/margin_normal16dp"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="Away Team"
+                            android:textColor="@color/secondary_text"
+                            android:textSize="10sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small8dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+                    <ImageView
+                        android:layout_width="@dimen/area_flag_size"
+                        android:layout_height="@dimen/area_flag_size"
+                        android:layout_marginVertical="@dimen/margin_small8dp"
+                        android:layout_marginEnd="@dimen/margin_small8dp"
+                        android:src="@drawable/ic_baseline_access_time_filled_24"
+                        app:layout_constraintBottom_toBottomOf="@+id/competition_name"
+                        app:layout_constraintStart_toEndOf="@+id/competition_name"
+                        app:layout_constraintTop_toTopOf="@+id/competition_name"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@{viewModel.singleMatch.toData().match.utcDate.toGMTString()}"
+                        android:textColor="@color/primary_text"
+                        android:textSize="10sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:text="1/10/2019" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+
+                    <ImageView
+                        android:layout_width="@dimen/area_flag_size"
+                        android:layout_height="@dimen/area_flag_size"
+                        android:layout_marginVertical="@dimen/margin_small8dp"
+                        android:layout_marginEnd="@dimen/margin_small8dp"
+                        android:src="@drawable/ic_baseline_sports_24"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@{viewModel.singleMatch.toData().match.status.toString()}"
+                        android:textColor="@color/primary_text"
+                        android:textSize="10sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:text="1/10/2019" />
+
+                </LinearLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
 
         </androidx.cardview.widget.CardView>
 
         <TextView
-            android:id="@+id/match_time"
+            android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:elevation="2dp"
-            android:textColor="@color/white"
-            android:textSize="42sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@id/match_time_card_view"
-            app:layout_constraintEnd_toEndOf="@+id/match_time_card_view"
-            app:layout_constraintStart_toStartOf="@+id/match_time_card_view"
-            app:layout_constraintTop_toTopOf="@id/match_time_card_view"
-            app:matchTime="@{viewModel.singleMatch.toData().match.utcDate}"
-            app:showWhenSuccess="@{viewModel.singleMatch}"
-            tools:text="15:30" />
-
+            android:layout_marginTop="@dimen/margin_huge40dp"
+            android:fontFamily="sans-serif-black"
+            android:text="Head To Head"
+            android:textColor="@color/primary_text"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/competition_card_view"
-            android:layout_width="match_parent"
-            android:layout_height="140dp"
-            android:layout_marginHorizontal="@dimen/margin_medium24dp"
-            android:layout_marginVertical="@dimen/margin_normal16dp"
-            app:cardCornerRadius="16dp"
-            app:layout_constraintTop_toBottomOf="@+id/match_time_card_view"
-            app:showWhenSuccess="@{viewModel.singleMatch}"
-            tools:layout_editor_absoluteX="18dp">
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="8dp"
+            android:layout_marginTop="@dimen/margin_normal16dp"
+            app:layout_constraintEnd_toEndOf="@+id/cardView"
+            app:layout_constraintStart_toStartOf="@+id/cardView"
+            app:layout_constraintTop_toBottomOf="@+id/textView7">
 
-            <View
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/competition_background" />
+                android:layout_height="wrap_content"
+                android:background="@color/item_background"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_normal16dp">
 
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_normal16dp"
+                        android:fontFamily="sans-serif-black"
+                        android:text="15"
+                        android:textColor="@color/primary_text"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_normal16dp"
+                        android:fontFamily="sans-serif-black"
+                        android:text="Total Matches"
+                        android:textColor="@color/primary_text"
+                        android:textSize="25sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_normal16dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_normal16dp"
+                        android:fontFamily="sans-serif-black"
+                        android:text="15"
+                        android:textColor="@color/primary_text"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_normal16dp"
+                        android:fontFamily="sans-serif-black"
+                        android:text="Total Goals"
+                        android:textColor="@color/primary_text"
+                        android:textSize="25sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_normal16dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_normal16dp"
+                        android:fontFamily="sans-serif-black"
+                        android:text="15"
+                        android:textColor="@color/primary_text"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_normal16dp"
+                        android:fontFamily="sans-serif-black"
+                        android:text="Home Wins"
+                        android:textColor="@color/primary_text"
+                        android:textSize="25sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_normal16dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_normal16dp"
+                        android:fontFamily="sans-serif-black"
+                        android:text="15"
+                        android:textColor="@color/primary_text"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_normal16dp"
+                        android:fontFamily="sans-serif-black"
+                        android:text="Draws"
+                        android:textColor="@color/primary_text"
+                        android:textSize="25sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_normal16dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_normal16dp"
+                        android:fontFamily="sans-serif-black"
+                        android:text="15"
+                        android:textColor="@color/primary_text"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_normal16dp"
+                        android:fontFamily="sans-serif-black"
+                        android:text="Away Wins"
+                        android:textColor="@color/primary_text"
+                        android:textSize="25sp" />
+                </LinearLayout>
+
+            </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <TextView
-            android:id="@+id/competition_name"
-            android:layout_width="320dp"
-            android:layout_height="wrap_content"
-            android:elevation="2dp"
-            android:ellipsize="end"
-            android:lines="1"
-            android:textAlignment="center"
-            android:textStyle="bold"
-            android:onClick="@{() -> viewModel.onCompetitionClicked(viewModel.singleMatch.toData().match.competition.id)}"
-            android:text="@{viewModel.singleMatch.toData().match.competition.name}"
-            android:textColor="@color/white"
-            android:textSize="36sp"
-            app:layout_constraintBottom_toBottomOf="@id/competition_card_view"
-            app:layout_constraintEnd_toEndOf="@+id/competition_card_view"
-            app:layout_constraintStart_toStartOf="@+id/competition_card_view"
-            app:layout_constraintTop_toTopOf="@id/competition_card_view"
-            app:showWhenSuccess="@{viewModel.singleMatch}"
-            tools:text="premiere league" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/head2head_card_view"
-            android:layout_width="match_parent"
-            android:layout_height="140dp"
-            android:layout_marginHorizontal="@dimen/margin_medium24dp"
-            android:layout_marginVertical="@dimen/margin_normal16dp"
-            app:cardCornerRadius="16dp"
-            app:layout_constraintTop_toBottomOf="@+id/competition_card_view"
-            app:showWhenSuccess="@{viewModel.singleMatch}"
-            tools:layout_editor_absoluteX="18dp" />
-
-        <TextView
-            android:id="@+id/home"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_normal16dp"
-            android:elevation="2dp"
-            android:text="@string/home"
-            android:textColor="@color/black"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="@id/head2head_card_view"
-            app:layout_constraintStart_toStartOf="@id/head2head_card_view"
-            app:layout_constraintTop_toTopOf="@id/head2head_card_view"
-            app:showWhenSuccess="@{viewModel.singleMatch}" />
-
-        <TextView
-            android:id="@+id/away"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_normal16dp"
-            android:elevation="2dp"
-            android:text="@string/away"
-            android:textColor="@color/black"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="@id/head2head_card_view"
-            app:layout_constraintEnd_toEndOf="@id/head2head_card_view"
-            app:layout_constraintTop_toTopOf="@id/head2head_card_view"
-            app:showWhenSuccess="@{viewModel.singleMatch}" />
-
-        <TextView
-            android:id="@+id/home_wins_number"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/margin_medium24dp"
-            android:layout_marginVertical="@dimen/margin_small8dp"
-            android:elevation="2dp"
-            android:text="@{String.valueOf(viewModel.singleMatch.toData().head2head.homeTeam.wins)}"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@+id/wins"
-            app:layout_constraintEnd_toEndOf="@+id/wins"
-            app:layout_constraintStart_toStartOf="@id/wins"
-            app:layout_constraintTop_toTopOf="@+id/home"
-            app:showWhenSuccess="@{viewModel.singleMatch}"
-            tools:text="2" />
-
-        <TextView
-            android:id="@+id/wins"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/margin_medium24dp"
-            android:layout_marginVertical="@dimen/margin_small8dp"
-            android:elevation="2dp"
-            android:text="@string/wins"
-            app:layout_constraintBottom_toBottomOf="@+id/home"
-            app:layout_constraintEnd_toStartOf="@+id/draw"
-            app:layout_constraintStart_toEndOf="@+id/home"
-            app:layout_constraintTop_toBottomOf="@+id/home_wins_number"
-            app:showWhenSuccess="@{viewModel.singleMatch}" />
-
-        <TextView
-            android:id="@+id/draw_number"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:elevation="2dp"
-            android:text="@{String.valueOf(viewModel.singleMatch.toData().head2head.homeTeam.draws)}"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@+id/home_wins_number"
-            app:layout_constraintEnd_toEndOf="@id/draw"
-            app:layout_constraintStart_toStartOf="@id/draw"
-            app:layout_constraintTop_toTopOf="@+id/home_wins_number"
-            app:showWhenSuccess="@{viewModel.singleMatch}"
-            tools:text="1" />
-
-        <TextView
-            android:id="@+id/draw"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:elevation="2dp"
-            android:text="@string/draw"
-            app:layout_constraintBottom_toBottomOf="@+id/wins"
-            app:layout_constraintEnd_toStartOf="@+id/away_wins"
-            app:layout_constraintStart_toEndOf="@+id/wins"
-            app:layout_constraintTop_toTopOf="@+id/wins"
-            app:showWhenSuccess="@{viewModel.singleMatch}" />
-
-
-        <TextView
-            android:id="@+id/away_wins_number"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/margin_medium24dp"
-            android:elevation="2dp"
-            android:text="@{String.valueOf(viewModel.singleMatch.toData().head2head.awayTeam.wins)}"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@+id/draw_number"
-            app:layout_constraintEnd_toEndOf="@id/away_wins"
-            app:layout_constraintStart_toStartOf="@id/away_wins"
-            app:layout_constraintTop_toTopOf="@+id/draw_number"
-            app:showWhenSuccess="@{viewModel.singleMatch}"
-            tools:text="2" />
-
-        <TextView
-            android:id="@+id/away_wins"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/margin_medium24dp"
-            android:elevation="2dp"
-            android:text="@string/wins"
-            app:layout_constraintBottom_toBottomOf="@+id/draw"
-            app:layout_constraintEnd_toStartOf="@+id/away"
-            app:layout_constraintStart_toEndOf="@+id/draw"
-            app:layout_constraintTop_toTopOf="@+id/draw"
-            app:showWhenSuccess="@{viewModel.singleMatch}" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
