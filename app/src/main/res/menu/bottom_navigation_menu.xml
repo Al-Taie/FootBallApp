@@ -3,12 +3,21 @@
 
     <item
         android:id="@+id/homeFragment2"
-        android:title="Home"
+        android:title="@string/home_menu"
+        android:checked="true"
+        android:color="@color/white"
         android:icon="@drawable/ic_baseline_home_24"/>
 
     <item
         android:id="@+id/homeFragment"
-        android:title="Matches"
+        android:title="@string/matches"
+        android:color="@color/white"
+        android:icon="@drawable/ic_baseline_table_rows_24"/>
+
+    <item
+        android:id="@+id/competitionListFragment"
+        android:title="@string/competitions"
+        android:color="@color/white"
         android:icon="@drawable/ic_baseline_table_rows_24"/>
 
 

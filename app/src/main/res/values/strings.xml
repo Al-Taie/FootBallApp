@@ -21,4 +21,7 @@
     <string name="spain_1899">Spain - 1899</string>
     <string name="manchester_united">Manchester United</string>
     <string name="england_1878">England - 1878</string>
+    <string name="home_menu">Home</string>
+    <string name="matches">Matches</string>
+    <string name="competitions">Competitions</string>
 </resources>
