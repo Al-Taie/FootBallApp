@@ -10,4 +10,11 @@ import kotlinx.coroutines.launch
 
 class HomeViewModel : ViewModel() {
 
+    private val _teamId = MutableLiveData<Event<Int>>()
+    val teamId : LiveData<Event<Int>>
+        get() = _teamId
+
+    fun onTeamClicked(teamId: Int){
+        _teamId.postValue(Event(teamId))
+    }
 }
