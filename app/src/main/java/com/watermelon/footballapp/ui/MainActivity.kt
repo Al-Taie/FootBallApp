@@ -14,7 +14,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     override val viewModel: MainViewModel by viewModels()
 
     override fun setup() {
-
+        setTheme(R.style.Theme_FootBallApp)
     }
 
     override fun onResume() {

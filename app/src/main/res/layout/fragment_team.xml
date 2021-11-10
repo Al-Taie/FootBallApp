@@ -17,6 +17,37 @@
         android:background="@drawable/background">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/item_background"
+            android:padding="@dimen/padding_small8dp"
+            app:showWhenError="@{viewModel.teamMatches}"
+            tools:visibility="gone">
+
+            <include
+                layout="@layout/error_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/item_background"
+            android:padding="@dimen/padding_small8dp"
+            app:showWhenLoading="@{viewModel.teamMatches}"
+            tools:visibility="gone">
+
+            <include
+                layout="@layout/loading_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -27,7 +58,8 @@
             android:padding="@dimen/margin_normal16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            app:showWhenSuccess="@{viewModel.team}">
 
             <ImageView
                 android:id="@+id/imageView4"
@@ -81,6 +113,7 @@
             app:layout_constraintEnd_toEndOf="@+id/constraintLayout"
             app:layout_constraintStart_toStartOf="@+id/constraintLayout"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+            app:showWhenSuccess="@{viewModel.team}"
             tools:text="www.laliga.com" />
 
         <TextView
@@ -93,6 +126,7 @@
             app:layout_constraintEnd_toEndOf="@+id/website"
             app:layout_constraintStart_toStartOf="@+id/website"
             app:layout_constraintTop_toBottomOf="@+id/website"
+            app:showWhenSuccess="@{viewModel.team}"
             tools:text="0753210514" />
 
         <TextView
@@ -106,18 +140,20 @@
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/phone_number" />
+            app:layout_constraintTop_toBottomOf="@+id/phone_number"
+            app:showWhenSuccess="@{viewModel.teamMatches}" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/matches_recycler"
             android:layout_width="match_parent"
-            android:layout_marginTop="@dimen/margin_normal16dp"
             android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_normal16dp"
             android:orientation="vertical"
             app:items="@{viewModel.teamMatches.toData().matches}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView4"
+            app:showWhenSuccess="@{viewModel.teamMatches}"
             tools:listitem="@layout/item_team_matches" />
 
 

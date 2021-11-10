@@ -56,6 +56,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/item_background"
+                app:showWhenSuccess="@{viewModel.singleMatch}"
                 android:padding="@dimen/padding_small8dp">
 
 
@@ -252,7 +253,34 @@
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/item_background"
+                app:showWhenError="@{viewModel.singleMatch}"
+                tools:visibility="gone"
+                android:padding="@dimen/padding_small8dp">
+                <include
+                    layout="@layout/error_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
 
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/item_background"
+                app:showWhenLoading="@{viewModel.singleMatch}"
+                tools:visibility="gone"
+                android:padding="@dimen/padding_small8dp">
+                <include
+                    layout="@layout/loading_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.cardview.widget.CardView>
 
@@ -264,6 +292,7 @@
             android:fontFamily="sans-serif-black"
             android:text="Head To Head"
             android:textColor="@color/primary_text"
+            app:showWhenSuccess="@{viewModel.singleMatch}"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -406,6 +435,35 @@
                 </LinearLayout>
 
             </LinearLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/item_background"
+                app:showWhenError="@{viewModel.singleMatch}"
+                tools:visibility="gone"
+                android:padding="@dimen/padding_small8dp">
+                <include
+                    layout="@layout/error_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/item_background"
+                app:showWhenLoading="@{viewModel.singleMatch}"
+                tools:visibility="gone"
+                android:padding="@dimen/padding_small8dp">
+                <include
+                    layout="@layout/loading_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
         </androidx.cardview.widget.CardView>
 
             </androidx.constraintlayout.widget.ConstraintLayout>

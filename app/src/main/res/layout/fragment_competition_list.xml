@@ -15,16 +15,35 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background">
-
-        <ProgressBar
-            android:id="@+id/progress_bar"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:showWhenLoading="@{viewModel.competitionList}" />
+            android:background="@color/item_background"
+            app:showWhenLoading="@{viewModel.competitionList}"
+            tools:visibility="gone"
+            android:padding="@dimen/padding_small8dp">
+            <include
+                layout="@layout/loading_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/item_background"
+            app:showWhenError="@{viewModel.competitionList}"
+            tools:visibility="gone"
+            android:padding="@dimen/padding_small8dp">
+            <include
+                layout="@layout/error_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/competition_recycler"

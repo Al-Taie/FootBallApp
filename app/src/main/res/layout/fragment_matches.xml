@@ -15,15 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background">
-        <ProgressBar
-            android:id="@+id/progress_bar"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:showWhenLoading="@{viewModel.matches}" />
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/matches_recycler"
@@ -34,7 +26,41 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:showWhenSuccess="@{viewModel.matches}"
             tools:listitem="@layout/item_match" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/item_background"
+            android:padding="@dimen/padding_small8dp"
+            app:showWhenError="@{viewModel.matches}"
+            tools:visibility="gone">
+
+            <include
+                layout="@layout/error_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/item_background"
+            android:padding="@dimen/padding_small8dp"
+            app:showWhenLoading="@{viewModel.matches}"
+            tools:visibility="gone">
+
+            <include
+                layout="@layout/loading_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
