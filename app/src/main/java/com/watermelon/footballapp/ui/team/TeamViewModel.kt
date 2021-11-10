@@ -5,7 +5,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.watermelon.footballapp.model.State
 import com.watermelon.footballapp.model.repository.FootBallRepository
-import com.watermelon.footballapp.model.response.matches.MatchesResponse
 import com.watermelon.footballapp.model.response.team.SingleTeamResponse
 import com.watermelon.footballapp.model.response.teamMatches.TeamMatchesResponse
 import com.watermelon.footballapp.ui.match.MatchInteractionListener

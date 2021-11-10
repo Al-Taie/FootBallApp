@@ -11,9 +11,9 @@ import watermelon.footballapp.databinding.FragmentTeamBinding
 class TeamFragment : BaseFragment<FragmentTeamBinding>() {
 
     override fun setup() {
+        binding.matchesRecycler.adapter = TeamMatchAdapter(emptyList(), viewModel)
         val args: TeamFragmentArgs by navArgs()
         viewModel.makeRequest(args.id)
-        binding.matchesRecycler.adapter = TeamMatchAdapter(emptyList(), viewModel)
     }
 
 
