@@ -19,6 +19,7 @@
         android:layout_height="120dp"
         android:layout_marginHorizontal="24dp"
         android:layout_marginVertical="12dp"
+        android:onClick="@{() -> listener.onMatchClicked(item.id)}"
         android:elevation="8dp"
         app:cardCornerRadius="8dp">
 
