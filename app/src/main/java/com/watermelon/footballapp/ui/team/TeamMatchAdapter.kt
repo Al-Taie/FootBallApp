@@ -1,6 +1,5 @@
 package com.watermelon.footballapp.ui.team
 
-import com.watermelon.footballapp.model.response.competitionMatches.CompetitionMatch
 import com.watermelon.footballapp.model.response.teamMatches.TeamMatch
 import com.watermelon.footballapp.ui.base.BaseAdapter
 import com.watermelon.footballapp.ui.match.MatchInteractionListener

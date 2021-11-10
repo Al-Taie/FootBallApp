@@ -26,8 +26,8 @@ interface FootballService {
     @GET("teams/{id}")
     suspend fun getTeamById(@Path("id") teamId: Int): Response<SingleTeamResponse>
 
-    @GET("teams/{teamId}}/matches")
-    suspend fun getMatchesForTeam(teamId:Int) : Response<TeamMatchesResponse>
+    @GET("teams/{teamId}/matches")
+    suspend fun getMatchesForTeam(@Path("teamId") teamId:Int) : Response<TeamMatchesResponse>
 
 
     @GET("competitions/")

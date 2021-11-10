@@ -4,6 +4,8 @@ package com.watermelon.footballapp.model.response.teamMatches
 import com.google.gson.annotations.SerializedName
 
 data class HomeTeam(
-    val id: Int? = null,
-    val name: String? = null
+    @SerializedName("id")
+    val id: Int?,
+    @SerializedName("name")
+    val name: String?
 )

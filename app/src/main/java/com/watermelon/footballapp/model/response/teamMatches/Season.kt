@@ -4,9 +4,14 @@ package com.watermelon.footballapp.model.response.teamMatches
 import com.google.gson.annotations.SerializedName
 
 data class Season(
-    val currentMatchday: Int? = null,
-    val endDate: String? = null,
-    val id: Int? = null,
-    val startDate: String? = null,
-    val winner: Any? = null
+    @SerializedName("currentMatchday")
+    val currentMatchday: Int?,
+    @SerializedName("endDate")
+    val endDate: String?,
+    @SerializedName("id")
+    val id: Int?,
+    @SerializedName("startDate")
+    val startDate: String?,
+    @SerializedName("winner")
+    val winner: Any?
 )

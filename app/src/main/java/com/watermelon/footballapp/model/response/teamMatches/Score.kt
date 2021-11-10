@@ -4,10 +4,16 @@ package com.watermelon.footballapp.model.response.teamMatches
 import com.google.gson.annotations.SerializedName
 
 data class Score(
-    val duration: String? = null,
-    val extraTime: ExtraTime? = null,
-    val fullTime: FullTime? = null,
-    val halfTime: HalfTime? = null,
-    val penalties: Penalties? = null,
-    val winner: String? = null
+    @SerializedName("duration")
+    val duration: String?,
+    @SerializedName("extraTime")
+    val extraTime: ExtraTime?,
+    @SerializedName("fullTime")
+    val fullTime: FullTime?,
+    @SerializedName("halfTime")
+    val halfTime: HalfTime?,
+    @SerializedName("penalties")
+    val penalties: Penalties?,
+    @SerializedName("winner")
+    val winner: String?
 )
