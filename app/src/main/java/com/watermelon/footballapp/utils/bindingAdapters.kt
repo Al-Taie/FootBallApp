@@ -122,11 +122,13 @@ fun <T> showWhenSuccess(view: View, state: State<T>?) {
 
 @BindingAdapter(value = ["imageUrl"])
 fun setImageUrl(view: ImageView, url: String?){
-    GlideToVectorYou.init()
-        .with(view.context)
-        .requestBuilder
-        .load(url)
-        .transition(DrawableTransitionOptions.withCrossFade())
-        .apply(RequestOptions().centerCrop())
-        .into(view)
+    if(url != null){
+        GlideToVectorYou.init()
+            .with(view.context)
+            .requestBuilder
+            .load(url)
+            .transition(DrawableTransitionOptions.withCrossFade())
+            .apply(RequestOptions().centerCrop())
+            .into(view)
+    }
 }
