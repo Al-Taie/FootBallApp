@@ -17,7 +17,7 @@
 
     <!--text colors-->
     <color name="primary_text">#ffffff</color>
-    <color name="light_text">#cccccc</color>
+    <color name="secondary_text">#cccccc</color>
 
     <color name="item_background">#1C1A28</color>
     <!--other colors-->
