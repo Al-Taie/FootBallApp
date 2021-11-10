@@ -13,8 +13,11 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 class TeamViewModel : ViewModel(),MatchInteractionListener {
+
     val team = MutableLiveData<State<SingleTeamResponse?>>()
+
     val teamMatches = MutableLiveData<State<TeamMatchesResponse?>>()
+
     fun makeRequest(id:Int) {
         viewModelScope.launch {
             FootBallRepository.getTeamById(id).collect {
@@ -27,6 +30,6 @@ class TeamViewModel : ViewModel(),MatchInteractionListener {
     }
 
     override fun onMatchClicked(id: Int) {
-        TODO("Not yet implemented")
+
     }
 }
