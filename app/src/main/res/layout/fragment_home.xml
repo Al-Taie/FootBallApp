@@ -41,6 +41,7 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:scaleType="centerCrop"
+                android:onClick="@{() -> viewModel.onCompetitionClicked(2021)}"
                 android:layout_marginHorizontal="@dimen/margin_normal16dp"
                 app:shapeAppearanceOverlay="@style/circleImageViewStyle" />
 
@@ -48,6 +49,7 @@
                 android:src="@drawable/laligaexample"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
+                android:onClick="@{() -> viewModel.onCompetitionClicked(2014)}"
                 android:scaleType="centerCrop"
                 android:layout_marginHorizontal="@dimen/margin_normal16dp"
                 app:shapeAppearanceOverlay="@style/circleImageViewStyle"/>
@@ -56,6 +58,7 @@
                 android:src="@drawable/serie_a"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
+                android:onClick="@{() -> viewModel.onCompetitionClicked(2019)}"
                 android:layout_marginHorizontal="@dimen/margin_normal16dp"
                 app:shapeAppearanceOverlay="@style/circleImageViewStyle"
                 android:background="@color/white" />
@@ -80,6 +83,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/margin_medium24dp"
             app:cardCornerRadius="8dp"
+            android:onClick="@{() -> viewModel.onTeamClicked(86)}"
             android:layout_marginTop="@dimen/margin_big32dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView8">
@@ -137,6 +141,7 @@
             android:layout_marginHorizontal="@dimen/margin_medium24dp"
             android:layout_marginTop="@dimen/margin_normal16dp"
             app:cardCornerRadius="8dp"
+            android:onClick="@{() -> viewModel.onTeamClicked(81)}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/real_madrid">
 

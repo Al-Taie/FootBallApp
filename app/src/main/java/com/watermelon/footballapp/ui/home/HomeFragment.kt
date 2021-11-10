@@ -15,6 +15,15 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         viewModel.teamId.observe(this, EventObserver{
             navigateToTeam(it)
         })
+
+        viewModel.competitionId.observe(this, EventObserver{
+            navigateToCompetition(it)
+        })
+    }
+
+    private fun navigateToCompetition(competitionId: Int) {
+        val action = HomeFragmentDirections.actionHomeFragment2ToCompetitionFragment(competitionId)
+        findNavController().navigate(action)
     }
 
     private fun navigateToTeam(teamId: Int) {

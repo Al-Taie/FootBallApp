@@ -14,7 +14,15 @@ class HomeViewModel : ViewModel() {
     val teamId : LiveData<Event<Int>>
         get() = _teamId
 
+    private val _competitionId = MutableLiveData<Event<Int>>()
+    val competitionId : LiveData<Event<Int>>
+        get() = _competitionId
+
     fun onTeamClicked(teamId: Int){
         _teamId.postValue(Event(teamId))
+    }
+
+    fun onCompetitionClicked(competitionId: Int){
+        _competitionId.postValue(Event(competitionId))
     }
 }
