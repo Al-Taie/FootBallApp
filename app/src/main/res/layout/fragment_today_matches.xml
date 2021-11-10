@@ -18,36 +18,33 @@
         android:background="@drawable/background"
         tools:context="com.watermelon.footballapp.ui.todayMatches.TodayMatchesFragment">
 
-
-        <ImageView
-            android:id="@+id/imageView6"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="#FF0000"
-            app:layout_constraintTop_toTopOf="parent"
-            app:showWhenError="@{viewModel.matches}" />
-        <ProgressBar
+            android:background="@color/item_background"
+            app:showWhenLoading="@{viewModel.matches}"
+            tools:visibility="gone"
+            android:padding="@dimen/padding_small8dp">
+            <include
+                layout="@layout/loading_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:showWhenLoading="@{viewModel.matches}" />
+            android:background="@color/item_background"
+            app:showWhenError="@{viewModel.matches}"
+            tools:visibility="gone"
+            android:padding="@dimen/padding_small8dp">
+            <include
+                layout="@layout/error_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
 
-        <TextView
-            android:id="@+id/no_matches"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-black"
-            android:text="@string/there_are_no_matches_today"
-            app:showWhenNoMatchesToday="@{viewModel.matches.toData().matches}"
-            android:textColor="@color/primary_text"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/matches_recycler"

@@ -40,6 +40,10 @@
     <style name="yesButton" parent="Widget.AppCompat.Button">
         <item name="android:background">#ff003c</item>
     </style>
+    <style name="splashtheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowSplashscreenContent" tools:targetApi="o">@drawable/splash_theme</item>
+        <item name="android:statusBarColor">@color/white</item>
+    </style>
 
 
 </resources>
